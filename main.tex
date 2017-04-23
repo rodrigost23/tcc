@@ -1,5 +1,420 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\title{Monografia TCC}
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	%twoside,			% para impressão em verso e anverso. Oposto a oneside
+    oneside,
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --    
+	english,			% idioma adicional para hifenização
+	% french,				% idioma adicional para hifenização
+	% spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento    
+	]{abntex2}
+    
+    %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXchapterfontsize}{ \large}
+	%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{todonotes}
+
+
+\definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
+
+% Pacotes para algoritmos/pseudo-código
+\usepackage{listings}
+
+\renewcommand{\lstlistingname}{Programa}
+
+\lstset
+{ %Formatting for code in appendix
+    language=C,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    frame = single,
+    showstringspaces=false,
+    tabsize=2,
+    breaklines=true,
+    xleftmargin=10pt,
+    breakatwhitespace=false,
+    extendedchars=true,
+    literate={á}{{\'a}}1 
+             {ã}{{\~a}}1
+             {é}{{\'e}}1
+             {í}{{\'i}}1
+             {õ}{{\~o}}1
+             {ç}{{\c{c}}}1,
+}
+
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
+
+\let\oldlstlistoflistings\lstlistoflistings
+\renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+
+% ---
+% Pacotes de citações
+% ---
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf, abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+\usepackage{abntex_dcc_ufrr}
+
+
+% PACOTES DE ALGORITMO
+
+\usepackage{algpseudocode,algorithm}
+% Declaracoes em Português
+
+\algrenewcommand\algorithmicend{\textbf{FIM}}
+\algrenewcommand\algorithmicdo{\textbf{FAÇA}}
+\algrenewcommand\algorithmicwhile{\textbf{ENQUANTO}}
+\algrenewcommand\algorithmicfor{\textbf{PARA}}
+\algrenewcommand\algorithmicforall{\textbf{PARA TODO}}
+\algrenewcommand\algorithmicif{\textbf{SE}}
+\algrenewcommand\algorithmicthen{\textbf{ENTÃO}}
+\algrenewcommand\algorithmicelse{\textbf{SENÃO}}
+\algrenewcommand\algorithmicreturn{\textbf{RETORNE}}
+\algrenewcommand\algorithmicfunction{\textbf{FUNÇÃO}}
+% New definitions
+\algnewcommand\algorithmicswitch{\textbf{ESCOLHA}}
+\algnewcommand\algorithmiccase{\textbf{CASO}}
+\algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+
+% Rearranja os finais de cada estrutura
+\algrenewtext{EndWhile}{\algorithmicend\ \algorithmicwhile}
+\algrenewtext{EndFor}{\algorithmicend\ \algorithmicfor}
+\algrenewtext{EndIf}{\algorithmicend\ \algorithmicif}
+\algrenewtext{EndFunction}{\algorithmicend\ \algorithmicfunction}
+
+% O comando For, a seguir, retorna 'para #1 -- #2 até #3 faça'
+\algnewcommand\algorithmicto{\textbf{até}}
+\algrenewtext{For}[3]%
+{\algorithmicfor\ #1 $\gets$ #2 \algorithmicto\ #3 \algorithmicdo}
+
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{MONOGRAFIA}
+
+\autor{RODRIGO DOS SANTOS TAVARES}
+\local{Boa Vista - RR}
+\data{2017}
+\orientador{DSc. Herbert Oliveira Rocha}
+
+\tipotrabalho{Monografia}
+
+\preambulo{Monografia de Graduação apresentada ao Departamento de Ciência da Computação da Universidade Federal de Roraima como requisito parcial para a obtenção do grau de Bacharel em Ciência da Computação.}
+
+% ---
+
+%-- Informações de dado para a FOLHA DE APROVAÇÃO
+\renewcommand{\dataDefesa}{?? de ????? de 2017}
+\renewcommand{\orientadorBanca}{Prof. Dr. Herbert Oliveira Rocha}
+\renewcommand{\primeiroMembroBanca}{Prof. ?? ?????}
+\renewcommand{\segundoMembroBanca}{Prof. ?? ?????}
+
+% ---
+% Configurações de aparência do PDF final
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
 \begin{document}
-(Type your content here.)
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+\imprimirfolhadeaprovacao
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{???????} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+???????
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{???????????}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+  ???
+
+ \vspace{\onelineskip}
+ 
+ \noindent 
+ \textbf{Palavras-chaves}: ??????
+\end{resumo}
+
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   ???
+
+   \vspace{\onelineskip}
+ 
+   \noindent 
+   \textbf{Key-words}: ???????
+ \end{otherlanguage*}
+\end{resumo}
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[????] ??????
+%    \item[EDS] Exemplo De Sigla
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+% \begin{simbolos}  
+%   \item[$ \Gamma $] \todo{Atualizar esta lista!} Letra grega Gama
+%   \item[$ \Lambda $] Lambda
+%   \item[$ \zeta $] Letra grega minúscula zeta
+%   \item[$ \in $] Pertence
+% \end{simbolos}
+% % ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\chapter{INTRODUÇÃO}
+%\input{sections/introducao.tex}
+
+% ----------------------------------------------------------
+% Conceitos e Definições
+% ----------------------------------------------------------
+\chapter{CONCEITOS E DEFINIÇÕES}
+%\input{sections/conceitos_e_definicoes.tex}
+
+% ----------------------------------------------------------
+% Revisão de Literatura
+% ----------------------------------------------------------
+\chapter{TRABALHOS CORRELATOS}
+%\input{sections/trabalhos_correlatos.tex}
+
+
+% ----------------------------------------------------------
+% Detalhes de Desenvolvimento do Projeto
+% ----------------------------------------------------------
+\chapter{MÉTODO PROPOSTO}
+%\input{sections/metodologia.tex}
+
+% ----------------------------------------------------------
+% Cronograma
+% ----------------------------------------------------------
+\chapter{CRONOGRAMA}
+%\input{sections/cronograma.tex}
+
+% ----------------------------------------------------------
+% Resultados -- Pode vir junto com discussão
+% ----------------------------------------------------------
+\chapter{RESULTADOS EXPERIMENTAIS}
+%\input{sections/resultados_experimentais.tex}
+%\chapter{DISCUSSÃO}
+
+% ----------------------------------------------------------
+% Conclusão
+% ----------------------------------------------------------
+\chapter{CONSIDERAÇÕES PARCIAIS E TRABALHOS FUTUROS}
+%\input{sections/consideracoes_parciais.tex}
+%\newpage
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{main}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+\printindex
+%---------------------------------------------------------------------
+
 \end{document}
+
