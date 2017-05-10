@@ -10,28 +10,28 @@
 	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
 	%twoside,			% para impressão em verso e anverso. Oposto a oneside
     oneside,
-	a4paper,			% tamanho do papel. 
+	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
 	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
 	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --    
+	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
 	% french,				% idioma adicional para hifenização
 	% spanish,			% idioma adicional para hifenização
-	brazil				% o último idioma é o principal do documento    
+	brazil				% o último idioma é o principal do documento
 	]{abntex2}
-    
+
     %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
 	%\renewcommand{\ABNTEXchapterfontsize}{ \large}
 	%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 	%\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
 % ---
-% Pacotes básicos 
+% Pacotes básicos
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{lastpage}			% Usado pela Ficha catalográfica
@@ -49,8 +49,7 @@
 
 \renewcommand{\lstlistingname}{Programa}
 
-\lstset
-{ %Formatting for code in appendix
+\lstset{ %Formatting for code in appendix
     language=C,
     basicstyle=\footnotesize,
     numbers=left,
@@ -62,10 +61,10 @@
     xleftmargin=10pt,
     breakatwhitespace=false,
     extendedchars=true,
-    literate={á}{{\'a}}1 
+    literate={á}{{\'a}}1
              {ã}{{\~a}}1
              {é}{{\'e}}1
-             {í}{{\'i}}1
+             {í}{{\'\i}}1
              {õ}{{\~o}}1
              {ç}{{\c{c}}}1,
 }
@@ -74,15 +73,15 @@
 
 % Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
 \begingroup\makeatletter
-\let\newcounter\@gobble\let\setcounter\@gobbletwo
-  \globaldefs\@ne \let\c@loldepth\@ne
+\let\newcounter\@gobble\let\setcounter\@gobbletwo{}
+  \globaldefs\@ne{} \let\c@loldepth\@ne{}
   \newlistof{listings}{lol}{\lstlistlistingname}
   \newlistentry{lstlisting}{lol}{0}
 \endgroup
 
 \renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
 
-\let\oldlstlistoflistings\lstlistoflistings
+\let\oldlstlistoflistings\lstlistoflistings{}
 \renewcommand{\lstlistoflistings}{%
    \begingroup%
    \let\oldnumberline\numberline%
@@ -102,9 +101,9 @@
 %\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf, abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
 
-% --- 
+% ---
 % CONFIGURAÇÕES DE PACOTES
-% --- 
+% ---
 
 \usepackage{abntex_dcc_ufrr}
 
@@ -128,7 +127,7 @@
 \algnewcommand\algorithmicswitch{\textbf{ESCOLHA}}
 \algnewcommand\algorithmiccase{\textbf{CASO}}
 \algnewcommand\algorithmicassert{\texttt{assert}}
-\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+\algnewcommand\Assert[1]{\State{} \algorithmicassert(#1)}%
 % New "environments"
 \algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
 \algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
@@ -171,7 +170,7 @@
 \titulo{MONOGRAFIA}
 
 \autor{RODRIGO DOS SANTOS TAVARES}
-\local{Boa Vista - RR}
+\local{Boa Vista --- RR}
 \data{2017}
 \orientador{DSc. Herbert Oliveira Rocha}
 
@@ -182,10 +181,10 @@
 % ---
 
 %-- Informações de dado para a FOLHA DE APROVAÇÃO
-\renewcommand{\dataDefesa}{?? de ????? de 2017}
-\renewcommand{\orientadorBanca}{Prof. Dr. Herbert Oliveira Rocha}
-\renewcommand{\primeiroMembroBanca}{Prof. ?? ?????}
-\renewcommand{\segundoMembroBanca}{Prof. ?? ?????}
+\renewcommand{\dataDefesa}{?? de ????? de 2017}%TODO:Data de defesa
+\renewcommand{\orientadorBanca}{Prof.\ Dr.\ Herbert Oliveira Rocha}
+\renewcommand{\primeiroMembroBanca}{Prof.\ ???????}%TODO:Membros da banca
+\renewcommand{\segundoMembroBanca}{Prof.\ ???????}
 
 % ---
 % Configurações de aparência do PDF final
@@ -194,11 +193,11 @@
 \makeatletter
 \hypersetup{
      	%pagebackref=true,
-		pdftitle={\@title}, 
+		pdftitle={\@title},
 		pdfauthor={\@author},
     	pdfsubject={\imprimirpreambulo},
 	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
 		colorlinks=true,       		% false: boxed links; true: colored links
     	linkcolor=blue,          	% color of internal links
     	citecolor=blue,        		% color of links to bibliography
@@ -207,11 +206,11 @@
 		bookmarksdepth=4
 }
 \makeatother
-% --- 
+% ---
 
-% --- 
-% Espaçamentos entre linhas e parágrafos 
-% --- 
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -231,7 +230,7 @@
 \begin{document}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+\frenchspacing
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -241,20 +240,20 @@
 % ---
 % Capa
 % ---
-\imprimircapa
+\imprimircapa{}
 % ---
 
 % ---
 % Folha de rosto
 % (o * indica que haverá a ficha bibliográfica)
 % ---
-\imprimirfolhaderosto
+\imprimirfolhaderosto{}
 % ---
 
 % ---
 % Inserir folha de aprovação
 % ---
-\imprimirfolhadeaprovacao
+\imprimirfolhadeaprovacao{}
 % ---
 % Dedicatória
 % ---
@@ -262,7 +261,7 @@
    \vspace*{\fill}
    \centering
    \noindent
-   \textit{???????} \vspace*{\fill}
+   \textit{???????} \vspace*{\fill}%TODO: Dedicatória
 \end{dedicatoria}
 % ---
 
@@ -270,7 +269,7 @@
 % Agradecimentos
 % ---
 \begin{agradecimentos}
-???????
+  \lipsum[1]%TODO:Agradecimentos
 \end{agradecimentos}
 % ---
 
@@ -280,7 +279,7 @@
 \begin{epigrafe}
     \vspace*{\fill}
 	\begin{flushright}
-		\textit{???????????}
+		\textit{???????????} %TODO: Epígrafe
 	\end{flushright}
 \end{epigrafe}
 % ---
@@ -292,22 +291,22 @@
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-  ???
+  \lipsum[1] %TODO: Resumo
 
  \vspace{\onelineskip}
- 
- \noindent 
- \textbf{Palavras-chaves}: ??????
+
+ \noindent
+ \textbf{Palavras-chaves}: ??????%TODO:Palavras-chave
 \end{resumo}
 
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-   ???
+   \lipsum[1] %TODO: Abstract
 
    \vspace{\onelineskip}
- 
-   \noindent 
-   \textbf{Key-words}: ???????
+
+   \noindent
+   \textbf{Key-words}: ???????%TODO:Keywords
  \end{otherlanguage*}
 \end{resumo}
 % ---
@@ -315,7 +314,7 @@
 % ---
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
-\cleardoublepage
+\cleardoublepage{}
 % ---
 
 % ---
@@ -323,14 +322,14 @@
 % ---
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
-\cleardoublepage
+\cleardoublepage{}
 % ---
 
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[????] ??????
+  \item[????] ??????%TODO:Lista de siglas
 %    \item[EDS] Exemplo De Sigla
 \end{siglas}
 % ---
@@ -338,7 +337,7 @@
 % ---
 % inserir lista de símbolos
 % ---
-% \begin{simbolos}  
+% \begin{simbolos}
 %   \item[$ \Gamma $] \todo{Atualizar esta lista!} Letra grega Gama
 %   \item[$ \Lambda $] Lambda
 %   \item[$ \zeta $] Letra grega minúscula zeta
@@ -351,7 +350,7 @@
 % ---
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
-\cleardoublepage
+\cleardoublepage{}
 % ---
 
 
@@ -359,7 +358,7 @@
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
-\textual
+\textual{}
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
@@ -417,4 +416,3 @@
 %---------------------------------------------------------------------
 
 \end{document}
-
