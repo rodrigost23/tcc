@@ -2,8 +2,6 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
-\title{Monografia TCC}
-
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
@@ -167,11 +165,16 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{AutomailX: Uma prótese robótica para geração de ações em movimentos baseada em padrões musculares\todo{Alterar o título, algo como:}}
+\title{AutomailX: Uma prótese robótica para geração de ações em movimentos baseada em padrões musculares\todo{Alterar o título, algo como:}}
+\titulo{\thetitle}
 
-\autor{RODRIGO DOS SANTOS TAVARES}
+\author{RODRIGO DOS SANTOS TAVARES}
+\autor{\theauthor}
+
 \local{Boa Vista --- RR}
-\data{2017}
+
+\date{2017}
+\data{\thedate}
 \orientador{DSc. Herbert Oliveira Rocha}
 
 \tipotrabalho{Monografia}
@@ -413,7 +416,7 @@
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{main}
+\bibliography{main,extra}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
