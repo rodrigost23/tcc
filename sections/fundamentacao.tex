@@ -1,19 +1,30 @@
 \section{Sistemas Embarcados}
-Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. Destes sistemas, são conhecidos como embarcados os que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais. \cite{vahid:2002}
+\label{sec:embarcados}
+Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. Destes sistemas, são conhecidos como embarcados os que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais \cite{vahid:2002}. Entende-se por sistema embarcado um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
-Entende-se por sistema embarcado um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas. \cite{heath:2002}
-
-
+\todo{Fazer gancho para próxima seção}
 \subsection{Microcontroladores vs. Microprocessadores}
+Microcontroladores são processadores com vários componentes embutidos, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, grande parte dos processadores em sistemas embarcados são, na verdade, microcontroladores, por serem simples e fáceis de usar.
+
+A distinção entre microprocessadores e microcontroladores é difícil de ser feita, \citeonline{schlett:1998} diz que, de forma simplificada, é comum diferenciá-los considerando seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores.
+
+\todo{Falta alguma coisa, talvez.}	
+
 \subsection{IoT: Internet das Coisas}
+Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas''  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos.
 
 \section{Robótica e suas Aplicações}
+\label{sec:robotica}
 \subsection{Próteses Robóticas}
 \todo[inline]{Próteses ativas, passivas, eletromiográficas}
+
 \section{Eletromiografia: Geração de Dados}
+\label{sec:emg}
 \todo[inline]{Como funciona, de onde vêm os dados, etc.}
 
 \section{Reconhecimento de Padrões}
+\label{patternrec}
+Nesta seção serão abordados aspectos relevantes ao reconhecimento dos padrões dos sinais, desde seu pré-processamento a previsões dos movimentos do usuário.
 \subsection{Pré-processamento}
 \todo[inline]{Filtros e fusão de dados, provavelmente?}%TODO
 \subsection{Aprendizado de máquina}
@@ -21,13 +32,15 @@ Entende-se por sistema embarcado um sistema computacional de propósito específ
 \subsubsection{Árvores de decisão}
 \todo[inline]{SciKit-Learn usa uma versão otimizada do algoritmo CART}%TODO
 \subsubsection{SVM e outros}
-\todo[inline]{Mas por que não SVM, por exemplo?}
+
 \todo[inline]{É necessário falar sobre impressora 3D, caso eu pretenda usar uma?}
-\todo[inline]{Herbert: Não falaremos na introdução}
+\todo[inline]{Herbert: Não, falaremos na introdução}
 
 \section{Modelos Formais para Validação de Sistemas}
-\subsection{Automatos}
+\label{sec:modelosformais}
+\subsection{Autômatos}
 \subsection{Redes de Petri}
 
 \section{Modelagem de software}
+\label{sec:modelagem}
 \subsection{Transformações de modelo para código}
