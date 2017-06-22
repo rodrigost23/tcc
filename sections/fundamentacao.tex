@@ -1,6 +1,6 @@
 \section{Sistemas Embarcados}
 \label{sec:embarcados}
-Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos\todo{Adicionar exemplo}. \textcolor{red}{Um conjunto especifico dos sistemas computacionais são conhecidos como sistemas embarcados (SE). Os SE fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o funcionamento do sistema maior\cite{vahid:2002}}. Entende-se por sistema embarcado um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
+Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos\todo{Adicionar exemplo}. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}. Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
 \textcolor{red}{ADICIONAR TEXTO SOBRE EXEMPLOS DE SE.}
 
@@ -21,19 +21,26 @@ A distinção entre microprocessadores e microcontroladores é difícil de ser f
 Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas''  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos.
 
 \section{Robótica e suas Aplicações}
+A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
+\todo[inline]{Uma aplicação da robótica seria na construção de próteses etc.}
 \label{sec:robotica}
 \subsection{Próteses Robóticas}
 \todo[inline]{Próteses ativas, passivas, eletromiográficas}
 
 \section{Eletromiografia: Geração de Dados}
 \label{sec:emg}
-\todo[inline]{Como funciona, de onde vêm os dados, etc.}
+\todo[inline]{Início do Rascunho}
+A eletromiografia (EMG) é uma técnica que consiste em monitorar a atividade elétrica gerada pelos músculos do corpo, sendo possível assim detectar os potenciais de ação através desta leitura. Isto significa, teoricamente, que é possível identificar a intenção de uma pessoa ao realizar uma atividade motora a partir de um eletromiograma.
+
+A leitura dos sinais eletromiográficos podem ser feitas de diferentes formas, incluindo o método por profundidade e o por superfície. O primeiro consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado.
+
+\todo[inline]{Fim do Rascunho}
 
 \section{Reconhecimento de Padrões}
 \label{patternrec}
 Nesta seção serão abordados aspectos relevantes ao reconhecimento dos padrões dos sinais, desde seu pré-processamento a previsões dos movimentos do usuário.
 \subsection{Pré-processamento}
-\todo[inline]{Filtros e fusão de dados, provavelmente?}%TODO'
+\todo[inline]{Filtros e fusão de dados, provavelmente?}%TODO
 \subsection{Aprendizado de máquina}
 \todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
 \subsubsection{Árvores de decisão}
