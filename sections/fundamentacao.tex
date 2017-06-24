@@ -1,6 +1,6 @@
 \section{Sistemas Embarcados}
 \label{sec:embarcados}
-Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos\todo{Adicionar exemplo}. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}. Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
+Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}. Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
 \textcolor{red}{ADICIONAR TEXTO SOBRE EXEMPLOS DE SE.}
 
@@ -13,7 +13,7 @@ Sistemas computacionais fazem parte de diversos produtos desde computadores pess
 \subsection{Microcontroladores vs. Microprocessadores}
 Microcontroladores são processadores com vários componentes embutidos, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, grande parte dos processadores em sistemas embarcados são, na verdade, microcontroladores, por serem simples e fáceis de usar.
 
-A distinção entre microprocessadores e microcontroladores é difícil de ser feita: \citeonline{schlett:1998} diz que, de forma simplificada, é comum diferenciá-los considerando seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores.
+A distinção entre microprocessadores e microcontroladores, contudo, não é tão trivial: \citeonline{schlett:1998} diz que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores.
 
 \todo{Falta alguma coisa, talvez.}	
 
@@ -30,17 +30,14 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 \label{sec:emg}
 A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
 
-\todo[inline]{Rascunho}
-A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado.
+A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado.\todo{Falta referências aqui!}
 
-\todo[inline]{sEMG é útil pra ler dados de membro residual de pessoas amputadas, porém pode ter problemas etc.}
+\todo[inline]{''sEMG é útil pra ler dados de membro residual de pessoas amputadas``}
 
 O eletromiograma consiste em [...]\todo{Explicar a saída dos sinais, o que são os números etc.}
 
-\todo[inline]{Fim do Rascunho}
-
 \section{Reconhecimento de Padrões}
-\label{patternrec}
+\label{sec:patternrec}
 Nesta seção serão abordados aspectos relevantes ao reconhecimento dos padrões dos sinais, desde seu pré-processamento a previsões dos movimentos do usuário.
 \subsection{Pré-processamento}
 \todo[inline]{Filtros e fusão de dados, provavelmente?}%TODO
