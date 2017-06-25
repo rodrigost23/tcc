@@ -1,0 +1,171 @@
+% =============================================================================
+%  PACOTES
+% =============================================================================
+\usepackage{lmodern}        % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}    % Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc} % Codificação do documento
+\usepackage{lastpage}       % Usado pela Ficha catalográfica
+\usepackage{indentfirst}    % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}          % Controle das cores
+\usepackage{graphicx}       % Inclusão de gráficos
+\usepackage{microtype}      % para melhorias de justificação
+\usepackage{todonotes}      % Anotações na margem
+\usepackage{lipsum}         % Lorem Ipsum
+\usepackage{listings}       % Algoritmo/pseudo-código
+\usepackage[alf,abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
+\usepackage{abntex_dcc_ufrr}
+% =============================================================================
+
+
+% =============================================================================
+%  CONFIGURAÇÕES DE ESTILO
+% =============================================================================
+%  Definição de cores
+% -----------------------------------------------------------------------------
+\definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
+% -----------------------------------------------------------------------------
+% Configurações de aparência do PDF final
+% -----------------------------------------------------------------------------
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+		colorlinks=true,         % false: boxed links; true: colored links
+    	linkcolor=black,         % color of internal links
+    	citecolor=black,         % color of links to bibliography
+    	filecolor=black,         % color of file links
+		urlcolor=black,
+		bookmarksdepth=4
+}
+\makeatother
+
+% -----------------------------------------------------------------------------
+% Espaçamentos entre linhas e parágrafos
+% -----------------------------------------------------------------------------
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% =============================================================================
+
+
+% =============================================================================
+%  CONFIGURAÇÕES DE PACOTES
+% =============================================================================
+% Anotações na margem esquerda em vez de direita (todonotes)
+% -----------------------------------------------------------------------------
+\reversemarginpar
+\setlength{\marginparwidth}{2.8cm}
+
+% -----------------------------------------------------------------------------
+% Configurações de trechos de código
+% -----------------------------------------------------------------------------
+\renewcommand{\lstlistingname}{Programa}
+
+\lstset{ % Formatação do  pseudo-código
+    language=C,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    frame = single,
+    showstringspaces=false,
+    tabsize=2,
+    breaklines=true,
+    xleftmargin=10pt,
+    breakatwhitespace=false,
+    extendedchars=true,
+    literate={á}{{\'a}}1
+             {ã}{{\~a}}1
+             {é}{{\'e}}1
+             {í}{{\'\i}}1
+             {õ}{{\~o}}1
+             {ç}{{\c{c}}}1,
+}
+
+% -----------------------------------------------------------------------------
+% ``Lista de códigos'' conforme regras da ABNT
+% -----------------------------------------------------------------------------
+\renewcommand{\lstlistlistingname}{Lista de códigos}
+
+\begingroup\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo{}
+  \globaldefs\@ne{} \let\c@loldepth\@ne{}
+  \newlistof{listings}{lol}{\lstlistlistingname}
+  \newlistentry{lstlisting}{lol}{0}
+\endgroup
+
+\renewcommand{\cftlstlistingaftersnum}{\hfill--\hfill}
+
+\let\oldlstlistoflistings\lstlistoflistings{}
+\renewcommand{\lstlistoflistings}{%
+   \begingroup%
+   \let\oldnumberline\numberline%
+   \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
+   \oldlstlistoflistings%
+   \endgroup}
+
+% -----------------------------------------------------------------------------
+%  PSEUDO-CÓDIGOS
+% -----------------------------------------------------------------------------
+\usepackage{algpseudocode,algorithm}
+% Declaracoes em Português
+
+\algrenewcommand\algorithmicend{\textbf{FIM}}
+\algrenewcommand\algorithmicdo{\textbf{FAÇA}}
+\algrenewcommand\algorithmicwhile{\textbf{ENQUANTO}}
+\algrenewcommand\algorithmicfor{\textbf{PARA}}
+\algrenewcommand\algorithmicforall{\textbf{PARA TODO}}
+\algrenewcommand\algorithmicif{\textbf{SE}}
+\algrenewcommand\algorithmicthen{\textbf{ENTÃO}}
+\algrenewcommand\algorithmicelse{\textbf{SENÃO}}
+\algrenewcommand\algorithmicreturn{\textbf{RETORNE}}
+\algrenewcommand\algorithmicfunction{\textbf{FUNÇÃO}}
+% New definitions
+\algnewcommand\algorithmicswitch{\textbf{ESCOLHA}}
+\algnewcommand\algorithmiccase{\textbf{CASO}}
+\algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\Assert[1]{\State{} \algorithmicassert(#1)}%
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+
+% Rearranja os finais de cada estrutura
+\algrenewtext{EndWhile}{\algorithmicend\ \algorithmicwhile}
+\algrenewtext{EndFor}{\algorithmicend\ \algorithmicfor}
+\algrenewtext{EndIf}{\algorithmicend\ \algorithmicif}
+\algrenewtext{EndFunction}{\algorithmicend\ \algorithmicfunction}
+
+% O comando For, a seguir, retorna 'para #1 -- #2 até #3 faça'
+\algnewcommand\algorithmicto{\textbf{até}}
+\algrenewtext{For}[3]%
+{\algorithmicfor\ #1 $\gets$ #2 \algorithmicto\ #3 \algorithmicdo}
+
+% -----------------------------------------------------------------------------
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% -----------------------------------------------------------------------------
+
+    %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXchapterfontsize}{ \large}
+	%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+	%\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
