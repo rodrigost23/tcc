@@ -1,48 +1,48 @@
 \documentclass[
 	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	%openright,			% capítulos começam em pág ímpar
-	%twoside,			% para verso e anverso. Oposto a oneside
+	12pt,				    % tamanho da fonte
+  %openright,			% capítulos começam em pág ímpar
+  %twoside,		  	% para verso e anverso. Oposto a oneside
     oneside,
-	a4paper,			% tamanho do papel.
+	a4paper,			        % tamanho do papel.
 	% -- opções da classe abntex2 --
-	chapter=TITLE,		% títulos de capítulos em letras maiúsculas
-	%section=TITLE,		% títulos de seções em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções em letras maiúsculas
+	chapter=TITLE,	  	  % títulos de capítulos em letras maiúsculas
+	%section=TITLE,		    % títulos de seções em letras maiúsculas
+	%subsection=TITLE,	  % títulos de subseções em letras maiúsculas
+	%subsubsection=TITLE, % títulos de subsubseções em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
 	% french,			% idioma adicional para hifenização
-	% spanish,			% idioma adicional para hifenização
+	% spanish,    % idioma adicional para hifenização
 	brazil				% o último idioma é o principal do documento
 	]{abntex2}
 
-    %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+  %\renewcommand{\ABNTEXpartfontsize}{\normalsize}
 	%\renewcommand{\ABNTEXchapterfontsize}{ \large}
 	%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 	%\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
-% ---
+% -----------------------------------------------------------------------------
 % Pacotes básicos
-% ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{lastpage}			% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
+% -----------------------------------------------------------------------------
+\usepackage{lmodern}        % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}    % Selecao de códigos de fonte.
+\usepackage[utf8]{inputenc} % Codificacão do documento
+\usepackage{lastpage}       % Usado pela Ficha catalográfica
+\usepackage{indentfirst}    % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}          % Controle das cores
+\usepackage{graphicx}       % Inclusão de gráficos
+\usepackage{microtype}      % para melhorias de justificação
 \usepackage{todonotes}
-\reversemarginpar 				% Coloca as anotações do lado esquerdo
+\reversemarginpar 				  % Coloca as anotações do lado esquerdo
 \setlength{\marginparwidth}{2.8cm}
 
 
 \definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
 
-% ---
+% -----------------------------------------------------------------------------
 % Pacotes para algoritmos/pseudo-código
-% ---
+% -----------------------------------------------------------------------------
 \usepackage{listings}
 
 \renewcommand{\lstlistingname}{Programa}
@@ -67,9 +67,9 @@
              {ç}{{\c{c}}}1,
 }
 
-% ---
+% -----------------------------------------------------------------------------
 % Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
-% ---
+% -----------------------------------------------------------------------------
 \renewcommand{\lstlistlistingname}{Lista de códigos}
 
 \begingroup\makeatletter
@@ -88,27 +88,27 @@
    \renewcommand{\numberline}{\lstlistingname\space\oldnumberline}%
    \oldlstlistoflistings%
    \endgroup}
-% ---
+% -----------------------------------------------------------------------------
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-% ---
+% -----------------------------------------------------------------------------
 \usepackage{lipsum}				% para geração de dummy text
-% ---
+% -----------------------------------------------------------------------------
 
 
-% ---
+% -----------------------------------------------------------------------------
 % Pacotes de citações
-% ---
+% -----------------------------------------------------------------------------
 \usepackage[alf, abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
 
-% ---
+% -----------------------------------------------------------------------------
 % CONFIGURAÇÕES DE PACOTES
-% ---
+% -----------------------------------------------------------------------------
 
 \usepackage{abntex_dcc_ufrr}
 
-
-% PACOTES DE ALGORITMO
-
+% -----------------------------------------------------------------------------
+% Algoritmos
+% -----------------------------------------------------------------------------
 \usepackage{algpseudocode,algorithm}
 % Declaracoes em Português
 
@@ -144,9 +144,10 @@
 \algnewcommand\algorithmicto{\textbf{até}}
 \algrenewtext{For}[3]%
 {\algorithmicfor\ #1 $\gets$ #2 \algorithmicto\ #3 \algorithmicdo}
+% -----------------------------------------------------------------------------
 
 
-% ---
+% -----------------------------------------------------------------------------
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
 %\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
@@ -161,11 +162,11 @@
 %	\else
 %		Citado #1 vezes nas páginas #2.%
 %	\fi}%
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
-% ---
+% -----------------------------------------------------------------------------
 \title{AutomailX\todo{Alterar o título}: Uma prótese robótica para geração de ações em movimentos baseada em padrões musculares}
 \titulo{\thetitle}
 
@@ -180,9 +181,11 @@
 
 \tipotrabalho{Monografia}
 
-\preambulo{Monografia de Graduação apresentada ao Departamento de Ciência da Computação da Universidade Federal de Roraima como requisito parcial para a obtenção do grau de Bacharel em Ciência da Computação.}
+\preambulo{Monografia de Graduação apresentada ao Departamento de Ciência da
+  Computação da Universidade Federal de Roraima como requisito parcial para a
+  obtenção do grau de Bacharel em Ciência da Computação.}
 
-% ---
+% -----------------------------------------------------------------------------
 
 %-- Informações de dado para a FOLHA DE APROVAÇÃO
 %\renewcommand{\dataDefesa}{?? de ????? de 2017}%TODO:Data de defesa
@@ -190,9 +193,9 @@
 %\renewcommand{\primeiroMembroBanca}{Prof.\ ???????}%TODO:Membros da banca
 %\renewcommand{\segundoMembroBanca}{Prof.\ ???????}
 
-% ---
+% -----------------------------------------------------------------------------
 % Configurações de aparência do PDF final
-% ---
+% -----------------------------------------------------------------------------
 % informações do PDF
 \makeatletter
 \hypersetup{
@@ -210,11 +213,11 @@
 		bookmarksdepth=4
 }
 \makeatother
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Espaçamentos entre linhas e parágrafos
-% ---
+% -----------------------------------------------------------------------------
 
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -222,78 +225,82 @@
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.2cm}  % tente também \onelineskip
 
-% ---
+% -----------------------------------------------------------------------------
 % compila o indice
-% ---
+% -----------------------------------------------------------------------------
 \makeindex
-% ---
+% -----------------------------------------------------------------------------
 
-% ----
+% -----------------------------------------------------------------------------
 % Início do documento
-% ----
+% -----------------------------------------------------------------------------
 \begin{document}
 
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % \pretextual
 
-% ---
+% -----------------------------------------------------------------------------
 % Capa
-% ---
+% -----------------------------------------------------------------------------
 \imprimircapa{}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Folha de rosto
 % (o * indica que haverá a ficha bibliográfica)
-% ---
+% -----------------------------------------------------------------------------
 \imprimirfolhaderosto{}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Inserir folha de aprovação
-% ---
+% -----------------------------------------------------------------------------
 \imprimirfolhadeaprovacao{}
-% ---
+% -----------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
 % Dedicatória
-% ---
+% -----------------------------------------------------------------------------
 \begin{dedicatoria}
    \vspace*{\fill}
    \centering
    \noindent
    \textit{???????} \vspace*{\fill}%TODO: Dedicatória
 \end{dedicatoria}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
+% -----------------------------------------------------------------------------
 % Agradecimentos
-% ---
+% -----------------------------------------------------------------------------
 \begin{agradecimentos}
   \textcolor{red}{\lipsum[1]}%TODO:Agradecimentos
 \end{agradecimentos}
-% ---
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Epígrafe
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \begin{epigrafe}
     \vspace*{\fill}
 	\begin{flushright}
 		\textit{???????????} %TODO: Epígrafe
 	\end{flushright}
 \end{epigrafe}
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % RESUMOS
-% ----------------------------------------------------------
-
-% PORTUGUÊS
+% -----------------------------------------------------------------------------
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+
+% -----------------------------------------------------------------------------
+% PORTUGUÊS
+% -----------------------------------------------------------------------------
 \begin{resumo}
   \textcolor{red}{\lipsum[2]} %TODO: Resumo
 
@@ -302,10 +309,13 @@
  \noindent
  \textbf{Palavras-chaves}: ??????%TODO:Palavras-chave
 \end{resumo}
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 
+% -----------------------------------------------------------------------------
 % INGLÊS
+% -----------------------------------------------------------------------------
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
    \textcolor{red}{\lipsum[3]} %TODO: Abstract
@@ -316,113 +326,114 @@
    \textbf{Key-words}: ???????%TODO:Keywords
  \end{otherlanguage*}
 \end{resumo}
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Lista de ilustrações
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage{}
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Lista de tabelas
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage{}
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Lista de abreviaturas e siglas
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \begin{siglas}
   \item[????] ??????%TODO:Lista de siglas
 %    \item[EDS] Exemplo De Sigla
 \end{siglas}
-% ---
+% -----------------------------------------------------------------------------
 
-% ---
-% inserir lista de símbolos
-% ---
+% -----------------------------------------------------------------------------
+% Lista de símbolos
+% -----------------------------------------------------------------------------
 % \begin{simbolos}
 %   \item[$ \Gamma $] \todo{Atualizar esta lista!} Letra grega Gama
 %   \item[$ \Lambda $] Lambda
 %   \item[$ \zeta $] Letra grega minúscula zeta
 %   \item[$ \in $] Pertence
 % \end{simbolos}
-% % ---
+% -----------------------------------------------------------------------------
 
-% ---
-% inserir o sumario
-% ---
+% -----------------------------------------------------------------------------
+% Sumário
+% -----------------------------------------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage{}
-% ---
+% -----------------------------------------------------------------------------
 
 
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % ELEMENTOS TEXTUAIS
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \textual{}
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Introdução
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{INTRODUÇÃO}
 \label{chapter:introducao}
 \input{sections/introducao.tex}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Conceitos e Definições
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{CONCEITOS E DEFINIÇÕES}
 \label{chapter:fundamentacao}
 \input{sections/fundamentacao.tex}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Revisão de Literatura
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{TRABALHOS CORRELATOS}
 \label{chapter:correlatos}
 %\input{sections/trabalhos_correlatos.tex}
 
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Detalhes de Desenvolvimento do Projeto
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{MÉTODO PROPOSTO}
 \label{chapter:metodo}
 \input{sections/metodo.tex}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Cronograma
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{CRONOGRAMA}
 \label{chapter:cronograma}
 %\input{sections/cronograma.tex}
 
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Conclusão
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 \chapter{CONSIDERAÇÕES FINAIS}
 \label{chapter:consideracoes}
 %\input{sections/consideracoes.tex}
 %\newpage
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Referências bibliográficas
-% ----------------------------------------------------------
+% -----------------------------------------------------------------------------
 %\bibliographystyle{abnt-alf}
 \bibliography{main}
 
-%---------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % INDICE REMISSIVO
-%---------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 %\phantompart
 \printindex
-%---------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 
 \end{document}
