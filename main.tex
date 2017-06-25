@@ -1,22 +1,18 @@
-% Apresentacao
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	%twoside,			% para impressão em verso e anverso. Oposto a oneside
+	%openright,			% capítulos começam em pág ímpar
+	%twoside,			% para verso e anverso. Oposto a oneside
     oneside,
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
-	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	chapter=TITLE,		% títulos de capítulos em letras maiúsculas
+	%section=TITLE,		% títulos de seções em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
-	% french,				% idioma adicional para hifenização
+	% french,			% idioma adicional para hifenização
 	% spanish,			% idioma adicional para hifenização
 	brazil				% o último idioma é o principal do documento
 	]{abntex2}
@@ -38,18 +34,20 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{todonotes}
-\reversemarginpar % Coloca as anotações do lado esquerdo
+\reversemarginpar 				% Coloca as anotações do lado esquerdo
 \setlength{\marginparwidth}{2.8cm}
 
 
 \definecolor{algColor}{RGB}{255,206,206} % rgb(255, 206, 206)
 
+% ---
 % Pacotes para algoritmos/pseudo-código
+% ---
 \usepackage{listings}
 
 \renewcommand{\lstlistingname}{Programa}
 
-\lstset{ %Formatting for code in appendix
+\lstset{ % Formatação do  pseudo-código
     language=C,
     basicstyle=\footnotesize,
     numbers=left,
@@ -69,9 +67,11 @@
              {ç}{{\c{c}}}1,
 }
 
+% ---
+% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
+% ---
 \renewcommand{\lstlistlistingname}{Lista de códigos}
 
-% Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
 \begingroup\makeatletter
 \let\newcounter\@gobble\let\setcounter\@gobbletwo{}
   \globaldefs\@ne{} \let\c@loldepth\@ne{}
@@ -98,7 +98,6 @@
 % ---
 % Pacotes de citações
 % ---
-%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf, abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
 
 % ---
@@ -186,14 +185,14 @@
 % ---
 
 %-- Informações de dado para a FOLHA DE APROVAÇÃO
-\renewcommand{\dataDefesa}{?? de ????? de 2017}%TODO:Data de defesa
+%\renewcommand{\dataDefesa}{?? de ????? de 2017}%TODO:Data de defesa
 \renewcommand{\orientadorBanca}{Prof.\ Dr.\ Herbert Oliveira Rocha}
-\renewcommand{\primeiroMembroBanca}{Prof.\ ???????}%TODO:Membros da banca
-\renewcommand{\segundoMembroBanca}{Prof.\ ???????}
+%\renewcommand{\primeiroMembroBanca}{Prof.\ ???????}%TODO:Membros da banca
+%\renewcommand{\segundoMembroBanca}{Prof.\ ???????}
 
 % ---
 % Configurações de aparência do PDF final
-
+% ---
 % informações do PDF
 \makeatletter
 \hypersetup{
@@ -278,22 +277,22 @@
 \end{agradecimentos}
 % ---
 
-% ---
+% ----------------------------------------------------------
 % Epígrafe
-% ---
+% ----------------------------------------------------------
 \begin{epigrafe}
     \vspace*{\fill}
 	\begin{flushright}
 		\textit{???????????} %TODO: Epígrafe
 	\end{flushright}
 \end{epigrafe}
-% ---
+% ----------------------------------------------------------
 
-% ---
+% ----------------------------------------------------------
 % RESUMOS
-% ---
+% ----------------------------------------------------------
 
-% resumo em português
+% PORTUGUÊS
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
   \textcolor{red}{\lipsum[2]} %TODO: Resumo
@@ -304,6 +303,9 @@
  \textbf{Palavras-chaves}: ??????%TODO:Palavras-chave
 \end{resumo}
 
+% ----------------------------------------------------------
+
+% INGLÊS
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
    \textcolor{red}{\lipsum[3]} %TODO: Abstract
@@ -314,25 +316,28 @@
    \textbf{Key-words}: ???????%TODO:Keywords
  \end{otherlanguage*}
 \end{resumo}
-% ---
-% inserir lista de ilustrações
-% ---
+
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Lista de ilustrações
+% ----------------------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage{}
-% ---
+% ----------------------------------------------------------
 
-% ---
-% inserir lista de tabelas
-% ---
+% ----------------------------------------------------------
+% Lista de tabelas
+% ----------------------------------------------------------
 \pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
 \cleardoublepage{}
-% ---
+% ----------------------------------------------------------
 
-% ---
-% inserir lista de abreviaturas e siglas
-% ---
+% ----------------------------------------------------------
+% Lista de abreviaturas e siglas
+% ----------------------------------------------------------
 \begin{siglas}
   \item[????] ??????%TODO:Lista de siglas
 %    \item[EDS] Exemplo De Sigla
@@ -399,14 +404,6 @@
 \chapter{CRONOGRAMA}
 \label{chapter:cronograma}
 %\input{sections/cronograma.tex}
-
-% ----------------------------------------------------------
-% Resultados
-% ----------------------------------------------------------
-%\chapter{RESULTADOS EXPERIMENTAIS}
-%\label{chapter:resultados}
-%\input{sections/resultados_experimentais.tex}
-%\chapter{DISCUSSÃO}
 
 % ----------------------------------------------------------
 % Conclusão
