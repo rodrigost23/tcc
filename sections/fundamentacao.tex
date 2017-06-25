@@ -8,7 +8,6 @@ Sistemas computacionais fazem parte de diversos produtos desde computadores pess
 
 \textcolor{red}{ADICIONAR TEXTO SOBRE O USO DE SE NA ATUALIDADE.}
 
-
 \todo{Fazer gancho para próxima seção}
 \subsection{Microcontroladores vs. Microprocessadores}
 Microcontroladores são processadores com vários componentes embutidos, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, grande parte dos processadores em sistemas embarcados são, na verdade, microcontroladores, por serem simples e fáceis de usar.
@@ -20,12 +19,16 @@ A distinção entre microprocessadores e microcontroladores, contudo, não é t�
 \subsection{IoT: Internet das Coisas}
 Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas''  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos.
 
+
 \section{Robótica e suas Aplicações}
+\label{sec:robotica}
 A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
 \todo[inline]{Uma aplicação da robótica seria na construção de próteses etc.}
-\label{sec:robotica}
+
 \subsection{Próteses Robóticas}
 \todo[inline]{Faltando aqui ainda}
+
+
 \section{Eletromiografia: Geração de Dados}
 \label{sec:emg}
 A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
@@ -36,11 +39,14 @@ A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por
 
 O eletromiograma consiste em [...]\todo{Explicar a saída dos sinais, o que são os números etc.}
 
+
 \section{Reconhecimento de Padrões}
 \label{sec:patternrec}
-Nesta seção serão abordados aspectos relevantes ao reconhecimento dos padrões dos sinais, desde seu pré-processamento a previsões dos movimentos do usuário.
+O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados \cite{bishop:2006}.
+
+Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
 \subsection{Pré-processamento}
-\todo[inline]{Filtros e fusão de dados, provavelmente?}%TODO
+\todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
 \subsection{Aprendizado de máquina}
 \todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
 \subsubsection{Árvores de decisão}
@@ -50,10 +56,12 @@ Nesta seção serão abordados aspectos relevantes ao reconhecimento dos padrõe
 \todo[inline]{É necessário falar sobre impressora 3D, caso eu pretenda usar uma?}
 \todo[inline]{Herbert: Não, falaremos na introdução}
 
+
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
 \subsection{Autômatos}
 \subsection{Redes de Petri}
+
 
 \section{Modelagem de software}
 \label{sec:modelagem}
