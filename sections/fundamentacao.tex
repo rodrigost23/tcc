@@ -35,9 +35,9 @@ A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neur
 
 A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado.\todo{Falta referências aqui!}
 
-\todo[inline]{``sEMG é útil pra ler dados de membro residual de pessoas amputadas''}
+Com os dados extraídos a partir da EMG, é possível que se construa próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
 
-O eletromiograma consiste em [...]\todo{Explicar a saída dos sinais, o que são os números etc.}
+\todo[inline]{Não é tão trivial... Modelos matemáticos para definir os atributos a serem usados}
 
 
 \section{Reconhecimento de Padrões}
@@ -47,11 +47,32 @@ O reconhecimento de padrões é um campo que busca encontrar padrões em conjunt
 Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
 \subsection{Pré-processamento}
 \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
+
 \subsection{Aprendizado de máquina}
+O aprendizado de máquina 
+\todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, etc.}
 \todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
 \subsubsection{Árvores de decisão}
-\todo[inline]{SciKit-Learn usa uma versão otimizada do algoritmo CART}%TODO
-\subsubsection{SVM e outros}
+\todo[inline]{...}%TODO
+
+\subsubsection{SVM}
+\todo[inline,color=lightgray]{Por que é bom? Usando para classificação}
+
+\todo{Verificar se posso copiar a imagem do livro assim}% TODO
+\begin{figure}[ht]
+    \centering
+    \caption{Classificação com SVM}
+    \label{fig:svm_classification}
+    %TODO:(a) Two classes of points (black and white circles) and three candidate linear separators.
+    \subfloat[\textcolor{red}{LEGENDA A} \label{fig:svm_classification_a}]
+        {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_a}}
+        \hfill
+    %TODO:(b) The maximum margin separator (heavy line), is at the midpoint of the margin (area between dashed lines). The support vectors (points with large circles) are the examples closest to the separator.
+    \subfloat[\textcolor{red}{LEGENDA B} \label{fig:svm_classification_b}]
+        {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_b}}
+        \legend{Fonte: \citeonline[p. 745]{russell:2010}}
+\end{figure}
+Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.
 
 \todo[inline]{É necessário falar sobre impressora 3D, caso eu pretenda usar uma?}
 \todo[inline]{Herbert: Não, falaremos na introdução}
