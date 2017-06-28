@@ -14,8 +14,6 @@ Microcontroladores são processadores com vários componentes embutidos, como RA
 
 A distinção entre microprocessadores e microcontroladores, contudo, não é tão trivial: \citeonline{schlett:1998} diz que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores.
 
-\todo{Falta alguma coisa, talvez.}	
-
 \subsection{IoT: Internet das Coisas}
 Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas''  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos.
 
@@ -23,7 +21,7 @@ Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos
 \section{Robótica e suas Aplicações}
 \label{sec:robotica}
 A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
-\todo[inline]{Uma aplicação da robótica seria na construção de próteses etc.}
+\todo[inline,color=lightgray]{Uma aplicação da robótica seria na construção de próteses etc.}
 
 \subsection{Próteses Robóticas}
 \todo[inline]{Faltando aqui ainda}
@@ -33,7 +31,7 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 \label{sec:emg}
 A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
 
-A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado.\todo{Falta referências aqui!}
+A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{FALTANDO}.\todo{Falta referências aqui!}
 
 Com os dados extraídos a partir da EMG, é possível que se construa próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
 
@@ -74,13 +72,11 @@ O aprendizado de máquina
 \end{figure}
 Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.
 
-\todo[inline]{É necessário falar sobre impressora 3D, caso eu pretenda usar uma?}
-\todo[inline]{Herbert: Não, falaremos na introdução}
-
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
-\subsection{Autômatos}
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+\subsection{Máquinas de Estado Finitas}
 \subsection{Redes de Petri}
 
 
