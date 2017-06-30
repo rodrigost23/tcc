@@ -6,10 +6,8 @@ Sistemas computacionais fazem parte de diversos produtos desde computadores pess
 
 \textcolor{red}{ADICIONAR TEXTO SOBRE RESTRIÇÕES DE SE.}
 
-\textcolor{red}{ADICIONAR TEXTO SOBRE O USO DE SE NA ATUALIDADE.}
-
 \todo{Fazer gancho para próxima seção}
-\subsection{Microcontroladores vs. Microprocessadores}
+\subsection{Microcontroladores versus Microprocessadores}
 Microcontroladores são processadores com vários componentes embutidos, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, grande parte dos processadores em sistemas embarcados são, na verdade, microcontroladores, por serem simples e fáceis de usar.
 
 A distinção entre microprocessadores e microcontroladores, contudo, não é tão trivial: \citeonline{schlett:1998} diz que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores.
@@ -57,12 +55,12 @@ O aprendizado de máquina
 \todo[inline,color=lightgray]{Por que é bom? Usando para classificação}
 
 \todo{Verificar se posso copiar a imagem do livro assim}% TODO
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \caption{Classificação com SVM}
     \label{fig:svm_classification}
     %TODO:(a) Two classes of points (black and white circles) and three candidate linear separators.
-    \subfloat[\textcolor{red}{LEGENDA A} \label{fig:svm_classification_a}]
+    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três possíveis separadores lineares. \label{fig:svm_classification_a}]
         {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_a}}
         \hfill
     %TODO:(b) The maximum margin separator (heavy line), is at the midpoint of the margin (area between dashed lines). The support vectors (points with large circles) are the examples closest to the separator.
@@ -73,12 +71,24 @@ O aprendizado de máquina
 Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.
 
 
-\section{Modelos Formais para Validação de Sistemas}
+\section{Modelos Formais e Validação de Sistemas}
 \label{sec:modelosformais}
 Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 \subsection{Máquinas de Estado Finitas}
 \subsection{Redes de Petri}
+Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
 
+A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas \cite{peterson:1981}. % $C = (P,T,I,O)
+
+\begin{figure}[h]
+	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
+	\begin{center}
+	    \includegraphics[width=0.5\textwidth]{resources/petri_net_murata_1}
+	\end{center}
+	\legend{Fonte: \citeonline[p. 545]{murata:1989}}
+\end{figure}
+\todo{Explicar os tokens e o funcionamento do exemplo}
+Na figura~\ref{fig:petrinet} é possível ver os \textit{tokens} nos lugares $P_1$ e $P_2$ \textcolor{red}{CONTINUAR AQUI...}
 
 \section{Modelagem de software}
 \label{sec:modelagem}
