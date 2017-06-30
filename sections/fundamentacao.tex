@@ -49,11 +49,11 @@ O aprendizado de máquina
 \todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, etc.}
 \todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
 \subsubsection{Árvores de decisão}
-\todo[inline]{...}%TODO
+\todo[inline]{Ainda falta}%TODO
 
 \subsubsection{SVM}
 \todo[inline,color=lightgray]{Por que é bom? Usando para classificação}
-
+\textcolor{red}{\lipsum[11-13]}
 \todo{Verificar se posso copiar a imagem do livro assim}% TODO
 \begin{figure}[h]
     \centering
@@ -71,14 +71,17 @@ O aprendizado de máquina
 Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.
 
 
-\section{Modelos Formais e Validação de Sistemas}
+\section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
 Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 \subsection{Máquinas de Estado Finitas}
+\todo[inline, color=lightgray]{Faltando ainda}
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
 
 A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas \cite{peterson:1981}. % $C = (P,T,I,O)
+
+Além disso, cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares \cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
 
 \begin{figure}[h]
 	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
@@ -87,8 +90,8 @@ A estrutura de uma rede de Petri consiste em lugares, transições, funções de
 	\end{center}
 	\legend{Fonte: \citeonline[p. 545]{murata:1989}}
 \end{figure}
-\todo{Explicar os tokens e o funcionamento do exemplo}
-Na figura~\ref{fig:petrinet} é possível ver os \textit{tokens} nos lugares $P_1$ e $P_2$ \textcolor{red}{CONTINUAR AQUI...}
+
+Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
 \section{Modelagem de software}
 \label{sec:modelagem}
