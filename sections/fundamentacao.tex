@@ -4,7 +4,7 @@ Sistemas computacionais fazem parte de diversos produtos desde computadores pess
 
 Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
-Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas, como de custo de produção ou de consumo de energia -- que é o caso de dispositivos móveis, por exemplo, que dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.\todo{Acrescentar info.\ sobre tempo real? Consultar \citeonline{vahid:2002}!}
+Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas, como de custo de produção ou de consumo de energia -- que é o caso de dispositivos móveis, por exemplo, que dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.%TODO: Acrescentar info.\ sobre tempo real se der tempo. Consultar \citeonline{vahid:2002}.
 
 \subsection{Microcontroladores versus Microprocessadores}
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
@@ -28,11 +28,11 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 \label{sec:emg}
 A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
 
-A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{FALTANDO}.\todo{Falta referências aqui!}
+A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{deluca:1979}
 
-Com os dados extraídos a partir da EMG, é possível que se construa próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
+Com os dados extraídos a partir da EMG, é possível que se desenvolva próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
 
-\todo[inline]{Não é tão trivial... Modelos matemáticos para definir os atributos a serem usados}
+%TODO: Não é tão trivial... Modelos matemáticos para definir os atributos a serem usados
 
 
 \section{Reconhecimento de Padrões}
@@ -41,19 +41,18 @@ O reconhecimento de padrões é um campo que busca encontrar padrões em conjunt
 
 Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
 \subsection{Pré-processamento}
+\todo[inline,color=lightgray]{Não faço ideia do que colocar nessa seção.}
 \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
 
 \subsection{Aprendizado de máquina}
 O aprendizado de máquina 
-\todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, etc.}
+\todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, classificação etc.}
 \todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
-\subsubsection{Árvores de decisão}
-\todo[inline]{Ainda falta}%TODO
+%\subsubsection{Árvores de decisão}
 
 \subsubsection{SVM}
 \todo[inline,color=lightgray]{Por que é bom? Usando para classificação}
-\textcolor{red}{\lipsum[11-13]}
-\todo{Verificar se posso copiar a imagem do livro assim}% TODO
+%\textcolor{red}{\lipsum[11-12]}
 \begin{figure}[h]
     \centering
     \caption{Classificação com SVM}
@@ -67,14 +66,26 @@ O aprendizado de máquina
         {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_b}}
         \legend{Fonte: \citeonline[p. 745]{russell:2010}}
 \end{figure}
-Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.
+\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
 Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+
 \subsection{Máquinas de Estado Finitas}
-\todo[inline, color=lightgray]{Faltando ainda}
+Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
+
+\begin{figure}[h]
+	\caption{\label{fig:fsm}Exemplo de diagrama de estados}
+	\begin{center}
+	    \includegraphics[width=0.5\textwidth]{resources/fsm_marwedel}
+	\end{center}
+	\legend{Fonte: \citeonline[p. 39]{marwedel:2010}}
+\end{figure}
+
+Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
+
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
 
