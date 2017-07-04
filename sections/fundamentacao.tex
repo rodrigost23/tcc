@@ -18,9 +18,9 @@ Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos
 \section{Robótica e suas Aplicações}
 \label{sec:robotica}
 A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
-\todo[inline,color=lightgray]{Uma aplicação da robótica seria na construção de próteses etc.}
 
 \subsection{Próteses Robóticas}
+\todo[inline,color=lightgray]{Uma aplicação da robótica seria na construção de próteses etc.}
 \todo[inline]{Faltando aqui ainda}
 
 
@@ -32,7 +32,7 @@ A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por
 
 Com os dados extraídos a partir da EMG, é possível que se desenvolva próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
 
-%TODO: Não é tão trivial... Modelos matemáticos para definir os atributos a serem usados
+%TODO: INCLUIR SELEÇÃO DE ATRIBUTOS?
 
 
 \section{Reconhecimento de Padrões}
@@ -45,28 +45,32 @@ Os dados eletromiográficos podem ser usados para classificação a partir do re
 \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
 
 \subsection{Aprendizado de máquina}
-O aprendizado de máquina 
+O aprendizado de máquina é importante quando não é possível determinar todos cenários possíveis de um sistema previamente, ou quando se deseja que este se adapte ao ambiente por conta própria \cite{russell:2010}. %TODO
 \todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, classificação etc.}
-\todo[inline]{Dizer aqui que nas próximas seções serão abordados alguns dos principais métodos de classificação}%TODO
-%\subsubsection{Árvores de decisão}
+
+%\subsubsection{Árvores de decisão} %Acho que não é mais necessário
 
 \subsubsection{SVM}
-\todo[inline,color=lightgray]{Por que é bom? Usando para classificação}
-%\textcolor{red}{\lipsum[11-12]}
+Máquina de Vetores de Suporte (SVM) é uma das técnicas mais populares de aprendizado de máquina supervisionado, por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
+
+A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes \cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em \ref{fig:svm_classification_a} e o separador linear desejado em \ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados \cite{russell:2010}.
+
+%TODO: \todo[inline,color=lightgray]{Como funciona? Usando para classificação}
+
 \begin{figure}[h]
     \centering
-    \caption{Classificação com SVM}
+    \caption{Classificação binária com SVM}
     \label{fig:svm_classification}
     %TODO:(a) Two classes of points (black and white circles) and three candidate linear separators.
-    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três possíveis separadores lineares. \label{fig:svm_classification_a}]
-        {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_a}}
-        \hfill
+    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
+        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
+        \hspace{0.2cm}
     %TODO:(b) The maximum margin separator (heavy line), is at the midpoint of the margin (area between dashed lines). The support vectors (points with large circles) are the examples closest to the separator.
-    \subfloat[\textcolor{red}{LEGENDA B} \label{fig:svm_classification_b}]
-        {\includegraphics[width=0.5\textwidth]{resources/svm_russel_classification_b}}
+    \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas pontilhadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
+        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
         \legend{Fonte: \citeonline[p. 745]{russell:2010}}
 \end{figure}
-\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
+%\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 
 \section{Modelos Formais para Validação de Sistemas}
