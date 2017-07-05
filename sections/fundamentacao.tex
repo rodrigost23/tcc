@@ -83,9 +83,14 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+Sistemas embarcados\todo{Descrever o porque de estar descrevendo somente estes dois?} são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes\todo{Descrever o que ocorre se um sistema falhar}. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+
+\textcolor{red}{TODO\todo{Adicionar um paragrafo apresentando onde modelos formais são usados e que conhecimento eles geram sobre o sistema}}
 
 \subsection{Máquinas de Estado Finitas}
+
+\textcolor{red}{Sugir renomear está seção para Máquina de estados, então definir e dentro desta seção apresentar as  finitas e não finitas.}
+
 Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
 \begin{figure}[h]
@@ -97,6 +102,8 @@ Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, 
 \end{figure}
 
 Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
+
+\textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de automatos, bem como apresentar um sistema embarcado modelado usando um automato\todo{TODO}.}
 
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
@@ -114,6 +121,8 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 \end{figure}
 
 Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
+
+\textcolor{red}{Falar sobre as propriedades de analise, ferramentas para analise, e exemplos de quem usa redes de preti\todo{TODO}.}
 
 \section{Modelagem de software}
 \label{sec:modelagem}
