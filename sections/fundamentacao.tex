@@ -5,21 +5,22 @@ Sistemas computacionais fazem parte de diversos produtos desde computadores pess
 Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
 Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas, como de custo de produção ou de consumo de energia -- que é o caso de dispositivos móveis, por exemplo, que dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.
-%TODO: Consultar \citeonline{vahid:2002}.
-\textcolor{red}{TODO!\todo{Falar sobre sistemas de tempo real e descrever as vantagens de sistemas embarcados}}
+
+Uma outra restrição comum que pode ser pertinente a um SE é de tempo. É conhecido como um sistema em tempo real aquele que precisa necessariamente realizar certas operações dentro de um tempo esperado, correndo o risco de não desempenhar seu papel caso isso falhe. Por exemplo, um sistema de controle de velocidade de cruzeiro precisa monitorar a velocidade, aceleração e desaceleração de um carro em tempo real, e, caso ocorra algum atraso, considera-se uma falha no sistema \cite{vahid:2002}.
+\textcolor{red}{TODO!}\todo{Descrever as vantagens de sistemas embarcados}
 
 \subsection{Microcontroladores versus Microprocessadores}
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Os microcontroladores surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002} e, segundo \citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar. 
 % 
-\textcolor{red}{TODO!\todo{Descrever também sobre o preço nos dias atuais.}}
+\textcolor{red}{TODO!}\todo{Descrever também sobre o preço nos dias atuais.}
 
 A distinção entre microprocessadores e microcontroladores, contudo, não é tão trivial: \citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de 8 e 16-bit como microcontroladores, e a partir disto como microprocessadores. Mas também existem outros critérios a se considerar, como seu uso e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
-\textcolor{red}{TODO!\todo{Apresentar a uma definição de microprocessadores e então detalhar mais as diferenças, bem como, apresentar alguns exemplos com suas especificações.}}
+\textcolor{red}{TODO!}\todo{Apresentar a uma definição de microprocessadores e então detalhar mais as diferenças, bem como, apresentar alguns exemplos com suas especificações.}
 
 \subsection{IoT: Internet das Coisas}
-Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas''  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos. 
-\textcolor{red}{TODO!\todo{Apresentar mais detalhes, bem como, exemplos e contextos de seu uso.}}
+Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente \cite{kopetz:2011}.  Segundo \citeonline{xia:2012}, o termo ``Internet das Coisas'' (IoT)  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos de forma inteligente.
 
+Um exemplo de objeto inteligente na IoT, segundo \citeonline{kopetz:2011}, é uma geladeira que mantém registro da validade e disponibilidade dos itens contidos, e faz pedidos automaticamente ao supermercado mais próximo dos produtos em falta.
 
 
 \section{Robótica e suas Aplicações}
@@ -38,10 +39,9 @@ A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neur
 A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{deluca:1979}
 
 Com os dados extraídos a partir da EMG, é possível que se desenvolva próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos dos músculos intactos \cite{park:1998}.
-\textcolor{red}{TODO!\todo{Apresentar um exemplo gráfico e descrever como os eletrodos são utilizados, apresentar exemplos de saída e quais os desafios para o reconhecimento de padrões.}}
+\textcolor{red}{TODO!}\todo{Apresentar um exemplo gráfico e descrever como os eletrodos são utilizados, apresentar exemplos de saída e quais os desafios para o reconhecimento de padrões.}
 
 %TODO: INCLUIR SELEÇÃO DE ATRIBUTOS?
-
 
 \section{Reconhecimento de Padrões}
 \label{sec:patternrec}
@@ -83,13 +83,13 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
-Sistemas embarcados\todo{Descrever o porque de estar descrevendo somente estes dois?} são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes\todo{Descrever o que ocorre se um sistema falhar}. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+Sistemas embarcados\todo{Descrever o porque de estar descrevendo somente estes dois?}\ são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes\todo{Descrever o que ocorre se um sistema falhar}. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 
-\textcolor{red}{TODO\todo{Adicionar um paragrafo apresentando onde modelos formais são usados e que conhecimento eles geram sobre o sistema}}
+\textcolor{red}{TODO}\todo{Adicionar um parágrafo apresentando onde modelos formais são usados e que conhecimento eles geram sobre o sistema}
 
 \subsection{Máquinas de Estado Finitas}
 
-\textcolor{red}{Sugir renomear está seção para Máquina de estados, então definir e dentro desta seção apresentar as  finitas e não finitas.}
+\textcolor{red}{Sugiro renomear está seção para Máquina de estados, então definir e dentro desta seção apresentar as  finitas e não finitas.}
 
 Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
@@ -103,7 +103,7 @@ Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, 
 
 Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
 
-\textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de automatos, bem como apresentar um sistema embarcado modelado usando um automato\todo{TODO}.}
+\textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de autômatos, bem como apresentar um sistema embarcado modelado usando um autômato.}\todo{TODO}
 
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
@@ -122,7 +122,7 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 
 Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-\textcolor{red}{Falar sobre as propriedades de analise, ferramentas para analise, e exemplos de quem usa redes de preti\todo{TODO}.}
+\textcolor{red}{Falar sobre as propriedades de análise, ferramentas para análise, e exemplos de quem usa redes de petri.}\todo{TODO}
 
 \section{Modelagem de software}
 \label{sec:modelagem}
