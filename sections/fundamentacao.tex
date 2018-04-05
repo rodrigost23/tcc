@@ -1,3 +1,5 @@
+Este capítulo apresentará a fundamentação teórica utilizada neste trabalho, abordando os temas mais pertinentes, como Sistemas Embarcados, \todo{listar as seções aqui}.
+
 \section{Sistemas Embarcados}
 \label{sec:embarcados}
 Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}.
@@ -30,25 +32,23 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 \todo[inline]{Faltando aqui ainda}
 
 
-\section{Eletromiografia: Geração de Dados}
-\label{sec:emg}
-A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
+% \section{Eletromiografia: Geração de Dados}
+% \label{sec:emg}
+% A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura \cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
 
-A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{deluca:1979}
+% A leitura dos sinais eletromiográficos pode ser feita de diferentes formas: por profundidade ou por superfície. O primeiro método consiste em inserir uma agulha que atinja o músculo desejado, permitindo a captação dos sinais; já a eletromiografia por superfície (sEMG) utiliza apenas um conjunto eletrodos sobre a pele, na região do músculo desejado \cite{deluca:1979}
 
-Com os dados extraídos a partir da EMG, é possível que se desenvolva próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos a partir dos músculos intactos \cite{park:1998}.
+% Com os dados extraídos a partir da EMG, é possível que se desenvolva próteses controláveis baseadas no reconhecimento de padrões e classificação dos dados eletromiográficos a partir dos músculos intactos \cite{park:1998}.
 
-No caso da sEMG, a superfície da pele tem diversos sinais com amplitude maior que da eletromiografia. Isso torna necessário o uso de uma configuração diferencial: analisa-se dois sinais de duas superfícies diferentes para que sejam subtraídos os sinais a fim de se obter a informação desejada. Dessa forma, as áreas de detecção e a distância entre elas são fatores importantes, pois afetam a amplitude e frequência do sinal \cite{deluca:1997}.
+% No caso da sEMG, a superfície da pele tem diversos sinais com amplitude maior que da eletromiografia. Isso torna necessário o uso de uma configuração diferencial: analisa-se dois sinais de duas superfícies diferentes para que sejam subtraídos os sinais a fim de se obter a informação desejada. Dessa forma, as áreas de detecção e a distância entre elas são fatores importantes, pois afetam a amplitude e frequência do sinal \cite{deluca:1997}.
 
-\textcolor{red}{TODO!}\todo{Inserir imagem com posicionamento de eletrodos e exemplo de leitura dos sinais.}
-
-%TODO: INCLUIR SELEÇÃO DE ATRIBUTOS?
+% \textcolor{red}{TODO!}\todo{Inserir imagem com posicionamento de eletrodos e exemplo de leitura dos sinais.}
 
 \section{Reconhecimento de Padrões}
 \label{sec:patternrec}
 O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados \cite{bishop:2006}.
 
-Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
+\todo{Tirar "dados eletromiográficos" daqui}Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
 \subsection{Pré-processamento}
 \todo[inline,color=lightgray]{Não faço ideia do que colocar nessa seção.}
 \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
@@ -84,13 +84,11 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
-Sistemas embarcados\todo{Descrever o porque de estar descrevendo somente estes dois?}\ são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes\todo{Descrever o que ocorre se um sistema falhar}. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente, antes que o sistema seja construído, o que pode poupar tempo no futuro \cite{edwards:1997}.
 
-\textcolor{red}{TODO}\todo{Adicionar um parágrafo apresentando onde modelos formais são usados e que conhecimento eles geram sobre o sistema}
+\subsection{Máquinas de Estado}
 
-\subsection{Máquinas de Estado Finitas}
-
-\textcolor{red}{Sugiro renomear está seção para Máquina de estados, então definir e dentro desta seção apresentar as  finitas e não finitas.}
+\todo[inline]{Adicionar parágrafo sobre máquina de estados no geral.}
 
 Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
