@@ -84,7 +84,7 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 \section{Modelos Formais para Validação de Sistemas}
 \label{sec:modelosformais}
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente, antes que o sistema seja construído, o que pode poupar tempo no futuro \cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 
 \subsection{Máquinas de Estado}
 
@@ -104,6 +104,8 @@ Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação cl�
 
 \textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de autômatos, bem como apresentar um sistema embarcado modelado usando um autômato.}\todo{TODO}
 
+\subsection{Diagrama de sequência}
+
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
 
@@ -121,8 +123,8 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 
 Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-\textcolor{red}{Falar sobre as propriedades de análise, ferramentas para análise, e exemplos de quem usa redes de petri.}\todo{TODO}
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, vivacidade, alcançabilidade e limitação \cite{peterson:1981}.
 
-\section{Modelagem de software}
-\label{sec:modelagem}
-\subsection{Transformações de modelo para código}
+% \section{Modelagem de software}
+% \label{sec:modelagem}
+% \subsection{Transformações de modelo para código}
