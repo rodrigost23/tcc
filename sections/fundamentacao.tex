@@ -89,7 +89,7 @@ Sistemas embarcados são muitas vezes usados em situações críticas, em que se
 \subsection{Diagrama de sequência}
 Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
 	\begin{center}
 	    \includegraphics[width=0.8\textwidth]{resources/seq_chart_marwedel_1}
@@ -107,7 +107,7 @@ Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas li
 
 Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:fsm}Exemplo de diagrama de estados}
 	\begin{center}
 	    \includegraphics[width=0.5\textwidth]{resources/fsm_marwedel}
@@ -126,7 +126,7 @@ A estrutura de uma rede de Petri consiste em lugares, transições, funções de
 
 Além disso, cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares \cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
 	\begin{center}
 	    \includegraphics[width=0.5\textwidth]{resources/petri_net_murata_1}
