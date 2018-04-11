@@ -49,15 +49,15 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados \cite{bishop:2006}.
 
 \todo{Tirar "dados eletromiográficos" daqui}Os dados eletromiográficos podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e os algoritmos envolvidos na classificação dos movimentos a partir dos dados dos sensores.
-\subsection{Pré-processamento}
-\todo[inline,color=lightgray]{Não faço ideia do que colocar nessa seção.}
-\todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
+% \subsection{Pré-processamento}
+% \todo[inline,color=lightgray]{Não faço ideia do que colocar nessa seção.}
+% \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
 
 \subsection{Aprendizado de máquina}
 O aprendizado de máquina é importante quando não é possível determinar todos cenários possíveis de um sistema previamente, ou quando se deseja que este se adapte ao ambiente por conta própria \cite{russell:2010}. %TODO
 \todo[inline,color=lightgray]{Supervisionada e não supervisionada, utilidade, classificação etc.}
 
-%\subsubsection{Árvores de decisão} %Acho que não é mais necessário
+\subsubsection{Árvores de decisão}
 
 \subsubsection{SVM}
 Máquina de Vetores de Suporte (SVM) é uma das técnicas mais populares de aprendizado de máquina supervisionado, por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
@@ -66,7 +66,7 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 %TODO: \todo[inline,color=lightgray]{Como funciona? Usando para classificação}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \caption{Classificação binária com SVM}
     \label{fig:svm_classification}
@@ -82,9 +82,24 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 
-\section{Modelos Formais para Validação de Sistemas}
+\section{Modelagem e validação de sistemas}
 \label{sec:modelosformais}
 Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+
+\subsection{Diagrama de sequência}
+Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
+
+\begin{figure}[!h]
+	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
+	\begin{center}
+	    \includegraphics[width=0.8\textwidth]{resources/seq_chart_marwedel_1}
+	\end{center}
+	\legend{Fonte: Adaptado de \citeonline[p. 37]{marwedel:2010}}
+\end{figure}
+
+A UML contém padronização do diagrama de sequência. As linhas tracejadas representam as "linhas da vida", e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
+
+Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
 
 \subsection{Máquinas de Estado}
 
@@ -103,8 +118,6 @@ Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, 
 Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
 
 \textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de autômatos, bem como apresentar um sistema embarcado modelado usando um autômato.}\todo{TODO}
-
-\subsection{Diagrama de sequência}
 
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
