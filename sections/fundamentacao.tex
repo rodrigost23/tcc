@@ -66,30 +66,26 @@ Quando os valores de saída são números, o problema é conhecido como \textbf{
 
 \todo[inline]{Adicionar algoritmo(s) específico(s) a ser(em) utilizado(s)?}
 
-\subsubsection{Árvores de decisão}
-\todo[inline]{Manter isso ou não?}
+% \subsubsection{Árvores de decisão}
 
-\subsubsection{SVM}
-\todo[inline]{Manter isso ou não?}
-Máquina de Vetores de Suporte (SVM) é uma das técnicas mais populares de aprendizado de máquina supervisionado, por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
+% \subsubsection{SVM}
+% Máquina de Vetores de Suporte (SVM) é uma das técnicas mais populares de aprendizado de máquina supervisionado, por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
 
-A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes \cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em \ref{fig:svm_classification_a} e o separador linear desejado em \ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados \cite{russell:2010}.
+% A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes \cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em \ref{fig:svm_classification_a} e o separador linear desejado em \ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados \cite{russell:2010}.
 
 %TODO: \todo[inline,color=lightgray]{Como funciona? Usando para classificação}
 
-\begin{figure}[ht]
-    \centering
-    \caption{Classificação binária com SVM}
-    \label{fig:svm_classification}
-    %TODO:(a) Two classes of points (black and white circles) and three candidate linear separators.
-    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
-        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
-        \hspace{0.2cm}
-    %TODO:(b) The maximum margin separator (heavy line), is at the midpoint of the margin (area between dashed lines). The support vectors (points with large circles) are the examples closest to the separator.
-    \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas pontilhadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
-        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
-        \legend{Fonte: \citeonline[p. 745]{russell:2010}}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \caption{Classificação binária com SVM}
+%     \label{fig:svm_classification}
+%     \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
+%         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
+%         \hspace{0.2cm}
+%     \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas pontilhadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
+%         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
+%         \legend{Fonte: \citeonline[p. 745]{russell:2010}}
+% \end{figure}
 %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 
@@ -114,21 +110,32 @@ Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas li
 
 \subsection{Máquinas de Estado}
 
-\todo[inline]{Adicionar parágrafo sobre máquina de estados no geral.}
+A teoria dos autômatos é o estudo de dispositivos computacionais abstratos (``máquinas''), que servem de modelo para o projeto e construção de softwares, a partir de conceitos como autômatos finitos e gramáticas formais \cite{hopcroft:2001}.
 
-Uma Máquina de Estado Finita (FSM) se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
+Um autômato finito, também conhecido como Máquina de Estados Finita (FSM) \cite{wagner:2006}, e se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
+
+Cada estado de uma FSM representa uma informação sobre o decorrer do programa, pois o estado muda de tempos em tempos durante a execução, e todos os estados representam todas as situações possíveis em que a máquina de estados pode estar. As saídas podem depender tanto do estado atual quanto das entradas da máquina \cite{wagner:2006}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:fsm}Exemplo de diagrama de estados}
 	\begin{center}
-	    \includegraphics[width=0.5\textwidth]{resources/fsm_marwedel}
+	    \includegraphics[width=0.6\textwidth]{resources/fsm_marwedel}
 	\end{center}
 	\legend{Fonte: \citeonline[p. 39]{marwedel:2010}}
 \end{figure}
 
 Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
 
-\textcolor{red}{Estão seção está bem curta, sugiro ampliar falando das propriedades de autômatos, bem como apresentar um sistema embarcado modelado usando um autômato.}\todo{TODO}
+\todo[inline]{Adicionar texto sobre o exemplo 2.}
+
+\begin{figure}[ht]
+	\caption{\label{fig:fsm_2}Diagrama de máquina de estados do contador de uma máquina de vendas}
+	\begin{center}
+	    \includegraphics[width=0.8\textwidth]{resources/fsm_wagner}
+	\end{center}
+	\legend{Fonte: Adaptado de \citeonline[p. 68]{wagner:2006}}
+\end{figure}
+
 
 \subsection{Redes de Petri}
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
