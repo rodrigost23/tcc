@@ -63,6 +63,7 @@ No \textbf{aprendizado supervisionado}, o agente observa pares de entrada e saí
 
 Quando os valores de saída são números, o problema é conhecido como \textbf{regressão}. Quando a saída é um conjunto de valores finitos, o problema de aprendizagem é chamado de \textbf{classificação}, também conhecido como classificação Booleana ou binária caso hajam apenas dois valores \cite{russell:2010}.
 
+\todo[inline] {Adicionar exemplo de classificação}
 % \subsubsection{Árvores de decisão}
 
 % \subsubsection{SVM}
@@ -79,13 +80,14 @@ Quando os valores de saída são números, o problema é conhecido como \textbf{
 %     \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
 %         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
 %         \hspace{0.2cm}
-%     \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas pontilhadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
+%     \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas tracejadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
 %         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
 %         \legend{Fonte: \citeonline[p. 745]{russell:2010}}
 % \end{figure}
-%\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
+% %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 \subsection{\textit{Frameworks} para aprendizado de máquina}
+\todo[inline]{Escrever intro sobre os frameworks}
 \label{sec:ml_frameworks}
 
 \subsubsection{scikit-learn}
@@ -133,7 +135,7 @@ Cada estado de uma FSM representa uma informação sobre o decorrer do programa,
 
 Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
 
-\todo[inline]{Adicionar texto sobre o exemplo 2.}
+A figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita moedas de 5 e de 10 centavos, sendo 25 o valor esperado. O estado ``Início'' é o estado em que ainda não foi depositada uma moeda e o estado ``Fim'' quer dizer que a máquina recebeu 25 centavos. As transições representam as moedas depositadas na máquina. Em todos os estados qualquer moeda é aceita, exceto no estado ``Vinte'', em que a moeda de 10 centavos é ignorada neste exemplo por questões de simplicidade \cite{wagner:2006}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:fsm_2}Diagrama de máquina de estados do contador de uma máquina de vendas}
@@ -162,6 +164,8 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
 A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, vivacidade, alcançabilidade e limitação \cite{peterson:1981}.
+
+\todo[inline]{Complementar definições das propriedades.}
 
 % \section{Modelagem de software}
 % \label{sec:modelagem}
