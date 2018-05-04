@@ -14,7 +14,7 @@ O objetivo dos autores \citeonline{pew:2017} foi fazer uma prótese para membros
 
 A leitura dos dados foi feita a partir da simulação de uma IMU usando captura de movimentos ótica, e o controle da rigidez da articulação foi feita usando um componente chamado VSTA (\textit{variable stiffness torsion adapter}), que podia ser ativado com uma célula de carga comercialmente conhecida como iPecs, como pode ser visto na figura~\ref{fig:rel_turnintent_1}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:rel_turnintent_1}Prótese incluindo o VSTA, a célula de carga iPecs e a posição da IMU simulada.}
 	\begin{center}
 	    \includegraphics[width=.4\textwidth]{resources/rel_pew_turnintent_1}
@@ -44,7 +44,7 @@ Este artigo por \citeonline{kumar:2017} propõe um protótipo de braço prostét
 
 O protótipo foi desenvolvido usando o \textit{software} Solid Works, e a simulação foi feita com Simulink e SimMechanics. A classificação foi feita usando ANFIS -- um tipo de rede neural artificial -- a partir dos dados das simulações. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:rel_kumar_1}Modelagem do protótipo desenolvida no Solid Works}
 	\begin{center}
 	    \includegraphics[width=.5\textwidth]{resources/rel_kumar_1}
@@ -57,7 +57,7 @@ O protótipo foi desenvolvido usando o \textit{software} Solid Works, e a simula
 \label{sec:rel_smartleg}
 Foi proposto por \citeonline{dedic:2011} uma forma de transformar uma prótese passiva disponível comercialmente em ativa, para que seja possível a subida e descida de escadas e outros movimentos que exigem um maior esforço motor. Assim, fez-se necessário o uso de uma fonte de energia externa, que foi feita usando atuadores hidráulicos nas articulações, como visto na figura~\ref{fig:rel_smartleg_1}. \citeonline{dedic:2011} também discute-se o uso de aprendizagem de máquina para garantir conforto aos usuários, pois pode-se adaptar os atuadores para funcionarem melhor com os padrões de andadura do indivíduo, mas isso não foi implementado. Outra ideia mencionada foi o uso de sensores de proximidade e sonares para detecção de obstáculos, algo que também não foi testado, apenas sugerido para o futuro.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:rel_smartleg_1}Protótipo com dois atuadores hidráulicos: nas articulações do joelho e do tornozelo.}
 	\begin{center}
 	    \includegraphics[width=.5\textwidth]{resources/rel_dedic_smart_leg_1}

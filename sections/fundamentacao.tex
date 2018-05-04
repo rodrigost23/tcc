@@ -164,9 +164,14 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 
 Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, vivacidade, alcançabilidade e limitação \cite{peterson:1981}.
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação\todo{Essa foi a melhor tradução que consegui para \textit{boundedness}.}\ e vivacidade.
 
-\todo[inline]{Complementar definições das propriedades.}
+Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
+
+O conceito de limitação (ou \textit{boundedness}, em inglês) é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
+
+Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
+\todo[inline]{Considerar imagem de \textit{deadlock} de \citeonline[página 86]{peterson:1981}.}
 
 % \section{Modelagem de software}
 % \label{sec:modelagem}
