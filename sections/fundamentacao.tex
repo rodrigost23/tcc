@@ -27,7 +27,6 @@ Um exemplo de objeto inteligente na IoT, segundo \citeonline{kopetz:2011}, é um
 \label{sec:robotica}
 A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
 
-\subsection{Próteses Robóticas}
 \todo[inline,color=lightgray]{Uma aplicação da robótica seria na construção de próteses etc.}
 \todo[inline]{Faltando aqui ainda}
 
@@ -63,7 +62,8 @@ No \textbf{aprendizado supervisionado}, o agente observa pares de entrada e saí
 
 Quando os valores de saída são números, o problema é conhecido como \textbf{regressão}. Quando a saída é um conjunto de valores finitos, o problema de aprendizagem é chamado de \textbf{classificação}, também conhecido como classificação Booleana ou binária caso hajam apenas dois valores \cite{russell:2010}.
 
-\todo[inline] {Adicionar exemplo de classificação}
+%TODO: \todo[inline] {Adicionar exemplo de classificação}
+
 % \subsubsection{Árvores de decisão}
 
 % \subsubsection{SVM}
@@ -86,18 +86,21 @@ Quando os valores de saída são números, o problema é conhecido como \textbf{
 % \end{figure}
 % %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
-\subsection{\textit{Frameworks} para aprendizado de máquina}
+\subsection{\textit{Frameworks}\todo{Talvez trocar \textit{frameworks} por \textbf{ferramentas}!} para aprendizado de máquina}
 \todo[inline]{Escrever intro sobre os frameworks}
 \label{sec:ml_frameworks}
 
 \subsubsection{Scikit-learn}
 \label{sec:ml_sklearn}
+\todo[inline,color=yellow]{\textbf{NOTA:} O artigo de \citeonline{pedregosa:2011} é o próprio indicado no site do scikit-learn, mas foi publicado em um periódico A1. Não consegui achar outras fontes ainda.}
+
 O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados \cite{pedregosa:2011}.
 
+Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado.
 
 \subsubsection{TensorFlow}
 \label{sec:ml_tf}
-\cite{abadi:2015}
+TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}.
 
 \section{Modelagem e validação de sistemas}
 \label{sec:modelosformais}
