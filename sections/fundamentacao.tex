@@ -1,4 +1,4 @@
-Este capítulo apresentará a fundamentação teórica utilizada neste trabalho, abordando os temas mais pertinentes, como Sistemas Embarcados, \todo{listar as seções aqui}.
+Este capítulo apresentará a fundamentação teórica utilizada neste trabalho, abordando os temas mais pertinentes, como Sistemas Embarcados, Robótica, Reconhecimento de padrões, e Modelagem de sistemas.
 
 \section{Sistemas Embarcados}
 \label{sec:embarcados}
@@ -86,20 +86,18 @@ Quando os valores de saída são números, o problema é conhecido como \textbf{
 % %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 \subsection{Ferramentas para aprendizado de máquina}
-\todo[inline]{Escrever intro sobre os frameworks}
-\label{sec:ml_frameworks}
+\label{sec:ml_tools}
+Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar na produção de soluções em diversas áreas, estão disponíveis diferentes ferramentas de desenvolvimento. Algumas destas ferramentas serão abordadas nesta seção.
 
 \subsubsection{Scikit-learn}
 \label{sec:ml_sklearn}
-\todo[inline,color=yellow]{\textbf{NOTA:} O artigo de \citeonline{pedregosa:2011} é o próprio indicado no site do scikit-learn, mas foi publicado em um periódico A1. Não consegui achar outras fontes ainda.}
-
-O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados \cite{pedregosa:2011}.
+O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
 
 Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado.
 
 \subsubsection{TensorFlow}
 \label{sec:ml_tf}
-TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}.
+TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}. É uma ferramenta bastante popular, e oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax \cite{ertram:2017}.
 
 \section{Modelagem e validação de sistemas}
 \label{sec:modelosformais}
@@ -116,7 +114,7 @@ Uma forma de detalhar as especificações iniciais do design do sistema é atrav
 	\legend{Fonte: Adaptado de \citeonline[p. 37]{marwedel:2010}}
 \end{figure}
 
-A UML contém padronização do diagrama de sequência. As linhas tracejadas representam as "linhas da vida", e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
+A UML contém padronização do diagrama de sequência. As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
 
 Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
 
