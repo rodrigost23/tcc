@@ -15,10 +15,12 @@ O projeto desenvolvido neste trabalho é uma prótese robótica para membros inf
 
 O sistema computacional que envolve o projeto estará equipado com sensores flex nas articulações dos joelhos além de giroscópios e acelerômetros, que serão usados para capturar as ações do usuário. A figura~\ref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
-Os dados dos sensores serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente\todo{Como vai ser a fonte de energia da prótese?}. Ou seja, a rigidez da prótese terá diferentes ajustes em caminhadas em planos, subida ou descida de escadas e rampas.
+Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente\todo{Como vai ser a fonte de energia da prótese?}. Ou seja, a rigidez da prótese terá diferentes ajustes em caminhadas em planos, subida ou descida de escadas e rampas.
 
 \section{Coleta de dados e classificação}
 \todo[inline,color=lightgray]{Coleta de dados dos sensores -- que sensores, que dados. Por que os dados são importantes: usar técnicas pra prever e identificar dados (Seção explicando da coleta, uma seção pra cada tipo de classificação)}
+
+Os dados coletados pelos sensores serão utilizados em um classificador\todo{Qual algoritmo?}, que determinará e tentará prever as ações do usuário. Estas ações serão classificadas em: repouso, caminhada, subida de degrau, descida de degrau, subida de rampa e descida de rampa.
 
 \todo[inline]{\textbf{Nova seção?}}
 \todo[inline,color=lightgray]{Geração de movimentos: a partir dos dados coletados. Os atuadores vão tentar identificar os ambientes. Na escada, o motor vai fazer tal coisa, etc. Na rampa, etc.}
