@@ -1,6 +1,6 @@
 Este capítulo apresentará o método proposto por este trabalho para o projeto de uma prótese ativa baseada em sensores e aprendizado de máquina.
 
-\section{\todo{Corrigir este título}O sistema embarcado da prótese}
+\section{Visão geral do método}\todo{Fluxo do método - diagrama}
 \label{sec:metodo_protese}
 
 O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial.
@@ -17,13 +17,23 @@ O sistema computacional que envolve o projeto estará equipado com sensores flex
 
 Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente\todo{Como vai ser a fonte de energia da prótese?}. Ou seja, a rigidez da prótese terá diferentes ajustes em caminhadas em planos, subida ou descida de escadas e rampas.
 
-\section{Coleta de dados e classificação}
-\todo[inline,color=lightgray]{Coleta de dados dos sensores -- que sensores, que dados. Por que os dados são importantes: usar técnicas pra prever e identificar dados (Seção explicando da coleta, uma seção pra cada tipo de classificação)}
+\section{Prototipação da prótese}
+\todo[inline,color=lightgray]{Descrever o funcionamento da prótese via algum modelo}
+\subsection{Arquitetura do software}
+\todo[inline,color=lightgray]{Diagrama UML}
+\subsection{Arquitetura do hardware}
+\todo[inline,color=lightgray]{Descrever os componentes da prótese: o motor, como funciona o motor e tal}
 
-Os dados coletados pelos sensores serão utilizados em um classificador\todo{Qual algoritmo?}, que determinará e tentará prever as ações do usuário. Estas ações serão classificadas em: repouso, caminhada, subida de degrau, descida de degrau, subida de rampa e descida de rampa.
+\section{Coleta de dados}
+\todo[inline,color=lightgray]{Descrever que dados serão coletados (de que sensores) e como serão coletados, armazenados, etc.}
 
-\todo[inline]{\textbf{Nova seção?}}
+\section{Previsão de movimentos}
+\todo[inline,color=lightgray]{Como, a partir da perna inteira, e do membro residual, identificar os movimentos para as ações necessárias. Descrever os cenários.
+Identificar o tipo de ML: supervisionada, etc. Exemplos de algoritmos a serem utilizados baseados nos cenários.}
 \todo[inline,color=lightgray]{Geração de movimentos: a partir dos dados coletados. Os atuadores vão tentar identificar os ambientes. Na escada, o motor vai fazer tal coisa, etc. Na rampa, etc.}
+Os dados coletados pelos sensores serão utilizados, que determinará e tentará prever as ações do usuário. Estas ações serão classificadas em: repouso, caminhada, subida de degrau, descida de degrau, subida de rampa e descida de rampa.
 
-\todo[inline]{\textbf{Nova seção?}}
+\section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
+\todo[inline,color=lightgray]{Descrever a partir de que dados será feito o diagnóstico, bem como as recomendações. Os dados serão comparados com algum guideline de ortopedia.
+(investigar para TCC2 se os sensores escolhidos são capazes de validar)}
 \todo[inline,color=lightgray]{Analisar saúde do caminhar. Se não tá caminhando torto. Gerar estatísticas do uso da prótese. (Os dados estão fazendo a pessoa puxar mais pra uma perna)}
