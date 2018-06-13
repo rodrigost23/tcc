@@ -1,9 +1,9 @@
 Este capítulo apresentará o método proposto por este trabalho para o projeto de uma prótese ativa baseada em sensores e aprendizado de máquina.
 
-\section{Visão geral do método}\todo{Fluxo do método - diagrama}
+\section{Visão geral do método}
 \label{sec:metodo_protese}
 
-O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial.
+O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação.
 
 \begin{figure}[h]
 	\caption{\label{fig:big_picture}Visão geral do protótipo}
@@ -15,7 +15,15 @@ O projeto desenvolvido neste trabalho é uma prótese robótica para membros inf
 
 O sistema computacional que envolve o projeto estará equipado com sensores flex nas articulações dos joelhos além de giroscópios e acelerômetros, que serão usados para capturar as ações do usuário. A figura~\ref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
-Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente\todo{Como vai ser a fonte de energia da prótese?}. Ou seja, a rigidez da prótese terá diferentes ajustes em caminhadas em planos, subida ou descida de escadas e rampas.
+Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente. Conforme mostra a figura~\ref{fig:flowchart}, a prótese terá diferentes ajustes dependendo do tipo de ação, seja em caminhadas em planos, subida ou descida de escadas.
+
+\todo{Terminar o fluxograma}\begin{figure}[h]
+	\caption{\label{fig:flowchart}Fluxograma de funcionamento da prótese}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/flowchart}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
 
 \section{Prototipação da prótese}
 \todo[inline,color=lightgray]{Descrever o funcionamento da prótese via algum modelo}
@@ -31,7 +39,7 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 \todo[inline,color=lightgray]{Como, a partir da perna inteira, e do membro residual, identificar os movimentos para as ações necessárias. Descrever os cenários.
 Identificar o tipo de ML: supervisionada, etc. Exemplos de algoritmos a serem utilizados baseados nos cenários.}
 \todo[inline,color=lightgray]{Geração de movimentos: a partir dos dados coletados. Os atuadores vão tentar identificar os ambientes. Na escada, o motor vai fazer tal coisa, etc. Na rampa, etc.}
-Os dados coletados pelos sensores serão utilizados, que determinará e tentará prever as ações do usuário. Estas ações serão classificadas em: repouso, caminhada, subida de degrau, descida de degrau, subida de rampa e descida de rampa.
+
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
 \todo[inline,color=lightgray]{Descrever a partir de que dados será feito o diagnóstico, bem como as recomendações. Os dados serão comparados com algum guideline de ortopedia.
