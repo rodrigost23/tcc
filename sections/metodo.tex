@@ -38,10 +38,14 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 \section{Previsão de movimentos}
 \todo[inline,color=lightgray]{Como, a partir da perna inteira, e do membro residual, identificar os movimentos para as ações necessárias. Descrever os cenários.
 Identificar o tipo de ML: supervisionada, etc. Exemplos de algoritmos a serem utilizados baseados nos cenários.}
+Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
+
+\todo[inline]{Não consigo identificar exatamente a dificuldade a ser resolvida em cada cenário.}
 \todo[inline,color=lightgray]{Geração de movimentos: a partir dos dados coletados. Os atuadores vão tentar identificar os ambientes. Na escada, o motor vai fazer tal coisa, etc. Na rampa, etc.}
 
-
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
-\todo[inline,color=lightgray]{Descrever a partir de que dados será feito o diagnóstico, bem como as recomendações. Os dados serão comparados com algum guideline de ortopedia.
-(investigar para TCC2 se os sensores escolhidos são capazes de validar)}
-\todo[inline,color=lightgray]{Analisar saúde do caminhar. Se não tá caminhando torto. Gerar estatísticas do uso da prótese. (Os dados estão fazendo a pessoa puxar mais pra uma perna)}
+Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
+
+A partir das informações geradas, poderá ser feitas recomendações de melhorias ao indivíduo, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
+
+Para que este diagnóstico seja possível, será analisada a hipótese do uso de sensores adicionais aos propostos pelo protótipo atual, caso estes não sejam suficientes para gerar os dados necessários de análise de saúde da caminhada.
