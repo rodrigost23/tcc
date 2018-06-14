@@ -36,12 +36,13 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 \todo[inline,color=lightgray]{Descrever que dados serão coletados (de que sensores) e como serão coletados, armazenados, etc.}
 
 \section{Previsão de movimentos}
-\todo[inline,color=lightgray]{Como, a partir da perna inteira, e do membro residual, identificar os movimentos para as ações necessárias. Descrever os cenários.
-Identificar o tipo de ML: supervisionada, etc. Exemplos de algoritmos a serem utilizados baseados nos cenários.}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
 
-\todo[inline]{Não consigo identificar exatamente a dificuldade a ser resolvida em cada cenário.}
-\todo[inline,color=lightgray]{Geração de movimentos: a partir dos dados coletados. Os atuadores vão tentar identificar os ambientes. Na escada, o motor vai fazer tal coisa, etc. Na rampa, etc.}
+Antes que o usuário realize um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, realizado pela perna intacta, e a partir do movimento atual extraído do membro residual.
+
+Considerando que teremos um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- será decidida uma técnica de aprendizado de máquina supervisionado, mais especificamente de classificação, através de ferramentas de aprendizado de máquina, como as descritas na seção~\ref{sec:ml_tools}.
+
+Assim que um passo começa a ser realizado, são acionados os atuadores, que terão sua ação determinada de acordo com o ambiente identificado, facilitando assim a locomoção do usuário.\todo{Não consigo identificar exatamente a dificuldade a ser resolvida em cada cenário para determinar \textbf{o que o motor deve fazer} especificamente.}
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
 Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
