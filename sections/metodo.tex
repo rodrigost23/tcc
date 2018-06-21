@@ -13,9 +13,9 @@ O projeto desenvolvido neste trabalho é uma prótese robótica para membros inf
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-O sistema computacional que envolve o projeto estará equipado com sensores flex nas articulações dos joelhos além de giroscópios e acelerômetros, que serão usados para capturar as ações do usuário. A figura~\ref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
+O sistema computacional que envolve o projeto estará equipado com sensores flex nas articulações dos joelhos além de giroscópios e acelerômetros, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
-Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente. Conforme mostra a figura~\ref{fig:flowchart}, a prótese terá diferentes ajustes dependendo do tipo de ação, seja em caminhadas em planos, subida ou descida de escadas.
+Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente. Conforme mostra a \autoref{fig:flowchart}, a prótese terá diferentes ajustes dependendo do tipo de ação, seja em caminhadas em planos, subida ou descida de escadas.
 
 \todo{Terminar o fluxograma}\begin{figure}[h]
 	\caption{\label{fig:flowchart}Fluxograma de funcionamento da prótese}
@@ -27,20 +27,27 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 
 \section{Prototipação da prótese}
 \todo[inline,color=lightgray]{Descrever o funcionamento da prótese via algum modelo}
+
 \subsection{Arquitetura do software}
 \todo[inline,color=lightgray]{Diagrama UML}
+
 \subsection{Arquitetura do hardware}
 \todo[inline,color=lightgray]{Descrever os componentes da prótese: o motor, como funciona o motor e tal}
+\todo[inline]{Só falta eu ter os conhecimentos de engenharia mecânica}
 
 \section{Coleta de dados}
-\todo[inline,color=lightgray]{Descrever que dados serão coletados (de que sensores) e como serão coletados, armazenados, etc.}
+Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flex, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
+
+Os valores capturados pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos.
+
+Além disso, os dados na central serão armazenados para uso posterior de análise\ldots \todo{Como armazenar os dados?}
 
 \section{Previsão de movimentos}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
 
 Antes que o usuário realize um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, realizado pela perna intacta, e a partir do movimento atual extraído do membro residual.
 
-Considerando que teremos um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- será decidida uma técnica de aprendizado de máquina supervisionado, mais especificamente de classificação, através de ferramentas de aprendizado de máquina, como as descritas na seção~\ref{sec:ml_tools}.
+Considerando que teremos um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- será decidida uma técnica de aprendizado de máquina supervisionado, mais especificamente de classificação, através de ferramentas de aprendizado de máquina, como as descritas na \autoref{sec:ml_tools}.
 
 Assim que um passo começa a ser realizado, são acionados os atuadores, que terão sua ação determinada de acordo com o ambiente identificado, facilitando assim a locomoção do usuário.\todo{Não consigo identificar exatamente a dificuldade a ser resolvida em cada cenário para determinar \textbf{o que o motor deve fazer} especificamente.}
 
