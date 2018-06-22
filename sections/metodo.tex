@@ -33,7 +33,20 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 
 \subsection{Arquitetura do hardware}
 \todo[inline,color=lightgray]{Descrever os componentes da prótese: o motor, como funciona o motor e tal}
-\todo[inline]{Só falta eu ter os conhecimentos de engenharia mecânica}
+A prótese em si será formada por partes impressas 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
+
+\begin{figure}[h]
+	\caption{\label{fig:hardware_scheme}Esquema representando o funcionamento dos atuadores}
+	\begin{center}
+	   % \includegraphics[width=\textwidth]{resources/hardware_scheme}
+	   \missingfigure[figwidth=12cm,figheight=8cm]{Desenho de detalhe da prótese, com articulações, motores, etc.}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo, que deverão ser acionados de acordo com a classificação dos dados dos sensores. \todo{Explicação dos motores das figuras.}
+
+
 
 \section{Coleta de dados}
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flex, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
@@ -49,7 +62,16 @@ Antes que o usuário realize um passo, o sistema deverá identificar em que ambi
 
 Considerando que teremos um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- será decidida uma técnica de aprendizado de máquina supervisionado, mais especificamente de classificação, através de ferramentas de aprendizado de máquina, como as descritas na \autoref{sec:ml_tools}.
 
-Assim que um passo começa a ser realizado, são acionados os atuadores, que terão sua ação determinada de acordo com o ambiente identificado, facilitando assim a locomoção do usuário.\todo{Não consigo identificar exatamente a dificuldade a ser resolvida em cada cenário para determinar \textbf{o que o motor deve fazer} especificamente.}
+\begin{figure}[h]
+	\caption{\label{fig:hardware_poses}Algumas posições da prótese de acordo com cenários}
+	\begin{center}
+	   % \includegraphics[width=\textwidth]{resources/hardware_poses}
+	   \missingfigure[figwidth=12cm,figheight=5cm]{Poses da prótese em diferentes situações: início de caminhada, fim de caminhada, descida de escada.}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+Assim que um passo começa a ser realizado, são acionados os atuadores, que terão sua ação determinada de acordo com o ambiente identificado. Na~\autoref{fig:hardware_poses} pode-se observar a forma em que a prótese deve se posicionar de acordo com cada tipo de ação. As ações diferem para o início e o fim de cada passo em diferentes cenários. \todo{Especificar mais ou menos que os motores serão acionados, etc.}
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
 Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
