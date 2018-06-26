@@ -26,12 +26,15 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 \end{figure}
 
 \section{Prototipação da prótese}
+\label{sec:metodo_prototipacao}
 \todo[inline,color=lightgray]{Descrever o funcionamento da prótese via algum modelo}
 
 \subsection{Arquitetura do software}
+\label{sec:metodo_prot_software}
 \todo[inline,color=lightgray]{Diagrama UML}
 
 \subsection{Arquitetura do hardware}
+\label{sec:metodo_prot_hardware}
 A prótese em si será formada por partes impressas 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
 
 \begin{figure}[h]
@@ -47,13 +50,15 @@ A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protóti
 Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, afim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}.
 
 \section{Coleta de dados}
+\label{sec:metodo_coleta}
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flex, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
 
 Os valores capturados pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos.
 
-Além disso, os dados na central serão armazenados para uso posterior de análise\ldots \todo{Como armazenar os dados?}
+Além disso, os dados na central serão armazenados para uso posterior de análise, que poderá ser feita separadamente, com o auxílio de um computador (ver \autoref{sec:metodo_diagnostico}).
 
 \section{Previsão de movimentos}
+\label{sec:metodo_previsao}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
 
 Antes que o usuário realize um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, realizado pela perna intacta, e a partir do movimento atual extraído do membro residual.
@@ -69,9 +74,12 @@ Considerando que teremos um conjunto predeterminado de cenários possíveis -- c
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Assim que um passo começa a ser realizado, são acionados os atuadores, que terão sua ação determinada de acordo com o ambiente identificado. Na~\autoref{fig:hardware_poses} pode-se observar a forma em que a prótese deve se posicionar de acordo com cada tipo de ação. As ações diferem para o início e o fim de cada passo em diferentes cenários. \todo{Especificar mais ou menos que os motores serão acionados, etc.}
+Assim que um passo começa a ser realizado, classifica-se o tipo de passo a ser realizado, e acionam-se os atuadores, que terão sua ação determinada de acordo com o cenário identificado. Na~\autoref{fig:hardware_poses} pode-se observar a forma em que a prótese deve se posicionar de acordo com cada tipo de ação. As ações diferem para o início e o fim de cada passo em diferentes cenários.
+
+As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) pisada plana, (b) fim de um passo em piso plano, e (c) descida de escada. No primeiro caso, os motores só mantém estabilidade para garantir equilíbrio; no segundo caso, é necessária maleabilidade na dianteira do pé, para que seja possível impulsionar o passo do usuário. No terceiro caso, antes que o usuário desça o próximo degrau, a prótese deve inclinar-se e contrair a dianteira do pé para evitar tropeços e auxiliar na descida.
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}
+\label{sec:metodo_diagnostico}
 Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
 
 A partir das informações geradas, poderá ser feitas recomendações de melhorias ao indivíduo, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
