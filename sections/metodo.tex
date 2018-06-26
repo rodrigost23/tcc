@@ -32,7 +32,6 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 \todo[inline,color=lightgray]{Diagrama UML}
 
 \subsection{Arquitetura do hardware}
-\todo[inline,color=lightgray]{Descrever os componentes da prótese: o motor, como funciona o motor e tal}
 A prótese em si será formada por partes impressas 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
 
 \begin{figure}[h]
@@ -43,9 +42,9 @@ A prótese em si será formada por partes impressas 3D, feitas a partir de model
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo, que deverão ser acionados de acordo com a classificação dos dados dos sensores. \todo{Explicação dos motores das figuras.}
+A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo, que deverão ser acionados de acordo com a classificação dos dados dos sensores. No ponto A, o motor do ``tornozelo'' da prótese regulará a rigidez da articulação, como forma de manter estabilidade nos passos. Os pontos B e C referem-se a motores de passo que, juntos a hastes, se prendem no ``calcanhar'' da prótese, para mover o pé e exercer força na pisada.
 
-
+Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, afim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}.
 
 \section{Coleta de dados}
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flex, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
