@@ -26,7 +26,8 @@
 % -----------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % -----------------------------------------------------------------------------
-\title{\productname: Uma prótese robótica para geração de ações em movimentos baseada em \textcolor{red}{padrões musculares \textbf{[trocar]}}}
+% \title{\productname: Uma prótese robótica para geração de ações em movimentos baseada em \textcolor{red}{padrões musculares \textbf{[trocar]}}}
+\title{Automail-$X$: Prótese Robótica Autônoma para a Previsão de Movimentos de Caminhada baseada em Padrões Musculares}
 \titulo{\thetitle}
 
 \author{RODRIGO DOS SANTOS TAVARES}
@@ -34,9 +35,9 @@
 
 \local{Boa Vista --- RR}
 
-\date{2017}
+\date{2018}
 \data{\thedate}
-\orientador{DSc. Herbert Oliveira Rocha}
+\orientador{Dr. Herbert Oliveira Rocha}
 
 \tipotrabalho{Monografia}
 
@@ -109,7 +110,7 @@
 % -----------------------------------------------------------------------------
 % Agradecimentos
 % -----------------------------------------------------------------------------
-\begin{agradecimentos}
+\begin{agradecimentos}[Agradecimentos]
   \textcolor{red}{\lipsum[1]}%TODO:Agradecimentos
 \end{agradecimentos}
 % -----------------------------------------------------------------------------
@@ -133,7 +134,7 @@
 % -----------------------------------------------------------------------------
 % PORTUGUÊS
 % -----------------------------------------------------------------------------
-\begin{resumo}
+\begin{resumo}[Resumo]
   \textcolor{red}{\lipsum[2]} %TODO: Resumo
 
  \vspace{\onelineskip}
@@ -148,16 +149,16 @@
 % -----------------------------------------------------------------------------
 % INGLÊS
 % -----------------------------------------------------------------------------
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   \textcolor{red}{\lipsum[3]} %TODO: Abstract
-
-   \vspace{\onelineskip}
-
-   \noindent
-   \textbf{Key-words}: ???????%TODO:Keywords
- \end{otherlanguage*}
-\end{resumo}
+% \begin{resumo}[Abstract]
+%  \begin{otherlanguage*}{english}
+%    \textcolor{red}{\lipsum[3]} %TODO: Abstract
+% 
+%    \vspace{\onelineskip}
+% 
+%    \noindent
+%    \textbf{Key-words}: ???????%TODO:Keywords
+%  \end{otherlanguage*}
+% \end{resumo}
 % -----------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------
@@ -166,6 +167,7 @@
 % Lista de ilustrações
 % -----------------------------------------------------------------------------
 \pdfbookmark[0]{\listfigurename}{lof}
+\renewcommand{\listfigurename}{Lista de Figuras}
 \listoffigures*
 \cleardoublepage{}
 % -----------------------------------------------------------------------------
@@ -173,21 +175,22 @@
 % -----------------------------------------------------------------------------
 % Lista de tabelas
 % -----------------------------------------------------------------------------
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage{}
+% \pdfbookmark[0]{\listtablename}{lot}
+% \renewcommand{\listtablename}{Lista de Tabelas}
+% \listoftables*
+% \cleardoublepage{}
 % -----------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------
 % Lista de abreviaturas e siglas
 % -----------------------------------------------------------------------------
-\begin{siglas}
-  \item[FSM] Máquina de Estados Finita (\textit{Finite State Machine})
-  \item[IoT] Internet das Coisas (\textit{Internet of Things})
-  \item[SVM] Máquina de Vetor de Suporte (\textit{Support Vector Machine})
-  %TODO: Não esquecer de completar essa lista
-%    \item[EDS] Exemplo De Sigla
-\end{siglas}
+% \begin{siglas}
+%   \item[FSM] Máquina de Estados Finita (\textit{Finite State Machine})
+%   \item[IoT] Internet das Coisas (\textit{Internet of Things})
+%   \item[SVM] Máquina de Vetor de Suporte (\textit{Support Vector Machine})
+%   %TODO: Não esquecer de completar essa lista
+% %    \item[EDS] Exemplo De Sigla
+% \end{siglas}
 % -----------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------
@@ -205,6 +208,7 @@
 % Sumário
 % -----------------------------------------------------------------------------
 \pdfbookmark[0]{\contentsname}{toc}
+\renewcommand{\contentsname}{Sumário}
 \tableofcontents*
 \cleardoublepage{}
 % -----------------------------------------------------------------------------
