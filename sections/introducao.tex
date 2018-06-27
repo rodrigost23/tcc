@@ -1,19 +1,19 @@
 % ----------------------------------------------------------
 % INTRODUÇÃO
 % ----------------------------------------------------------
-Soluções tecnológicas são desenvolvidas cada vez mais para suprir necessidades que melhorem a qualidade de vida das pessoas. Quando nos tornamos incapazes de interagir fisicamente com o ambiente ao nosso redor, buscamos este tipo de solução. O campo da robótica de reabilitação trabalha sobre esta ideia, visando trazer conforto e restaurar a independência de pessoas com diversos tipos de limitações, incluindo pessoas com membros amputados, que precisam de próteses para voltar às atividades cotidianas \cite{siciliano:2008}.
+Soluções tecnológicas são desenvolvidas cada vez mais para suprir necessidades que melhorem a qualidade de vida das pessoas. Quando nos tornamos incapazes de interagir fisicamente com o ambiente ao nosso redor, buscamos este tipo de solução. O campo da robótica de reabilitação trabalha sobre esta ideia, visando trazer conforto e restaurar a independência de pessoas com diversos tipos de limitações, incluindo pessoas com membros amputados, que precisam de próteses para voltar às atividades cotidianas~\cite{siciliano:2008}.
 
 Segundo \citeonline{siciliano:2008}, o desafio do desenvolvimento de próteses de membros humanos é manter a funcionalidade de um membro natural. Aspectos desta naturalidade incluem controle intuitivo das articulações, controle da força dos membros para situações diversas, e sentidos tátil e de movimento que existem nos membros naturais.
 
 As próteses mais comuns para membros inferiores são otimizadas para caminhada em linha reta e, por isso, têm rigidez fixa nas articulações, o que dificulta várias ações do cotidiano que fogem desse comportamento padrão \cite{pew:2017}. Conforme a análise de \citeonline{dedic:2011}, próteses comerciais ainda costumam ser passivas mesmo com o avanço tecnológico dos últimos anos, e muitas funções motoras exigem uma energia maior nas articulações.
 
-De acordo com \citeonline{novak:2013Automated}, vários dispositivos que visam aprimorar ou restaurar funções motoras de membros inferiores foram desenvolvidos, incluindo exoesqueletos e próteses ativas. Estes sistemas são equipados com sensores utilizados para perceber o ambiente ao redor do corpo humano. Além de sensores localizados nos dispositivos em si, também existem sistemas com sensores como acelerômetros montados no corpo do usuário, com o intuito de compreender as intenções do usuário e prever seus movimentos.
+De acordo com \citeonline{novak:2013Automated}, vários dispositivos que visam aprimorar ou restaurar funções motoras de membros inferiores foram desenvolvidos, incluindo exoesqueletos e próteses ativas. Estes sistemas são equipados com sensores utilizados para perceber o ambiente ao redor do corpo humano. Além de sensores localizados nos dispositivos em si, também existem sistemas com sensores como acelerômetros\todo{Adicionar referência} montados no corpo do usuário, com o intuito de compreender as intenções do usuário e prever seus movimentos.
 
 Para que ações como subir escadas e rampas sejam realizadas naturalmente, é necessário que se utilize mais energia nas articulações, que precisam de mais força nessas ações do que na caminhada plana. Mesmo com o controle computadorizado de articulações que permitem velocidades diferentes de caminhada, ainda é difícil para pessoas amputadas a subida de escadas \cite{dedic:2011}.
 
 Com o advento das próteses ativas, tornou-se possível definir estratégias de controle diferentes para cada tipo de ação do usuário. Estas estratégias são necessárias porque a biomecânica da perna é bem variável em relação à ação realizada, dependendo se o indivíduo está caminhando em um chão plano, ou subindo ou descendo uma rampa ou escada, por exemplo. Um campo de pesquisa atual consiste em determinar precisa e rapidamente o tipo de ação que o usuário está realizando, sem que seja necessário um dispositivo externo à prótese \cite{stolyarov:2017}.
 
-Ainda segundo \citeonline{stolyarov:2017}, os métodos mais eficazes de prever estas ações de caminhada atualmente envolvem o reconhecimento de padrões de alguns sensores como unidades de medição inerciais, (IMUs) e eletrodos de eletromiografia superficial (sEMG), que é um método que varia muito fora de ambientes de laboratório, pois depende de diversos fatores fisiológicos.
+Ainda segundo \citeonline{stolyarov:2017}, os métodos mais eficazes de prever estas ações de caminhada atualmente envolvem o reconhecimento de padrões de alguns sensores como unidades de medição inerciais, (IMUs)\todo{apresentar descrição da sigla} e eletrodos de eletromiografia superficial (sEMG), que é um método que varia muito fora de ambientes de laboratório, pois depende de diversos fatores fisiológicos.
 
 %Motivação
 Dado este contexto, é pertinente o desenvolvimento de novas técnicas em robótica de reabilitação que procurem melhorar a qualidade de vida de pessoas com certas necessidades. Este trabalho visa contribuir para o desenvolvimento de próteses robóticas que auxiliem em uma interação natural com o ambiente através de um sistema computacional embarcado de baixo custo. Este sistema funcionará por meio de sensores de movimento posicionados nos membros inferiores do usuário, cujos dados serão processados por algoritmos de aprendizado de máquina, para que sejam previstas as ações do indivíduo e seja adaptada a prótese de acordo com a situação.
@@ -22,28 +22,31 @@ Dado este contexto, é pertinente o desenvolvimento de novas técnicas em robót
 % PROBLEMA
 % ----------------------------------------------------------
 \section{Definição do Problema}
-Por conta da dificuldade que pessoas amputadas têm em realizar certas atividades com as próteses mais comuns do mercado, novas formas de auxiliá-las são necessárias para promover seu bem estar. Desta forma, o problema abordado por este trabalho é representado pelo seguinte questionamento: \textit{Como projetar uma prótese robótica para a perna humana que funcione de forma autônoma através da previsão de movimentos das articulações com o intuito de auxiliar na locomoção de seu usuário, visando um baixo custo e permitindo o monitoramento da saúde de seu usuário em situações de risco?}	
+
+Por conta da dificuldade que pessoas amputadas têm em realizar certas atividades com as próteses mais comuns do mercado, novas formas de auxiliá-las são necessárias para promover seu bem estar. Desta forma, o problema abordado por este trabalho é representado pelo seguinte questionamento: \textbf{Como projetar uma prótese robótica para o pé humana que funcione de forma autônoma através da previsão de movimentos das articulações com o intuito de auxiliar na locomoção de seu usuário, visando um baixo custo e permitindo o monitoramento da saúde de seu usuário em relação a situações ortopédicas de risco?}	
 
 % ----------------------------------------------------------
 % OBJETIVOS
 % ----------------------------------------------------------
 \section{Objetivos}
 \label{sec:objetivos}
+
 %\todo{Revisar, foi atualizado, pois está muito parecido com a questão de pesquisa, aqui temos que uma resposta}
-O objetivo geral deste trabalho é projetar e desenvolver uma prótese robótica que seja autônoma por meio da previsão de movimentos das articulações do usuário durante as ações executadas, utilizando-se de modelos formais para validar a ações do sistema proposto e a definição de dados a serem coletados durante sua execução, bem como a utilização de sensores de movimento, pressão, motores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
+O objetivo geral deste trabalho é projetar e avaliar uma prótese robótica que seja autônoma por meio da previsão de movimentos das articulações do usuário durante as suas ações executadas, utilizando-se de modelos formais para validar o fluxo de execução do sistema proposto e a análise de dados coletados durante sua execução, bem como, a utilização de sensores e atuadores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
+% sensores de movimento, pressão, motores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
 
 %O objetivo geral deste trabalho é projetar e desenvolver uma prótese robótica que seja autônoma para usuário por meio da previsão de movimentos de suas articulações durante as ações executadas, ao mesmo tempo deve ser de baixo custo e efetuar monitoramento da saúde de seu usuário.
 
 Os objetivos específicos são os seguintes:
 \begin{enumerate}
   \item Identificar métodos para a modelagem do software e do hardware;
-  \item Definir um modelo formal que represente o fluxo de execução do sistema proposto, visando analisar propriedades de segurança;
+  \item Definir um modelo formal que represente o fluxo de execução do sistema proposto, visando analisar propriedades de segurança do funcionamento do sistema;
   \item Demonstrar uma técnica para transformação de modelos de software em códigos do projeto;
-  \item Propor um método para prever movimentos de articulações através da classificação de sinais extraídos do membro residual;
+  \item Propor um método para prever movimentos de articulações através da classificação de sinais extraídos de membros residuais;
   \item Determinar componentes eletrônicos de baixo custo para a prototipação do sistema proposto;
-  \item Construir uma estrutura para prótese utilizando impressora 3D.
-  \item Propor uma técnica que analise os dados dos sensores e o funcionamento do sistema, afim de prever perigos à saúde do usuário relacionados ao uso da prótese como, por exemplo, postura incorreta;
-  \item Validar sistema proposto pela análise de testes práticos e simulados, a fim de examinar a sua eficácia e aplicabilidade.
+  \item Propor uma estrutura para prótese utilizando impressora 3D;
+  \item Propor uma técnica que análise os dados dos sensores e o funcionamento do sistema, afim de prever perigos à saúde do usuário relacionados ao uso da prótese, por exemplo, postura incorreta;
+  \item Validar e avaliar o sistema proposto pela análise de testes práticos e simulados, a fim de examinar a sua eficácia e aplicabilidade.
 \end{enumerate}
 
 % ----------------------------------------------------------
