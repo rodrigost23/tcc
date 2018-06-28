@@ -1,16 +1,22 @@
-Este capítulo apresentará outros trabalhos existentes na literatura que compartilham de objetivos semelhantes ou são comparáveis de alguma forma e contribuem para o desenvolvimento deste trabalho. Os trabalhos descritos nas seções a seguir propõem métodos relacionados a previsão de movimentos para próteses ativas.
+Este capítulo apresentará trabalhos existentes na literatura que compartilham de objetivos semelhantes ou são comparáveis de alguma forma e contribuem para o desenvolvimento deste trabalho. Os trabalhos descritos nas seções a seguir propõem métodos relacionados a previsão de movimentos para próteses ativas.
 
+% ===================================================================================
 \section{Translational Motion Tracking of Leg Joints for Enhanced Prediction of Walking Tasks}
 \label{sec:rel_stolyarov}
+% ===================================================================================
+
 Neste artigo, \citeonline{stolyarov:2017} propuseram um método de prever tarefas de caminhada utilizando apenas uma IMU (unidade de medição inercial) em uma prótese comercial de uma articulação (tornozelo-pé). Foram classificadas cinco tarefas diferentes: caminhada em solo plano, subida de rampa, descida de rampa, subida de degrau e descida de degrau. Usando apenas a IMU, foi possível ter uma classificação até mais precisa que próteses que usam sEMG, pois, segundo os autores \citeonline{stolyarov:2017}, estas costumam ter ótimos resultados apenas em ambientes de laboratório, mas fora dele dependem de muitos fatores não controlados. A alta acurácia do classificador apresentado sugere que o método tenha ótimos resultados mesmo fora de laboratório.
 
 Algumas limitações deste método são a falta de filtros para tratar problemas comuns do tipo de sensor utilizado, como \textit{drifting}, e a baixa precisão que o algoritmo tem em superfícies escorregadias ou macias.
+% 
+O estudo do artigo de \citeonline{stolyarov:2017} proporciona ao trabalho aqui proposto a noção de que o uso de acelerômetros e giroscópios pode ser o suficiente para o objetivo proposto, principalmente quando se trata de próteses de baixo custo.
 
-O estudo deste artigo proporciona a este trabalho a noção de que o uso de acelerômetros e giroscópios pode ser o suficiente para o objetivo proposto, principalmente quando se trata de próteses de baixo custo.
-
+% ===================================================================================
 \section{Turn Intent Detection for Control of a Lower Limb Prosthesis}
 \label{sec:rel_pew}
-O objetivo dos autores \citeonline{pew:2017} foi fazer uma prótese para membros inferiores que tivesse rigidez adaptável em tempo real durante movimentos de virada, prevendo as ações de caminhada e de virada usando técnicas de aprendizagem de máquina. 
+% ===================================================================================
+
+No trabalho de \citeonline{pew:2017} foi proposto fazer uma prótese para membros inferiores que tivesse rigidez adaptável em tempo real durante movimentos de virada, prevendo as ações de caminhada e de virada usando técnicas de aprendizagem de máquina, tais como, SVM e KNN. 
 
 A leitura dos dados foi feita a partir da simulação de uma IMU usando captura de movimentos ótica, e o controle da rigidez da articulação foi feita usando um componente chamado VSTA (\textit{variable stiffness torsion adapter}), que podia ser ativado com uma célula de carga comercialmente conhecida como iPecs, como pode ser visto na figura~\ref{fig:rel_turnintent_1}.
 
@@ -22,7 +28,7 @@ A leitura dos dados foi feita a partir da simulação de uma IMU usando captura 
 	\legend{Fonte: \citeonline{pew:2017}}
 \end{figure}
 
-Para a previsão de ações, foi feita uma comparação entre técnicas de classificação em aprendizagem de máquina: \textit{Bagged Decision Tree Ensemble}, SVM e KNN. Na previsão de caminhada, o SVM teve 85\% de acurácia, o KNN teve 82\%, e o Ensemble, 97\%. Na previsão de virada, o SVM teve 96\%, o KNN, 93\% e o Ensemble teve 91\% de acurácia. Embora tenha sido inferior na classificação da intenção de virada, a alta acurácia do \textit{Bagged Decision Tree Ensemble} na detecção de caminhada compensa, o que o torna o algoritmo mais preciso dentre os testados. Também foi constatado, através da IMU simulada, que a acurácia do giroscópio (83\% a 90\%) foi superior à do acelerômetro (66\% a 77\%), o que conclui que o uso apenas do giroscópio pode ser suficiente.
+Para a previsão de ações, foi feita uma comparação entre técnicas de classificação em aprendizagem de máquina: \textit{Bagged Decision Tree Ensemble}, SVM e KNN. Na previsão de caminhada, o SVM teve $85$\% de acurácia, o KNN teve $82$\%, e o Ensemble, $97$\%\todo{Apresentar referências para técnicas listadas}. Na previsão de virada, o SVM teve $96$\%, o KNN, $93$\% e o Ensemble teve $91$\% de acurácia. Embora tenha sido inferior na classificação da intenção de virada, a alta acurácia do \textit{Bagged Decision Tree Ensemble} na detecção de caminhada compensa, o que o torna o algoritmo mais preciso dentre os testados. Também foi constatado, através da IMU simulada, que a acurácia do giroscópio ($83$\% a $90$\%) foi superior à do acelerômetro ($66$\% a $77$\%), o que conclui que o uso apenas do giroscópio pode ser suficiente.
 
 A comparação dos algoritmos feita pelos autores \citeonline{pew:2017} e os testes feitos com a IMU simulada podem ser úteis para este trabalho, pois valida a utilização dos sensores como forma de leitura de movimentos para previsão de intenções.
 
