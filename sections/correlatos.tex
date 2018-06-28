@@ -32,28 +32,35 @@ Para a previsão de ações, foi feita uma comparação entre técnicas de class
 
 A comparação dos algoritmos feita pelos autores \citeonline{pew:2017} e os testes feitos com a IMU simulada podem ser úteis para este trabalho, pois valida a utilização dos sensores como forma de leitura de movimentos para previsão de intenções.
 
+
+% ===================================================================================
 \section{Automated detection of gait initiation and termination using wearable sensors}
 \label{sec:rel_novak}
-\citeonline{novak:2013Automated} desenvolveram um método de previsão de início e término de caminhada, a partir de IMUs e uma sola sensível a pressão. O treino foi feito com pessoas com membros intactos e sem deficiências motoras, apenas para desenvolver a técnica. Foram utilizados 12 sinais das IMUs, passando por filtros de Kalman, e 4 sinais das duas solas. Além disso, os sinais foram classificados utilizando uma árvore de classificação, tanto para detectar os passos individuais quanto para prever as intenções de início e término da caminhada.
+% ===================================================================================
 
-Foi constatado que é possível detectar o início da caminhada usando a velocidade angular do quadril e ângulo do joelho; e o término utilizando a duração dos passos, e o padrão da pisada na sola para detectar se o passo atual será o último.
+\citeonline{novak:2013Automated} desenvolveram um método de previsão de início e término de caminhada, a partir de IMUs e uma sola sensível a pressão. O treino foi feito com pessoas com membros intactos e sem deficiências motoras, apenas para desenvolver a técnica. Foram utilizados $12$ sinais das IMUs, passando por filtros de Kalman\todo{Referência}, e $4$ sinais das duas solas. Além disso, os sinais foram classificados utilizando uma árvore de classificação, tanto para detectar os passos individuais quanto para prever as intenções de início e término da caminhada.
+
+No trabalho de \citeonline{novak:2013Automated} foi constatado que é possível detectar o início da caminhada usando a velocidade angular do quadril e ângulo do joelho; e o término utilizando a duração dos passos, e o padrão da pisada na sola para detectar se o passo atual será o último.
 
 Ainda segundo \citeonline{novak:2013Automated}, IMUs são mais eficientes para detectar o término da caminhada, e os sensores nas solas são melhores para detectar os passos individuais. O sistema pode ser adaptado para ser usado em dispositivos como próteses ou exoesqueletos, embora precise ser reduzido para isso, devido à grande quantidade de sensores.
 
-A técnica apresentada pareceu ser eficiente, porém a grande quantidade de sensores não a torna muito prática fora de um laboratório.
+% A técnica apresentada pareceu ser eficiente, porém a grande quantidade de sensores não a torna muito prática fora de um laboratório.
 
+% ===================================================================================
 \section{A Novel Design of a Full Length Prosthetic Robotic Arm for the Disabled}
 \label{sec:rel_kumar}
-\todo[inline]{\textbf{ATENÇÃO:} Achei esse artigo muito ``engenharia'', pois não fala sobre a classificação em si, e foca muito na construção do braço, incluindo a escolha de materiais.}
-%TODO
-Este artigo por \citeonline{kumar:2017} propõe um protótipo de braço prostético robótico controlado por um microcontrolador, usando técnicas de aprendizagem de máquina. Além disso, o objetivo era fazer com que a prótese tivesse movimentos com aspecto humano e o menor torque necessário possível.
+% ===================================================================================
 
-O protótipo foi desenvolvido usando o \textit{software} Solid Works, e a simulação foi feita com Simulink e SimMechanics. A classificação foi feita usando ANFIS -- um tipo de rede neural artificial -- a partir dos dados das simulações. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
+% \todo[inline]{\textbf{ATENÇÃO:} Achei esse artigo muito ``engenharia'', pois não fala sobre a classificação em si, e foca muito na construção do braço, incluindo a escolha de materiais.}
 
-\begin{figure}[ht]
+O trabalho de \citeonline{kumar:2017} propõe um protótipo de braço prostético robótico (ver Figura~\ref{fig:rel_kumar_1}) controlado por um microcontrolador, usando técnicas de aprendizagem de máquina\todo{Mencionar quais técnicas}. Além disso, o objetivo era fazer com que a prótese tivesse movimentos com aspecto humano e o menor torque necessário possível.
+
+O protótipo foi desenvolvido usando o \textit{software} Solid Works\todo{Adicionar referência}, e a simulação foi feita com Simulink e SimMechanics\todo{Adicionar referências}. A classificação foi feita usando ANFIS\todo{Adicionar referência}, um tipo de rede neural artificial, a partir dos dados das simulações\todo{Descrever os resultados da classificação}. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
+
+\begin{figure}[!htp]
 	\caption{\label{fig:rel_kumar_1}Modelagem do protótipo desenolvida no Solid Works}
 	\begin{center}
-	    \includegraphics[width=.5\textwidth]{resources/rel_kumar_1}
+	    \includegraphics[width=.3\textwidth]{resources/rel_kumar_1}
 	\end{center}
 	\legend{Fonte: \citeonline{kumar:2017}}
 \end{figure}
