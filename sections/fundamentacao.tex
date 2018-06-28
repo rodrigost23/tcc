@@ -1,14 +1,19 @@
 Este capítulo apresentará a fundamentação teórica utilizada neste trabalho, abordando os temas mais pertinentes, como Sistemas Embarcados, Robótica, Reconhecimento de padrões, e Modelagem de sistemas.
 
+% ==================================================
 \section{Sistemas Embarcados}
 \label{sec:embarcados}
+% ==================================================
+
 Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}.
 
-Também pode-se definir um SE como um sistema computacional de propósito específico -- em contraste a um computador pessoal --, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
+Também pode-se definir um SE como um sistema computacional de propósito específico, em contraste a um computador pessoal, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
-Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas, como de custo de produção ou de consumo de energia -- que é o caso de dispositivos móveis, por exemplo, que dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.
+Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas, como de custo de produção ou de consumo de energia que é o caso de dispositivos móveis, por exemplo, que dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.
 
 Uma outra restrição comum que pode ser pertinente a um SE é de tempo. Alguns sistemas precisam necessariamente realizar certas operações dentro de um tempo esperado, correndo o risco de não desempenhar seu papel caso isso falhe, sendo conhecidos como sistemas em tempo real. Por exemplo, um sistema de controle de velocidade de cruzeiro de um automóvel precisa monitorar a velocidade, aceleração e desaceleração do veículo em tempo real, e qualquer atraso é considerado uma falha do sistema \cite{vahid:2002}.
+
+\todo[inline]{Falar um pouco mais de tempo real e qual é a relação com a robotica}
 
 \subsection{Microcontroladores versus Microprocessadores}
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída \cite{white:2011}. Esses componentes surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior \cite{heath:2002}. Além disso, segundo \citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
