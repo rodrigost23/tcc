@@ -149,12 +149,18 @@ TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona
 
 \todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do proprio site}
 
+
+% ==================================================
 \section{Modelagem e validação de sistemas}
 \label{sec:modelosformais}
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida. O uso de modelos formais para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+% ==================================================
 
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais\todo{Citar Exemplos com referências} para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+
+% ==================================================
 \subsection{Diagrama de sequência}
-Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
+% ==================================================
+Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência\todo{Falar um pouco sobre UML}. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
 \begin{figure}[!ht]
 	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
@@ -166,13 +172,17 @@ Uma forma de detalhar as especificações iniciais do design do sistema é atrav
 
 A UML contém padronização do diagrama de sequência. As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
 
-Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
+Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações\todo{Exemplificar quais.} e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
 
+% ==================================================
 \subsection{Máquinas de Estado}
+% ==================================================
 
 A teoria dos autômatos é o estudo de dispositivos computacionais abstratos (``máquinas''), que servem de modelo para o projeto e construção de softwares, a partir de conceitos como autômatos finitos e gramáticas formais \cite{hopcroft:2001}.
 
 Um autômato finito, também conhecido como Máquina de Estados Finita (FSM) \cite{wagner:2006}, e se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
+
+\todo[inline]{Apresentar definição formal para um FSM}
 
 Cada estado de uma FSM representa uma informação sobre o decorrer do programa, pois o estado muda de tempos em tempos durante a execução, e todos os estados representam todas as situações possíveis em que a máquina de estados pode estar. As saídas podem depender tanto do estado atual quanto das entradas da máquina \cite{wagner:2006}.
 
@@ -184,9 +194,9 @@ Cada estado de uma FSM representa uma informação sobre o decorrer do programa,
 	\legend{Fonte: \citeonline[p. 39]{marwedel:2010}}
 \end{figure}
 
-Um diagrama de estados como o da figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
+Um diagrama de estados como o da Figura~\ref{fig:fsm} é uma representação clássica de uma FSM. Os círculos representam estados, as arestas são transições e o rótulo das arestas são eventos de transição, que levam a máquina a mudar de estado \cite{marwedel:2010}.
 
-A figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita moedas de 5 e de 10 centavos, sendo 25 o valor esperado. O estado ``Início'' é o estado em que ainda não foi depositada uma moeda e o estado ``Fim'' quer dizer que a máquina recebeu 25 centavos. As transições representam as moedas depositadas na máquina. Em todos os estados qualquer moeda é aceita, exceto no estado ``Vinte'', em que a moeda de 10 centavos é ignorada neste exemplo por questões de simplicidade \cite{wagner:2006}.
+A Figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita moedas de 5 e de 10 centavos, sendo 25 o valor esperado. O estado ``Início'' é o estado em que ainda não foi depositada uma moeda e o estado ``Fim'' quer dizer que a máquina recebeu 25 centavos. As transições representam as moedas depositadas na máquina. Em todos os estados qualquer moeda é aceita, exceto no estado ``Vinte'', em que a moeda de 10 centavos é ignorada neste exemplo por questões de simplicidade \cite{wagner:2006}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:fsm_2}Diagrama de máquina de estados do contador de uma máquina de vendas}
@@ -196,11 +206,17 @@ A figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita m
 	\legend{Fonte: Adaptado de \citeonline[p. 68]{wagner:2006}}
 \end{figure}
 
+\todo[inline]{Descrever que propriedades podem ser validadas usando um FSM}
 
+% ==================================================
 \subsection{Redes de Petri}
+% ==================================================
+
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado \cite{peterson:1981}. Segundo \citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
 
 A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas \cite{peterson:1981}. % $C = (P,T,I,O)
+
+\todo[inline]{Apresentar a definição formal de RP}
 
 Além disso, cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares \cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
 
@@ -212,15 +228,15 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 	\legend{Fonte: \citeonline[p. 545]{murata:1989}}
 \end{figure}
 
-Na figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
+Na Figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação\todo{Essa foi a melhor tradução que consegui para \textit{boundedness}.}\ e vivacidade.
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness} e vivacidade. 
+% 
+Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
 
-Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
+O conceito de limitação\todo{Apresentar exemplo gráfico} é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
 
-O conceito de limitação (ou \textit{boundedness}, em inglês) é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
-
-Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
+Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas\todo{Apresentar exemplo gráfico}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
 %TODO: Considerar imagem de \textit{deadlock} de \citeonline[página 86]{peterson:1981}.
 
 % \section{Modelagem de software}
