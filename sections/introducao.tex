@@ -13,7 +13,7 @@ Para que ações como subir escadas e rampas sejam realizadas naturalmente, é n
 
 Com o advento das próteses ativas, tornou-se possível definir estratégias de controle diferentes para cada tipo de ação do usuário. Estas estratégias são necessárias porque a biomecânica da perna é bem variável em relação à ação realizada, dependendo se o indivíduo está caminhando em um chão plano, ou subindo ou descendo uma rampa ou escada, por exemplo. Um campo de pesquisa atual consiste em determinar precisa e rapidamente o tipo de ação que o usuário está realizando, sem que seja necessário um dispositivo externo à prótese \cite{stolyarov:2017}.
 
-Ainda segundo \citeonline{stolyarov:2017}, os métodos mais eficazes de prever estas ações de caminhada atualmente envolvem o reconhecimento de padrões de alguns sensores como unidades de medição inerciais, (IMUs)\todo{apresentar descrição da sigla} e eletrodos de eletromiografia superficial (sEMG), que é um método que varia muito fora de ambientes de laboratório, pois depende de diversos fatores fisiológicos.
+Ainda segundo \citeonline{stolyarov:2017}, os métodos mais eficazes de prever estas ações de caminhada atualmente envolvem o reconhecimento de padrões de alguns sensores como unidades de medição inerciais (IMUs)\todo{apresentar descrição da sigla}, e eletrodos de eletromiografia superficial (sEMG), que é um método que varia muito fora de ambientes de laboratório, pois depende de diversos fatores fisiológicos.
 
 %Motivação
 Dado este contexto, é pertinente o desenvolvimento de novas técnicas em robótica de reabilitação que procurem melhorar a qualidade de vida de pessoas com certas necessidades. Este trabalho visa contribuir para o desenvolvimento de próteses robóticas que auxiliem em uma interação natural com o ambiente através de um sistema computacional embarcado de baixo custo. Este sistema funcionará por meio de sensores de movimento posicionados nos membros inferiores do usuário, cujos dados serão processados por algoritmos de aprendizado de máquina, para que sejam previstas as ações do indivíduo e seja adaptada a prótese de acordo com a situação.
@@ -23,7 +23,7 @@ Dado este contexto, é pertinente o desenvolvimento de novas técnicas em robót
 % ----------------------------------------------------------
 \section{Definição do Problema}
 
-Por conta da dificuldade que pessoas amputadas têm em realizar certas atividades com as próteses mais comuns do mercado, novas formas de auxiliá-las são necessárias para promover seu bem estar. Desta forma, o problema abordado por este trabalho é representado pelo seguinte questionamento: \textbf{Como projetar uma prótese robótica para o pé humana que funcione de forma autônoma através da previsão de movimentos das articulações com o intuito de auxiliar na locomoção de seu usuário, visando um baixo custo e permitindo o monitoramento da saúde de seu usuário em relação a situações ortopédicas de risco?}	
+Por conta da dificuldade que pessoas amputadas têm em realizar certas atividades com as próteses mais comuns do mercado, novas formas de auxiliá-las são necessárias para promover seu bem estar. Desta forma, o problema abordado por este trabalho é representado pelo seguinte questionamento: \textbf{Como projetar uma prótese robótica para o pé humano que funcione de forma autônoma através da previsão de movimentos das articulações com o intuito de auxiliar na locomoção de seu usuário, visando um baixo custo e permitindo o monitoramento da saúde de seu usuário em relação a situações ortopédicas de risco?}	
 
 % ----------------------------------------------------------
 % OBJETIVOS
@@ -31,8 +31,7 @@ Por conta da dificuldade que pessoas amputadas têm em realizar certas atividade
 \section{Objetivos}
 \label{sec:objetivos}
 
-%\todo{Revisar, foi atualizado, pois está muito parecido com a questão de pesquisa, aqui temos que uma resposta}
-O objetivo geral deste trabalho é projetar e avaliar uma prótese robótica que seja autônoma por meio da previsão de movimentos das articulações do usuário durante as suas ações executadas, utilizando-se de modelos formais para validar o fluxo de execução do sistema proposto e a análise de dados coletados durante sua execução, bem como, a utilização de sensores e atuadores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
+O objetivo geral deste trabalho é projetar e avaliar uma prótese robótica que seja autônoma por meio da previsão de movimentos das articulações do usuário durante as suas ações executadas, utilizando-se de modelos formais para validar o fluxo de execução do sistema proposto e a análise de dados coletados durante sua execução, bem como a utilização de sensores e atuadores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
 % sensores de movimento, pressão, motores disponíveis no mercado nacional e estruturas feitas em impressora 3D, visando o baixo custo de produção.
 
 %O objetivo geral deste trabalho é projetar e desenvolver uma prótese robótica que seja autônoma para usuário por meio da previsão de movimentos de suas articulações durante as ações executadas, ao mesmo tempo deve ser de baixo custo e efetuar monitoramento da saúde de seu usuário.

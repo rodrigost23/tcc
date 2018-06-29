@@ -5,7 +5,7 @@ Este capítulo apresentará a fundamentação teórica utilizada neste trabalho,
 \label{sec:embarcados}
 % ==================================================
 
-Sistemas computacionais fazem parte de diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}.
+Sistemas computacionais estão presentes em diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}.
 
 Também pode-se definir um SE como um sistema computacional de propósito específico, em contraste a um computador pessoal, que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
@@ -13,7 +13,7 @@ Algumas características de sistemas embarcados, segundo \citeonline{schlett:199
 
 Uma outra restrição comum que pode ser pertinente a um SE é de tempo. Alguns sistemas precisam necessariamente realizar certas operações dentro de um tempo esperado, correndo o risco de não desempenhar seu papel caso isso falhe, sendo conhecidos como sistemas em tempo real. Por exemplo, um sistema de controle de velocidade de cruzeiro de um automóvel precisa monitorar a velocidade, aceleração e desaceleração do veículo em tempo real, e qualquer atraso é considerado uma falha do sistema \cite{vahid:2002}.
 
-\todo[inline]{Falar um pouco mais de tempo real e qual é a relação com a robotica}
+\todo[inline]{Falar um pouco mais de tempo real e qual é a relação com a robótica}
 
 % ==================================================
 \subsection{Microcontroladores versus Microprocessadores}
@@ -38,26 +38,26 @@ Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos
 
 Um exemplo de objeto inteligente na IoT, segundo \citeonline{kopetz:2011}, é uma geladeira que mantém registro da validade e disponibilidade dos itens contidos, e faz pedidos automaticamente ao supermercado mais próximo dos produtos em falta.
 
-\todo[inline]{Apresentar um exemplo de IoT com robotica}
+\todo[inline]{Apresentar um exemplo de IoT com robótica}
 
 % ==================================================
 \section{Robótica e suas Aplicações}
 \label{sec:robotica}
 % ==================================================
 
-A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo seja feita por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
+A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo sejam feitas por pesquisadores de outras áreas, servindo como meio para diversos fins \cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos \cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial.
 
-\todo[inline]{Apresentar um exemplo de uso na industria com uma imagem}
+\todo[inline]{Apresentar um exemplo de uso na indústria com uma imagem}
 
-\todo[inline]{Apresentar um exemplo de uso de protese com uma imagem, lembre que no título tem e suas aplicações}
+\todo[inline]{Apresentar um exemplo de uso de prótese com uma imagem, lembre que no título tem ``e suas aplicações''}
 
 A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas, por exemplo, por meio de sistemas como próteses robóticas, por exemplo \cite{siciliano:2008}. Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum \cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no capítulo~\ref{ch:correlatos}.
 
-\todo[inline]{Apresentar e descrever sensores e atuadores utilizados na robotica}
+\todo[inline]{Apresentar e descrever sensores e atuadores utilizados na robótica}
 
 \todo[inline]{Apresentar detalhes sobre mecânica na robotica - ver http://www.leomar.com.br/brinquedos/images/stories/manuais/laboratorio/guia\%20de\%20robotica.pdf}
 
-\todo[inline]{Falar sobre as platormas de desenvolvimento para robotica, como Lego Mindstorm - ver http://livros01.livrosgratis.com.br/cp115615.pdf}
+\todo[inline]{Falar sobre as platormas de desenvolvimento para robótica, como Lego Mindstorm - ver http://livros01.livrosgratis.com.br/cp115615.pdf}
 
 % \section{Eletromiografia: Geração de Dados}
 % \label{sec:emg}
@@ -76,12 +76,9 @@ A robótica de reabilitação consiste em auxiliar pessoas com dificuldades moto
 \label{sec:patternrec}
 % ==================================================
 
-O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina\todo{Adicionar referência.} no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados \cite{bishop:2006}.
+O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina\todo{Adicionar referência.}\ no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados \cite{bishop:2006}.
 
 Os dados extraídos de sensores podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e alguns \textit{frameworks} que podem ser usados na classificação dos movimentos a partir desses dados.
-% \subsection{Pré-processamento}
-% \todo[inline,color=lightgray]{Não faço ideia do que colocar nessa seção.}
-% \todo[inline]{Filtros ou fusão de dados... Depende do sensor a ser utilizado!}%TODO
 
 % ==================================================
 \subsection{Aprendizado de máquina}
@@ -132,11 +129,11 @@ Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar
 \label{sec:ml_sklearn}
 % ==================================================
 
-O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos\todo{Citar exemplos com referências} de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
+O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos\todo{Citar exemplos com referências}\ de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
 
 Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado.
 
-\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do proprio site}
+\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
 
 % ==================================================
 \subsubsection{TensorFlow}
@@ -145,9 +142,9 @@ Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 
 TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}. É uma ferramenta bastante popular, e oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax \cite{ertram:2017}.
 
-\todo[inline]{Ampliar esta seção está bem raza, sugiro falar sobre as técnicas que são usadas na tool, como RNN pre-treinadas. Mencionar quem usa está tool e onde.}
+\todo[inline]{Ampliar esta seção está bem rasa, sugiro falar sobre as técnicas que são usadas na tool, como RNN pre-treinadas. Mencionar quem usa esta \textit{tool} e onde.}
 
-\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do proprio site}
+\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
 
 
 % ==================================================
@@ -155,7 +152,7 @@ TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona
 \label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais\todo{Citar Exemplos com referências} para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais\todo{Citar Exemplos com referências}\ para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
@@ -180,7 +177,7 @@ Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas li
 
 A teoria dos autômatos é o estudo de dispositivos computacionais abstratos (``máquinas''), que servem de modelo para o projeto e construção de softwares, a partir de conceitos como autômatos finitos e gramáticas formais \cite{hopcroft:2001}.
 
-Um autômato finito, também conhecido como Máquina de Estados Finita (FSM) \cite{wagner:2006}, e se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
+Um autômato finito, também conhecido como Máquina de Estados Finita (FSM) \cite{wagner:2006}, se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
 \todo[inline]{Apresentar definição formal para um FSM}
 
@@ -228,13 +225,13 @@ Além disso, cada um dos lugares é marcado com um número não negativo de \tex
 	\legend{Fonte: \citeonline[p. 545]{murata:1989}}
 \end{figure}
 
-Na Figura~\ref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
+Na \autoref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness} e vivacidade. 
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. 
 % 
-Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
+Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico}\ é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
 
-O conceito de limitação\todo{Apresentar exemplo gráfico} é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
+O conceito de limitação\todo{Apresentar exemplo gráfico}\ é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
 
 Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas\todo{Apresentar exemplo gráfico}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
 %TODO: Considerar imagem de \textit{deadlock} de \citeonline[página 86]{peterson:1981}.
