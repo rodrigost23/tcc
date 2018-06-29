@@ -53,17 +53,17 @@ Ainda segundo \citeonline{novak:2013Automated}, IMUs são mais eficientes para d
 
 % \todo[inline]{\textbf{ATENÇÃO:} Achei esse artigo muito ``engenharia'', pois não fala sobre a classificação em si, e foca muito na construção do braço, incluindo a escolha de materiais.}
 
-O trabalho de \citeonline{kumar:2017} propõe um protótipo de braço prostético robótico (ver Figura~\ref{fig:rel_kumar_1}) controlado por um microcontrolador, usando técnicas de aprendizagem de máquina\todo{Mencionar quais técnicas}. Além disso, o objetivo era fazer com que a prótese tivesse movimentos com aspecto humano e o menor torque necessário possível.
-
-O protótipo foi desenvolvido usando o \textit{software} Solid Works\todo{Adicionar referência}, e a simulação foi feita com Simulink e SimMechanics\todo{Adicionar referências}. A classificação foi feita usando ANFIS\todo{Adicionar referência}, um tipo de rede neural artificial, a partir dos dados das simulações\todo{Descrever os resultados da classificação}. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
+O trabalho de \citeonline{kumar:2017} propõe um protótipo de braço prostético robótico (ver Figura~\ref{fig:rel_kumar_1}) controlado por um microcontrolador, com uso de aprendizagem de máquina. Além disso, o objetivo era fazer com que a prótese tivesse movimentos com aspecto humano e o menor torque necessário possível.
 
 \begin{figure}[!htp]
 	\caption{\label{fig:rel_kumar_1}Modelagem do protótipo desenolvida no Solid Works}
 	\begin{center}
-	    \includegraphics[width=.3\textwidth]{resources/rel_kumar_1}
+	    \includegraphics[width=.25\textwidth]{resources/rel_kumar_1}
 	\end{center}
 	\legend{Fonte: \citeonline{kumar:2017}}
 \end{figure}
+
+O protótipo de \citeonline{kumar:2017} foi desenvolvido usando o \textit{software} Solid Works\footnote{<https://www.solidworks.com/>}, e a simulação foi feita com Simulink\footnote{<https://www.mathworks.com/products/simulink.html>} e SimMechanics\footnote{<https://www.mathworks.com/products/simmechanics.html>}. A classificação por aprendizado de máquina foi feita utilizando ANFIS \cite{jang:1993anfis}, um tipo de rede neural artificial, a partir dos dados das simulações\todo{Descrever os resultados da classificação}. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
 
 
 % ===================================================================================
@@ -83,7 +83,7 @@ O trabalho de \citeonline{dedic:2011} propõe uma forma de transformar uma prót
 	\legend{Fonte: \citeonline{dedic:2011}}
 \end{figure}
 
-O protótipo da Figura~\ref{fig:rel_smartleg_1} foi desenvolvido visando baixo custo, pois utiliza próteses passivas disponíveis no mercado, apenas as equipando com atuadores. A coleta de dados realizada permitiu que se comparasse o padrão de caminhada de indivíduos saudáveis com amputados utilizando a prótese, e a prótese produzida permitiu dois graus de liberdade (DOF) com o controle feito por microcontrolador. O maior empecilho é o sistema hidráulico utilizado, que ocupa muito espaço, tornando a versão proposta atual inviável para uso diário.
+O protótipo da Figura~\ref{fig:rel_smartleg_1} foi desenvolvido visando baixo custo, pois utiliza uma prótese passiva disponível no mercado, apenas a equipando com atuadores. A coleta de dados realizada permitiu que se comparasse o padrão de caminhada de indivíduos saudáveis com amputados utilizando a prótese, e a prótese produzida permitiu dois graus de liberdade (DOF) com o controle feito por microcontrolador. O maior empecilho é o sistema hidráulico utilizado, que ocupa muito espaço, tornando a versão proposta atual inviável para uso diário.
 
 %\section{Evaluation of shoulder complex motion-based input strategies for endpoint prosthetic-limb control using dual-task paradigm}
 %\todo[inline]{\cite{losier:2011}}
