@@ -237,7 +237,7 @@ Na \autoref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois
 
 A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. 
 % 
-Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico}\ é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas 0 ou 1 \cite{peterson:1981}.
+Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico}\ é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas $0$ ou $1$ \cite{peterson:1981}.
 
 O conceito de limitação\todo{Apresentar exemplo gráfico}\ é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
 
