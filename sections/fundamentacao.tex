@@ -213,14 +213,22 @@ Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revel
 
 A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas \cite{peterson:1981}. % $C = (P,T,I,O)
 
-\todo[inline]{Apresentar a definição formal de RP}
+Segundo \citeonline{murata:1989}, uma rede de Petri é uma quíntupla $PN = (P, T, F, W, M_0)$, onde:\\
+\todo{Tentar colocar um recuo ou uma caixinha aqui}$P = \{p_1, p_2, \cdots , p_m\}$ é um conjunto finito de lugares,\\
+$T = \{t_1, t_2, \cdots, t_n\}$ é um conjunto finito de transições,\\
+$F \subseteq (P \times T) \cup (T \times P)$ é um conjunto de arcos (relação de fluxo),\\
+$W: F \to \{1,2,3,\cdots\}$ é uma função de peso,\\
+$M_0: P \to \{0,1,2,3,\cdots\}$ é a marcação inicial,\\
+$P \cap T = \emptyset$ e $P \cup T \neq \emptyset$
 
-Além disso, cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares \cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
+Uma estrutura de rede de Petri $N=(P,T,F,W)$ sem nenhuma marcação inicial é denotada por $N$, e uma rede de Petri com a marcação inicial definida é denotada por $(N,M_0)$ \cite{murata:1989}.
+
+Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares \cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
 	\begin{center}
-	    \includegraphics[width=0.5\textwidth]{resources/petri_net_murata_1}
+	    \includegraphics[width=0.6\textwidth]{resources/petri_net_murata_1}
 	\end{center}
 	\legend{Fonte: \citeonline[p. 545]{murata:1989}}
 \end{figure}
@@ -233,8 +241,17 @@ Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar
 
 O conceito de limitação\todo{Apresentar exemplo gráfico}\ é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores \cite{peterson:1981}.
 
-Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas\todo{Apresentar exemplo gráfico}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
-%TODO: Considerar imagem de \textit{deadlock} de \citeonline[página 86]{peterson:1981}.
+Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições $t_2$ e $t_5$ na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri \cite{peterson:1981}.
+
+\begin{figure}[ht]
+	\caption{\label{fig:petrinet_deadlock}Exemplo de possível \textit{deadlock} em uma rede de Petri}
+	\begin{center}
+	    \includegraphics[width=0.7\textwidth]{resources/petri_net_peterson_deadlock}
+	\end{center}
+	\legend{Fonte: Adaptado de \citeonline[p. 86]{peterson:1981}}
+\end{figure}
+
+
 
 % \section{Modelagem de software}
 % \label{sec:modelagem}
