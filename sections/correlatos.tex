@@ -38,7 +38,7 @@ A comparação dos algoritmos feita pelos autores \citeonline{pew:2017} e os tes
 \label{sec:rel_novak}
 % ===================================================================================
 
-\citeonline{novak:2013Automated} desenvolveram um método de previsão de início e término de caminhada, a partir de IMUs e uma sola sensível a pressão. O treino foi feito com pessoas com membros intactos e sem deficiências motoras, apenas para desenvolver a técnica. Foram utilizados $12$ sinais das IMUs, passando por filtros de Kalman\todo{Referência}, e $4$ sinais das duas solas. Além disso, os sinais foram classificados utilizando uma árvore de classificação, tanto para detectar os passos individuais quanto para prever as intenções de início e término da caminhada.
+\citeonline{novak:2013Automated} desenvolveram um método de previsão de início e término de caminhada, a partir de IMUs e uma sola sensível a pressão. O treino foi feito com pessoas com membros intactos e sem deficiências motoras, apenas para desenvolver a técnica. Foram utilizados $12$ sinais das IMUs, passando por filtros de Kalman \cite{kalman:1960}, e $4$ sinais das duas solas. Além disso, os sinais foram classificados utilizando uma árvore de classificação, tanto para detectar os passos individuais quanto para prever as intenções de início e término da caminhada.
 
 No trabalho de \citeonline{novak:2013Automated} foi constatado que é possível detectar o início da caminhada usando a velocidade angular do quadril e ângulo do joelho; e o término utilizando a duração dos passos, e o padrão da pisada na sola para detectar se o passo atual será o último.
 
@@ -56,9 +56,9 @@ Ainda segundo \citeonline{novak:2013Automated}, IMUs são mais eficientes para d
 O trabalho de \citeonline{kumar:2017} propõe um protótipo de braço prostético robótico (ver Figura~\ref{fig:rel_kumar_1}) controlado por um microcontrolador, com uso de aprendizagem de máquina. Além disso, o objetivo era fazer com que a prótese tivesse movimentos com aspecto humano e o menor torque necessário possível.
 
 \begin{figure}[!htp]
-	\caption{\label{fig:rel_kumar_1}Modelagem do protótipo desenolvida no Solid Works}
+	\caption{\label{fig:rel_kumar_1}Modelagem do protótipo desenvolvida no Solid Works}
 	\begin{center}
-	    \includegraphics[width=.25\textwidth]{resources/rel_kumar_1}
+	    \includegraphics[width=.3\textwidth]{resources/rel_kumar_1}
 	\end{center}
 	\legend{Fonte: \citeonline{kumar:2017}}
 \end{figure}
