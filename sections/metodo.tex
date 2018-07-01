@@ -17,7 +17,7 @@ O sistema computacional que envolve o projeto estará equipado com sensores flex
 
 Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente. Conforme mostra a \autoref{fig:flowchart}, a prótese terá diferentes ajustes dependendo do tipo de ação, seja em caminhadas em planos, subida ou descida de escadas.
 
-\todo{Terminar o fluxograma}\begin{figure}[h]
+\todo{Terminar o fluxograma}\begin{figure}[ht]
 	\caption{\label{fig:flowchart}Fluxograma de funcionamento da prótese}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/flowchart}
@@ -31,13 +31,20 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 
 \subsection{Arquitetura do software}
 \label{sec:metodo_prot_software}
-\todo[inline,color=lightgray]{Diagrama UML}
+
+\begin{figure}[ht]
+	\caption{\label{fig:flowchart}Diagrama de sequência que descreve a interação entre os componentes do sistema}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/sequence_diagram.pdf}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}\todo{Explicar o diagrama de sequência no texto}
 
 \subsection{Arquitetura do hardware}
 \label{sec:metodo_prot_hardware}
 A prótese em si será formada por partes impressas 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\caption{\label{fig:hardware_scheme}Esquema representando o funcionamento dos atuadores}
 	\begin{center}
 	   \fbox{\includegraphics[width=0.5\textwidth]{resources/hardware_scheme}}	   %\missingfigure[figwidth=12cm,figheight=8cm]{Desenho de detalhe da prótese, com articulações, motores, etc.}
