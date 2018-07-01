@@ -15,30 +15,34 @@ O projeto desenvolvido neste trabalho é uma prótese robótica para membros inf
 
 O sistema computacional que envolve o projeto estará equipado com sensores flex nas articulações dos joelhos além de giroscópios e acelerômetros, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
-Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, que se comunicará com o atuador, de forma a adaptar a pisada do usuário de acordo com o ambiente. Conforme mostra a \autoref{fig:flowchart}, a prótese terá diferentes ajustes dependendo do tipo de ação, seja em caminhadas em planos, subida ou descida de escadas.
+Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, posicionada na estrutura da própria prótese, que fará a classificação para determinar a ação dos atuadores, como pode ser visto no fluxograma ilustrado na \autoref{fig:flowchart}.
 
-\todo{Terminar o fluxograma}\begin{figure}[ht]
+\begin{figure}[ht]
 	\caption{\label{fig:flowchart}Fluxograma de funcionamento da prótese}
 	\begin{center}
-	    \includegraphics[width=\textwidth]{resources/flowchart}
+	    \includegraphics[width=0.8\textwidth]{resources/flowchart}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
+
 \section{Prototipação da prótese}
 \label{sec:metodo_prototipacao}
-\todo[inline,color=lightgray]{Descrever o funcionamento da prótese via algum modelo}
-
-\subsection{Arquitetura do software}
-\label{sec:metodo_prot_software}
+O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença de dois objetos caracterizados como ``sensores'': com fio e sem fio. Os sensores sem fio são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
 
 \begin{figure}[ht]
-	\caption{\label{fig:flowchart}Diagrama de sequência que descreve a interação entre os componentes do sistema}
+	\caption{\label{fig:sequence_diagram}Diagrama de sequência que descreve a interação entre os componentes do sistema}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/sequence_diagram.pdf}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
-\end{figure}\todo{Explicar o diagrama de sequência no texto}
+\end{figure}
+
+A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que determinará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente, como por exemplo tenha sido iniciada a descida de uma escada.
+
+\subsection{Arquitetura do software}
+\label{sec:metodo_prot_software}
+\todo[inline]{UML?}
 
 \subsection{Arquitetura do hardware}
 \label{sec:metodo_prot_hardware}
