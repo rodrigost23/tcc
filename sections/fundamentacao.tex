@@ -93,54 +93,56 @@ No \textbf{aprendizado supervisionado}, o agente observa pares de entrada e saí
 
 Quando os valores de saída são números, o problema é conhecido como \textbf{regressão}. Quando a saída é um conjunto de valores finitos, o problema de aprendizagem é chamado de \textbf{classificação}, também conhecido como classificação Booleana ou binária caso hajam apenas dois valores \cite{russell:2010}.
 
-\todo[inline]{Adicionar exemplo de algoritmo como SVM e KNN}
-
-% \subsubsection{Árvores de decisão}
-
 % \subsubsection{SVM}
-% Máquina de Vetores de Suporte (SVM) é uma das técnicas mais populares de aprendizado de máquina supervisionado, por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
+Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado \cite{russell:2010}.
 
-% A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes \cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em \ref{fig:svm_classification_a} e o separador linear desejado em \ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados \cite{russell:2010}.
+A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes \cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em \ref{fig:svm_classification_a} e o separador linear desejado em \ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados \cite{russell:2010}. Neste exemplo, é feita a classificação entre os círculos pretos e os brancos.
 
-%TODO: \todo[inline,color=lightgray]{Como funciona? Usando para classificação}
-
-% \begin{figure}[ht]
-%     \centering
-%     \caption{Classificação binária com SVM}
-%     \label{fig:svm_classification}
-%     \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
-%         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
-%         \hspace{0.2cm}
-%     \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas tracejadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
-%         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
-%         \legend{Fonte: \citeonline[p. 745]{russell:2010}}
-% \end{figure}
-% %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
+\begin{figure}[ht]
+    \centering
+    \caption{Classificação binária com SVM}
+    \label{fig:svm_classification}
+    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
+        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
+        \hspace{0.2cm}
+    \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas tracejadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
+        {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
+        \legend{Fonte: Adaptado de \citeonline[p. 745]{russell:2010}}
+\end{figure}
+%\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
 % ==================================================
 \subsection{Ferramentas para aprendizado de máquina}
 \label{sec:ml_tools}
 % ==================================================
 
-Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar na produção de soluções em diversas áreas, estão disponíveis diferentes ferramentas de desenvolvimento\todo{Citar exemplos com referências}. Algumas destas ferramentas serão abordadas nas próximas seções.
+Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar na produção de soluções em diversas áreas, estão disponíveis diferentes ferramentas de desenvolvimento, como scikit-learn \cite{pedregosa:2011} e Tensorflow \cite{abadi:2015}. Algumas destas ferramentas serão abordadas nas próximas seções.
 
 % ==================================================
 \subsubsection{Scikit-learn}
 \label{sec:ml_sklearn}
 % ==================================================
 
-O scikit-learn é um módulo para a linguagem Python que integra uma alta gama de algoritmos\todo{Citar exemplos com referências}\ de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
+O scikit-learn\footnote{\href{http://scikit-learn.org/}{<http://scikit-learn.org/>}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos\todo{Citar exemplos com referências}\ de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
 
-Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado.
+Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
 
-\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
+\begin{figure}[ht]
+	\caption{\label{fig:sklearn_svm}Exemplo de classificação de dados utilizando scikit-learn}
+	\begin{center}
+	    \includegraphics[width=0.8\textwidth]{resources/sklearn_iris_svm.png}
+	\end{center}
+	\legend{Fonte: \href{http://scikit-learn.org/stable/modules/svm.html\#classification}{<http://scikit-learn.org/stable/modules/svm.html\#classification>} \textcolor{red}{Verificar referência}}
+\end{figure}
+
+%\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
 
 % ==================================================
 \subsubsection{TensorFlow}
 \label{sec:ml_tf}
 % ==================================================
 
-TensorFlow é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}. É uma ferramenta bastante popular, e oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax \cite{ertram:2017}.
+TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos \cite{abadi:2016}. É uma ferramenta bastante popular, e oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax \cite{ertram:2017}.
 
 \todo[inline]{Ampliar esta seção está bem rasa, sugiro falar sobre as técnicas que são usadas na tool, como RNN pre-treinadas. Mencionar quem usa esta \textit{tool} e onde.}
 
@@ -157,7 +159,7 @@ Sistemas embarcados são muitas vezes usados em situações críticas, em que se
 % ==================================================
 \subsection{Diagrama de sequência}
 % ==================================================
-Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência\todo{Falar um pouco sobre UML}. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
+Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência, que é um modelo especificado pela UML\todo{Falar um pouco sobre UML}. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
 \begin{figure}[!ht]
 	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
@@ -167,7 +169,7 @@ Uma forma de detalhar as especificações iniciais do design do sistema é atrav
 	\legend{Fonte: Adaptado de \citeonline[p. 37]{marwedel:2010}}
 \end{figure}
 
-A UML contém padronização do diagrama de sequência. As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
+As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
 
 Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações\todo{Exemplificar quais.} e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
 
