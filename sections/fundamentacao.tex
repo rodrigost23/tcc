@@ -7,13 +7,14 @@ Este capítulo apresentará a fundamentação teórica utilizada neste trabalho,
 
 Sistemas computacionais estão presentes em diversos produtos desde computadores pessoais e \textit{laptops}, até utensílios domésticos. São conhecidos como sistemas embarcados (SE) os sistemas computacionais que fazem parte de um dispositivo eletrônico maior, não representando sua totalidade, mas oferecendo recursos computacionais específicos para o seu funcionamento \cite{vahid:2002}.
 
-Também pode-se definir um SE como um sistema computacional de propósito específico, e que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas, em contraste a um computador pessoal\cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
+Também pode-se definir um SE como um sistema computacional de propósito específico, e que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas, em contraste a um computador pessoal \cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
 Algumas características de sistemas embarcados, segundo \citeonline{schlett:1998}, são restrições específicas como de custo de produção ou de consumo de energia, que é o caso de dispositivos móveis, por exemplo, pois dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.
 
 Uma outra restrição comum que pode ser pertinente a um SE é de tempo. Alguns sistemas precisam necessariamente realizar certas operações dentro de um tempo esperado, correndo o risco de não desempenhar seu papel caso isso falhe, sendo conhecidos como sistemas em tempo real. Por exemplo, um sistema de controle de velocidade de cruzeiro de um automóvel precisa monitorar a velocidade, aceleração e desaceleração do veículo em tempo real, e qualquer atraso é considerado uma falha do sistema \cite{vahid:2002}.
 
-\todo[inline]{Falar um pouco mais de tempo real e qual é a relação com a robótica}
+\todo[inline]{\textbf{Falar um pouco mais de tempo real} \textit{e qual é a relação com a robótica}}
+Sistemas robóticos, do ponto de vista de arquitetura, dependem de interação com ambientes dinâmicos e incertos, o que exige controle em tempo real dos sensores e atuadores, com suporte a concorrência e reagindo rapidamente a situações excepcionais \cite{siciliano:2008springer}.
 
 % ==================================================
 \subsection{Microcontroladores versus Microprocessadores}
@@ -49,9 +50,15 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 
 \todo[inline]{Apresentar um exemplo de uso na indústria com uma imagem}
 
-\todo[inline]{Apresentar um exemplo de uso de prótese com uma imagem, lembre que no título tem ``e suas aplicações''}
+A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração do andar de pacientes na \autoref{fig:rehab_gait} \cite{siciliano:2008springer}. Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum \cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no \autoref{ch:correlatos}.
 
-A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas, por exemplo, por meio de sistemas como próteses robóticas, por exemplo \cite{siciliano:2008}. Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum \cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no capítulo~\ref{ch:correlatos}.
+\todo{Trocar por foto de prótese}\begin{figure}[ht]
+	\caption{\label{fig:rehab_gait}Exemplos de robôs de reabilitação de andar}
+	\begin{center}
+	    \includegraphics[width=0.9\textwidth]{resources/robotics_rehab_1}
+	\end{center}
+	\legend{Fonte: \citeonline[p.1232]{siciliano:2008springer}}
+\end{figure}
 
 \todo[inline]{Apresentar e descrever sensores e atuadores utilizados na robótica}
 
@@ -123,7 +130,7 @@ Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar
 \label{sec:ml_sklearn}
 % ==================================================
 
-O scikit-learn\footnote{\href{http://scikit-learn.org/}{<http://scikit-learn.org/>}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos\todo{Citar exemplos com referências}\ de aprendizado de máquina, tanto supervisionados quanto não supervisionados, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
+O scikit-learn\footnote{\href{http://scikit-learn.org/}{<http://scikit-learn.org/>}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM, KNN, e K-Means\todo{Adicionar referências das técnicas?}, e permite a comparação fácil de diversos métodos em uma aplicação \cite{pedregosa:2011}.
 
 Segundo \citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso, \citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
 
@@ -154,7 +161,7 @@ TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é 
 \label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais\todo{Citar Exemplos com referências}\ para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais, como redes de Petri \cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente \cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
@@ -171,7 +178,7 @@ Uma forma de detalhar as especificações iniciais do design do sistema é atrav
 
 As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
 
-Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações\todo{Exemplificar quais.}\ e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial.
+%Ainda segundo \citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações\todo{Exemplificar quais.}\ e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial. %===> Não sei de onde eu tirei essa ideia!
 
 % ==================================================
 \subsection{Máquinas de Estado}
@@ -181,7 +188,13 @@ A teoria dos autômatos é o estudo de dispositivos computacionais abstratos (``
 
 Um autômato finito, também conhecido como Máquina de Estados Finita (FSM) \cite{wagner:2006}, se baseia em um conjunto finito de estados, entradas, saídas e transições entre estados. A descrição do comportamento baseado em estados é importante na modelagem de sistemas embarcados \cite{marwedel:2010}.
 
-\todo[inline]{Apresentar definição formal para um FSM}
+De acordo com \citeonline{wagner:2006}, uma FSM é uma quíntupla $\{\Sigma, S, s0, \delta, F\}$, onde:
+\begin{itemize}
+    \item $\Sigma$ é o alfabeto de entrada (um conjunto finito não vazio de símbolos)
+    \item $S$ é um conjunto não vazio de estados
+    \item $s0$ é um estado inicial, um elemento de $S$
+    \item $F$ é o conjunto de estados finais, um subconjunto de $S$.
+\end{itemize}
 
 Cada estado de uma FSM representa uma informação sobre o decorrer do programa, pois o estado muda de tempos em tempos durante a execução, e todos os estados representam todas as situações possíveis em que a máquina de estados pode estar. As saídas podem depender tanto do estado atual quanto das entradas da máquina \cite{wagner:2006}.
 
@@ -215,13 +228,16 @@ Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revel
 
 A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas \cite{peterson:1981}. % $C = (P,T,I,O)
 
-Segundo \citeonline{murata:1989}, uma rede de Petri é uma quíntupla $PN = (P, T, F, W, M_0)$, onde:\\
-\todo{Tentar colocar um recuo ou uma caixinha aqui}$P = \{p_1, p_2, \cdots , p_m\}$ é um conjunto finito de lugares,\\
-$T = \{t_1, t_2, \cdots, t_n\}$ é um conjunto finito de transições,\\
-$F \subseteq (P \times T) \cup (T \times P)$ é um conjunto de arcos (relação de fluxo),\\
-$W: F \to \{1,2,3,\cdots\}$ é uma função de peso,\\
-$M_0: P \to \{0,1,2,3,\cdots\}$ é a marcação inicial,\\
-$P \cap T = \emptyset$ e $P \cup T \neq \emptyset$
+Segundo \citeonline{murata:1989}, uma rede de Petri é uma quíntupla $PN = (P, T, F, W, M_0)$, onde:
+
+\begin{itemize}
+    \item $P = \{p_1, p_2, \cdots , p_m\}$ é um conjunto finito de lugares,
+    \item $T = \{t_1, t_2, \cdots, t_n\}$ é um conjunto finito de transições,
+    \item $F \subseteq (P \times T) \cup (T \times P)$ é um conjunto de arcos (relação de fluxo),
+    \item $W: F \to \{1,2,3,\cdots\}$ é uma função de peso,
+    \item $M_0: P \to \{0,1,2,3,\cdots\}$ é a marcação inicial,
+    \item $P \cap T = \emptyset$ e $P \cup T \neq \emptyset$
+\end{itemize}
 
 Uma estrutura de rede de Petri $N=(P,T,F,W)$ sem nenhuma marcação inicial é denotada por $N$, e uma rede de Petri com a marcação inicial definida é denotada por $(N,M_0)$ \cite{murata:1989}.
 
