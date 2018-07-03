@@ -26,7 +26,7 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 
 
 \section{Prototipação da prótese}\label{sec:metodo_prototipacao}
-O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como, a interação entre eles. Nela, pode-se observar a presença de dois objetos caracterizados como ``sensores'': com fio e sem fio. Os sensores sem fio são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
+O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença de dois objetos caracterizados como ``sensores'': com fio e sem fio. Os sensores sem fio são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
 
 \begin{figure}[ht]
 	\caption{\label{fig:sequence_diagram}Diagrama de sequência que descreve a interação entre os componentes do sistema}
@@ -36,7 +36,7 @@ O diagrama de sequência da \autoref{fig:sequence_diagram} representa os compone
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que determinará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente, como por exemplo,  tenha sido iniciada a descida de uma escada.
+A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que tomará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente como, por exemplo, tenha sido iniciada a descida de uma escada.
 
 \subsection{Arquitetura do software}\label{sec:metodo_prot_software}
 % \todo[inline]{UML?}
@@ -61,9 +61,7 @@ Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motoriz
 
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flex, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
 
-Os valores capturados\todo{Adicionar um exemplo de dados gerados pelos sensores} pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos.
-
-Além disso, os dados na central serão armazenados para uso posterior de análise, que poderá ser feita separadamente, com o auxílio de um computador\todo{Ficou confuso, a classificação será feita fora da protese?} (ver \autoref{sec:metodo_diagnostico}).
+Os valores capturados\todo{Adicionar um exemplo de dados gerados pelos sensores}\ pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos. Os dados também serão armazenados para a análise descrita na~\autoref{sec:metodo_diagnostico}.
 
 \section{Previsão de movimentos}\label{sec:metodo_previsao}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
