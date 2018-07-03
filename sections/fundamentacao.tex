@@ -25,7 +25,7 @@ A distinção entre microprocessadores e microcontroladores, contudo, não é t�
 Os microprocessadores, por sua vez, não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por esse motivo, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
 
 \todo[inline]{Apresentar exemplo de Microcontrolador, exemplo Arduino suas funções e pinagens}
-
+    
 \todo[inline]{Apresentar exemplo de Microprocessador, exemplo Galileo suas funções e pinagens}
 
 % ==================================================
@@ -221,7 +221,6 @@ Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revel
 A estrutura de uma rede de Petri consiste em lugares, transições, funções de entrada e funções de saída. Graficamente, sua representação é dada por um grafo direcionado, em que os lugares são representados por círculos, as transições por barras, e os arcos entre os lugares e as transições indicam entradas e saídas~\cite{peterson:1981}. % $C = (P,T,I,O)
 
 Segundo~\citeonline{murata:1989}, uma rede de Petri é uma quíntupla \(PN = (P, T, F, W, M_0)\), onde:
-
 \begin{itemize}
     \item \(P = \{p_1, p_2, \ldots , p_m\}\) é um conjunto finito de lugares,
     \item \(T = \{t_1, t_2, \ldots, t_n\}\) é um conjunto finito de transições,
@@ -233,7 +232,7 @@ Segundo~\citeonline{murata:1989}, uma rede de Petri é uma quíntupla \(PN = (P,
 
 Uma estrutura de rede de Petri \(N=(P,T,F,W)\) sem nenhuma marcação inicial é denotada por \(N\), e uma rede de Petri com a marcação inicial definida é denotada por \((N,M_0)\)~\cite{murata:1989}.
 
-Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo $k$ de \textit{tokens}, estes são representados graficamente por $k$ círculos preenchidos posicionados no interior dos círculos que representam os lugares~\cite{murata:1989}, como pode ser visto nos lugares $P_1$ e $P_2$ da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
+Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo \(k\) de \textit{tokens}, estes são representados graficamente por \(k\) círculos preenchidos posicionados no interior dos círculos que representam os lugares~\cite{murata:1989}, como pode ser visto nos lugares \(P_1\) e \(P_2\) da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
