@@ -39,9 +39,9 @@ O diagrama de sequência da \autoref{fig:sequence_diagram} representa os compone
 A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que tomará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente como, por exemplo, tenha sido iniciada a descida de uma escada.
 
 \subsection{Arquitetura do \textit{software}}\label{sec:metodo_prot_software}
-O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado por meio de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na~\autoref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais.
+O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado através de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na~\autoref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais.
 
-A classificação será realizada com a utilização de uma ferramenta como as descritas na~\autoref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, a fim de se criar um conjunto de dados a ser usado pela classificação na prótese.
+A classificação será realizada com a utilização de uma ferramenta como as descritas na~\autoref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, de modo a se criar um conjunto de dados a ser usado pela classificação na prótese.
 
 \subsection{Arquitetura do \textit{hardware}}\label{sec:metodo_prot_hardware}
 A prótese em si será formada por partes impressas em 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
@@ -56,7 +56,7 @@ A prótese em si será formada por partes impressas em 3D, feitas a partir de mo
 
 A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo, que deverão ser acionados de acordo com a classificação dos dados dos sensores. No ponto A, o motor do ``tornozelo'' da prótese regulará a rigidez da articulação, como forma de manter estabilidade nos passos. Os pontos B e C referem-se a motores de passo que, juntos a hastes, se prendem no ``calcanhar'' da prótese, para mover o pé e exercer força na pisada.
 
-Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, afim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}.
+Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, a fim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}.
 
 \section{Coleta de dados}\label{sec:metodo_coleta}
 

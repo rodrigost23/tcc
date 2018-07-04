@@ -20,7 +20,7 @@ Conforme~\citeonline{buttazzo2011:realtime} afirma, um sistema em tempo real nã
 
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída~\cite{white:2011}. Esses componentes surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior~\cite{heath:2002}. Além disso, segundo~\citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
 
-O Arduino Uno Rev3, por exemplo, é um placa de microcontrolador, equipado com o microcontrolador ATmega328/P e conta com 14 pinos de entrada/saída digitais e 6 entradas analógicas~\cite{arduino:uno_store}.
+O Arduino Uno Rev3, por exemplo, é uma placa de microcontrolador, equipado com o microcontrolador ATmega328/P e conta com 14 pinos de entrada/saída digitais e 6 entradas analógicas~\cite{arduino:uno_store}.
 
 O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pinout}, é um microcontrolador 8-bit de baixo consumo de energia com arquitetura RISC que oferece 131 instruções. Além disso, contém uma memória \textit{flash} programável de 32kB \cite{atmel:2016atmega328p}.
 
@@ -32,7 +32,7 @@ O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pin
 	\legend{Fonte:~\citeonline[p.14]{atmel:2016atmega328p}}
 \end{figure}
 
-A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Mas também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
+A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
 
 Microprocessadores não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por isso, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
 
@@ -49,7 +49,7 @@ Um computador de placa única que conta com um microprocessador é o Raspberry P
 % ==================================================
 \subsection{IoT\@: Internet das Coisas}
 % ==================================================
-Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente~\cite{kopetz:2011}.  Segundo~\citeonline{xia:2012}, o termo ``Internet das Coisas'' (IoT)  não refere-se apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos de forma inteligente.
+Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente~\cite{kopetz:2011}.  Segundo~\citeonline{xia:2012}, o termo ``Internet das Coisas'' (IoT)  não se refere apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos de forma inteligente.
 
 Para~\citeonline{gubbi:2013iot}, a visão completa da IoT se dará através de sensores e atuadores ubíquos, escondidos do usuário, atuando de forma independente. A ideia de computação ubíqua, também conhecida como pervasiva~\cite{satyanarayanan:2001pervasive}, está bem relacionada com a IoT e se refere a um mundo repleto de sensores, atuadores e sistemas computacionais integrados nos objetos do dia-a-dia~\cite{gubbi:2013iot}.
 
@@ -80,7 +80,7 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 
 Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos~\cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial. Alguns robôs têm sido criados aos moldes de seres humanos, como o da~\autoref{fig:robot_johnnie}.
 
-A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração de caminhada de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. 
+A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas através de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração de caminhada de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. 
 
 \begin{figure}[ht]
 	\caption{\label{fig:rehab_gait}Exemplos de robôs de auxílio na restauração de caminhada}
@@ -122,7 +122,7 @@ Os dados extraídos de sensores podem ser usados para classificação a partir d
 \subsection{Aprendizado de máquina}\label{sec:ml}
 % ==================================================
 
-O aprendizado de máquina é importante quando não é possível determinar todos cenários possíveis de um sistema previamente, ou quando se deseja que este se adapte ao ambiente por conta própria. Também há o caso de ser impossível uma pessoa programar uma solução por conta própria, por exemplo: humanos conseguem reconhecer faces muito bem, mas não são capazes de desenvolver um programa que realize esta tarefa, sem usar algoritmos de aprendizagem~\cite{russell:2010}.
+O aprendizado de máquina é importante quando não é possível determinar todos os cenários possíveis de um sistema previamente, ou quando se deseja que este se adapte ao ambiente por conta própria. Também há o caso de ser impossível uma pessoa programar uma solução por conta própria, por exemplo: humanos conseguem reconhecer faces muito bem, mas não são capazes de desenvolver um programa que realize esta tarefa, sem usar algoritmos de aprendizagem~\cite{russell:2010}.
 
 Existem três principais formas de aprendizagem que são determinadas a partir do tipo de \textit{feedback} dado ao algoritmo. No \textbf{aprendizado não supervisionado}, o agente aprende os padrões da entrada mesmo sem ter nenhum tipo de \textit{feedback}. Agrupamento (ou \textit{clustering}) é o tipo de aprendizagem não supervisionada mais comum, em que se detecta grupos a partir de exemplos de entrada. O \textbf{aprendizado por reforço} consiste em aprender baseado em um \textit{feedback} positivo ou negativo do resultado do algoritmo, indicando se algo de errado foi feito. Dessa forma, decide-se que ações pode ter ocasionado um resultado indesejado~\cite{russell:2010}.
 
@@ -152,7 +152,7 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 \subsection{Ferramentas para aprendizado de máquina}\label{sec:ml_tools}
 % ==================================================
 
-Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar na produção de soluções em diversas áreas, estão disponíveis diferentes ferramentas de desenvolvimento, como scikit-learn~\cite{pedregosa:2011} e Tensorflow~\cite{abadi:2015}. Algumas destas ferramentas serão abordadas nas próximas seções.
+Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar na produção de soluções em diversas áreas, estão disponíveis diferentes ferramentas de desenvolvimento, como scikit-learn~\cite{pedregosa:2011} e TensorFlow~\cite{abadi:2015}. Algumas destas ferramentas serão abordadas nas próximas seções.
 
 % ==================================================
 \subsubsection{Scikit-learn}\label{sec:ml_sklearn}
@@ -160,7 +160,7 @@ Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar
 
 O scikit-learn\footnote{\href{http://scikit-learn.org/}{<http://scikit-learn.org/>}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM \cite{cortes:1995svm}, KNN \cite{cover:1967knn}, e K-Means \cite{macqueen:1967kmeans}, e permite a comparação fácil de diversos métodos em uma aplicação~\cite{pedregosa:2011}.
 
-Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de software e em campos além da ciência da computação. Além disso,~\citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
+Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de \textit{software} e em campos além da ciência da computação. Além disso,~\citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
 
 \begin{figure}[ht]
 	\caption{\label{fig:sklearn_svm}Exemplo de classificação de dados utilizando scikit-learn}
@@ -195,14 +195,14 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida ou grandes prejuízos~\cite{edwards:1997}. \citeonline{buttazzo2011:realtime} apresenta o caso do foguete Ariane 5, que em 1996 teve uma falha 37 segundos após seu lançamento e teve que ser destruído pois desviou do curso correto. A falha foi causada por um erro de conversão de inteiros não previsto \cite{buttazzo2011:realtime}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, porque podem oferecer risco à vida ou grandes prejuízos~\cite{edwards:1997}. \citeonline{buttazzo2011:realtime} apresenta o caso do foguete Ariane 5, que em 1996 teve uma falha 37 segundos após seu lançamento e teve que ser destruído, pois desviou do curso correto. A falha foi causada por um erro de conversão de inteiros não previsto \cite{buttazzo2011:realtime}.
 
 O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade e evitar erros, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
 % ==================================================
-Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência, que é um modelo especificado pela UML. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas, desenvolvida por especialistas de software e utilizada por ferramentas comerciais~\cite{marwedel:2010}.
+Uma forma de detalhar as especificações iniciais do \textit{design} do sistema é através do diagrama de sequência, que é um modelo especificado pela UML. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas, desenvolvida por especialistas de \textit{software} e utilizada por ferramentas comerciais~\cite{marwedel:2010}.
 
 Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
@@ -278,7 +278,7 @@ Segundo~\citeonline{murata:1989}, uma rede de Petri é uma quíntupla \(PN = (P,
 
 Uma estrutura de rede de Petri \(N=(P,T,F,W)\) sem nenhuma marcação inicial é denotada por \(N\), e uma rede de Petri com a marcação inicial definida é denotada por \((N,M_0)\)~\cite{murata:1989}.
 
-Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo \(k\) de \textit{tokens}, estes são representados graficamente por \(k\) círculos preenchidos posicionados no interior dos círculos que representam os lugares~\cite{murata:1989}, como pode ser visto nos lugares \(P_1\) e \(P_2\) da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que hajam \textit{tokens} suficientes no lugar de entrada.
+Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. Quando os lugares têm um número positivo \(k\) de \textit{tokens}, estes são representados graficamente por \(k\) círculos preenchidos posicionados no interior dos círculos que representam os lugares~\cite{murata:1989}, como pode ser visto nos lugares \(P_1\) e \(P_2\) da figura~\ref{fig:petrinet}. Uma transição é disparada de acordo com um evento determinado, desde que haja \textit{tokens} suficientes no lugar de entrada.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet}Exemplo de rede de Petri com atividades paralelas}
@@ -288,7 +288,7 @@ Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. 
 	\legend{Fonte:~\citeonline[p. 545]{murata:1989}}
 \end{figure}
 
-Na \autoref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
+Na \autoref{fig:petrinet}, as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
 A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros \cite{peterson:1981}.
 
@@ -306,9 +306,9 @@ A importância desta propriedade para dispositivos de hardware se dá pelo fato 
         \legend{Fonte: Adaptado de~\citeonline[p. 81]{peterson:1981}}
 \end{figure}
 
-O conceito de limitação, por sua vez, é uma generalização da propriedade de segurança, representada na~\autoref{fig:petri_net_safeness}, e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores~\cite{peterson:1981}.
+O conceito de limitação, no que lhe concerne, é uma generalização da propriedade de segurança, representada na~\autoref{fig:petri_net_safeness}, e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de \textit{hardware}, e os lugares podem ser implementados com contadores~\cite{peterson:1981}.
 
-Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições $t_2$ e $t_5$ na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri~\cite{peterson:1981}.
+Um problema computacional comum em relação à alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições $t_2$ e $t_5$ na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri~\cite{peterson:1981}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet_deadlock}Exemplo de possível \textit{deadlock} em uma rede de Petri}
