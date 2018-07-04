@@ -191,12 +191,16 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida ou grandes prejuízos~\cite{edwards:1997}. \citeonline{buttazzo2011:realtime} apresenta o caso do foguete Ariane 5, que em 1996 teve uma falha 37 segundos após seu lançamento e teve que ser destruído pois desviou do curso correto. A falha foi causada por um erro de conversão de inteiros não previsto \cite{buttazzo2011:realtime}.
+
+O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade e evitar erros, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
 % ==================================================
-Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência, que é um modelo especificado pela UML\todo{Falar um pouco sobre UML}. Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
+Uma forma de detalhar as especificações iniciais do design do sistema é através do diagrama de sequência, que é um modelo especificado pela UML. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas e é utilizada
+
+Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
 \begin{figure}[!ht]
 	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
@@ -283,17 +287,31 @@ Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. 
 Na \autoref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
 A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. 
-% 
-Em uma rede de Petri que modela um hardware, \textit{segurança}\todo{Apresentar exemplo gráfico}\ é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros. A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas $0$ ou $1$~\cite{peterson:1981}.
 
-O conceito de limitação\todo{Apresentar exemplo gráfico}\ é uma generalização da propriedade de segurança e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores~\cite{peterson:1981}.
+Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros.
+
+A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas $0$ ou $1$~\cite{peterson:1981}. A Figura~\ref{fig:petri_net_safeness_a} demonstra uma rede de Petri não segura cuja propriedade de segurança foi forçada na Figura~\ref{fig:petri_net_safeness_b}.
+
+\begin{figure}[ht]
+    \centering
+    \caption{Exemplo de segurança em uma rede de Petri}
+    \label{fig:petri_net_safeness}
+    \subfloat[Rede de Petri não segura \label{fig:petri_net_safeness_a}]
+        {\includegraphics[width=0.45\textwidth]{resources/petri_net_peterson_safeness_a}}
+        \hspace{0.1cm}
+    \subfloat[A rede de Petri da Figura~\ref{fig:petri_net_safeness_a} pode ser forçada a ser segura desta forma \label{fig:petri_net_safeness_b}]
+        {\includegraphics[width=0.45\textwidth]{resources/petri_net_peterson_safeness_b}}
+        \legend{Fonte: Adaptado de~\citeonline[p. 81]{peterson:1981}}
+\end{figure}
+
+O conceito de limitação, por sua vez, é uma generalização da propriedade de segurança, representada na~\autoref{fig:petri_net_safeness}, e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de hardware, e os lugares podem ser implementados com contadores~\cite{peterson:1981}.
 
 Um problema computacional comum em relação a alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições $t_2$ e $t_5$ na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri~\cite{peterson:1981}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet_deadlock}Exemplo de possível \textit{deadlock} em uma rede de Petri}
 	\begin{center}
-	    \includegraphics[width=0.7\textwidth]{resources/petri_net_peterson_deadlock}
+	    \includegraphics[width=0.5\textwidth]{resources/petri_net_peterson_deadlock}
 	\end{center}
 	\legend{Fonte: Adaptado de~\citeonline[p. 86]{peterson:1981}}
 \end{figure}
