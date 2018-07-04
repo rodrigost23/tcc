@@ -21,7 +21,7 @@ Conforme~\citeonline{buttazzo2011:realtime} afirma, um sistema em tempo real nã
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída~\cite{white:2011}. Esses componentes surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior~\cite{heath:2002}. Além disso, segundo~\citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
 
 O Arduino Uno Rev3, por exemplo, é uma placa de microcontrolador, equipado com o microcontrolador ATmega328/P e conta com 14 pinos de entrada/saída digitais e 6 entradas analógicas~\cite{arduino:uno_store}.
-
+% 
 O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pinout}, é um microcontrolador 8-bit de baixo consumo de energia com arquitetura RISC que oferece 131 instruções. Além disso, contém uma memória \textit{flash} programável de 32kB \cite{atmel:2016atmega328p}.
 
 \begin{figure}[ht]
@@ -98,6 +98,8 @@ Sensores são os responsáveis por coletar informações sobre o estado interno 
 
 A parte mecânica é um aspecto importante da Robótica que pode se referir à mecânica estrutural, relativa a peças físicas de sustentação como barras e parafusos, e peças dinâmicas como polias, engrenagens e eixos, que permitem a movimentação \cite{modelix:2010guia_robotica}.
 
+\todo[inline]{Seria bom falar um pouco mais sobre as questõe mecanicas sobre movimentação de motores}
+
 % \section{Eletromiografia: Geração de Dados}
 % \label{sec:emg}
 % A eletromiografia (EMG) é uma técnica que consiste em monitorar atividade neuromuscular, sendo possível assim detectar os potenciais de ação através desta leitura~\cite{deluca:1979}. Em teoria, isto significa que, a partir do eletromiograma, é possível identificar a intenção de uma pessoa ao realizar uma atividade motora.
@@ -148,6 +150,7 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 \end{figure}
 %\textcolor{red}{Testes figura~\ref{fig:svm_classification}, e as figuras~\ref{fig:svm_classification_a}~e~\ref{fig:svm_classification_b}.}
 
+
 % ==================================================
 \subsection{Ferramentas para aprendizado de máquina}\label{sec:ml_tools}
 % ==================================================
@@ -172,6 +175,8 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 
 %\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
 
+\todo[inline]{Sugiro Apresentar algum exemplo/trecho de código}
+
 % ==================================================
 \subsubsection{TensorFlow}\label{sec:ml_tf}
 % ==================================================
@@ -190,6 +195,7 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 	\legend{Fonte: \citeonline{tensorflow:premade_estimators}}
 \end{figure}
 
+\todo[inline]{Sugiro Apresentar algum exemplo/trecho de código}
 
 % ==================================================
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
