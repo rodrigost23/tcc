@@ -158,14 +158,22 @@ TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é 
 
 \todo[inline]{Ampliar esta seção está bem rasa, sugiro falar sobre as técnicas que são usadas na tool, como RNN pre-treinadas. Mencionar quem usa esta \textit{tool} e onde.}
 
-\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
+A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit{Deep Neural Network}, em inglês) com 2 camadas ocultas, contendo 10 nós cada. Este programa utiliza dados já contidos na API para classificar flores em três espécies diferentes, baseado nos tamanhos das sépalas e pétalas delas~\cite{tensorflow:premade_estimators}.
+
+\begin{figure}[ht]
+	\caption{\label{fig:tensorflow_ann_example}Rede Neural Profunda construída com o TensorFlow}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/tensorflow_ann_example}
+	\end{center}
+	\legend{Fonte: \citeonline{tensorflow:premade_estimators}}
+\end{figure}
 
 
 % ==================================================
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido e é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, pois podem oferecer risco à vida\todo{Apresentar exemplo}. O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
