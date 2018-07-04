@@ -4,7 +4,9 @@ Este capítulo apresentará trabalhos existentes na literatura que compartilham 
 \section{Translational Motion Tracking of Leg Joints for Enhanced Prediction of Walking Tasks}\label{sec:rel_stolyarov}
 % ===================================================================================
 
-Neste artigo, \citeonline{stolyarov:2017} propuseram um método de prever tarefas de caminhada utilizando apenas uma IMU (unidade de medição inercial) em uma prótese comercial de uma articulação (tornozelo-pé). Foram classificadas cinco tarefas diferentes: caminhada em solo plano, subida de rampa, descida de rampa, subida de degrau e descida de degrau. Usando apenas a IMU, foi possível ter uma classificação até mais precisa que próteses que usam sEMG, pois, segundo os autores \citeonline{stolyarov:2017}, estas costumam ter ótimos resultados apenas em ambientes de laboratório, mas fora dele dependem de muitos fatores não controlados. A alta acurácia do classificador apresentado sugere que o método tenha ótimos resultados mesmo fora de laboratório.
+Neste artigo, \citeonline{stolyarov:2017} propuseram um método de prever tarefas de caminhada utilizando apenas uma IMU (unidade de medição inercial) em uma prótese comercial de uma articulação (tornozelo-pé). Foram classificadas cinco tarefas diferentes: caminhada em solo plano, subida de rampa, descida de rampa, subida de degrau e descida de degrau.
+
+Usando apenas a IMU, foi possível ter uma classificação até mais precisa que próteses que usam sEMG, pois, segundo os autores \citeonline{stolyarov:2017}, estas costumam ter ótimos resultados apenas em ambientes de laboratório, mas fora dele dependem de muitos fatores não controlados. A alta acurácia do classificador apresentado sugere que o método tenha ótimos resultados mesmo fora de laboratório.
 
 Algumas limitações deste método são a falta de filtros para tratar problemas comuns do tipo de sensor utilizado, como \textit{drifting}, e a baixa precisão que o algoritmo tem em superfícies escorregadias ou macias.
 % 
@@ -21,12 +23,14 @@ A leitura dos dados foi feita a partir da simulação de uma IMU usando captura 
 \begin{figure}[ht]
 	\caption{\label{fig:rel_turnintent_1}Prótese incluindo o VSTA, a célula de carga iPecs e a posição da IMU simulada.}
 	\begin{center}
-	    \includegraphics[width=.4\textwidth]{resources/rel_pew_turnintent_1}
+	    \includegraphics[width=.25\textwidth]{resources/rel_pew_turnintent_1}
 	\end{center}
 	\legend{Fonte: \citeonline{pew:2017}}
 \end{figure}
 
-Para a previsão de ações, foi feita uma comparação entre técnicas de classificação em aprendizagem de máquina: \textit{Bagged Decision Tree Ensemble}~\cite{breiman:1996bagging}\cite{dietterich:2000ensemble}, SVM~\cite{cortes:1995svm} e KNN~\cite{cover:1967knn}\@. Na previsão de caminhada, o SVM teve $85\%$ de acurácia, o KNN teve $82\%$, e o \textit{Ensemble}, $97\%$. Na previsão de virada, o SVM teve $96\%$, o KNN, $93\%$ e o \textit{Ensemble} teve $91\%$ de acurácia. Embora tenha sido inferior na classificação da intenção de virada, a alta acurácia do \textit{Bagged Decision Tree Ensemble} na detecção de caminhada compensa, o que o torna o algoritmo mais preciso dentre os testados. Também foi constatado, através da IMU simulada, que a acurácia do giroscópio ($83\%$ a $90\%$) foi superior à do acelerômetro ($66\%$ a $77\%$), o que conclui que o uso apenas do giroscópio pode ser suficiente.
+Para a previsão de ações, foi feita uma comparação entre técnicas de classificação em aprendizagem de máquina: \textit{Bagged Decision Tree Ensemble}~\cite{breiman:1996bagging}\cite{dietterich:2000ensemble}, SVM~\cite{cortes:1995svm} e KNN~\cite{cover:1967knn}\@. Na previsão de caminhada, o SVM teve $85\%$ de acurácia, o KNN teve $82\%$, e o \textit{Ensemble}, $97\%$. Na previsão de virada, o SVM teve $96\%$, o KNN, $93\%$ e o \textit{Ensemble} teve $91\%$ de acurácia.
+
+Embora tenha sido inferior na classificação da intenção de virada, a alta acurácia do \textit{Bagged Decision Tree Ensemble} na detecção de caminhada compensa, o que o torna o algoritmo mais preciso dentre os testados. Também foi constatado, através da IMU simulada, que a acurácia do giroscópio ($83\%$ a $90\%$) foi superior à do acelerômetro ($66\%$ a $77\%$), o que conclui que o uso apenas do giroscópio pode ser suficiente.
 
 A comparação dos algoritmos feita pelos autores \citeonline{pew:2017} e os testes feitos com a IMU simulada podem ser úteis para este trabalho, pois valida a utilização dos sensores como forma de leitura de movimentos para previsão de intenções.
 
@@ -75,7 +79,7 @@ O trabalho de \citeonline{dedic:2011} propõe uma forma de transformar uma prót
 \begin{figure}[ht]
 	\caption{\label{fig:rel_smartleg_1}Protótipo com dois atuadores hidráulicos: nas articulações do joelho e do tornozelo.}
 	\begin{center}
-	    \includegraphics[width=.5\textwidth]{resources/rel_dedic_smart_leg_1}
+	    \includegraphics[width=.3\textwidth]{resources/rel_dedic_smart_leg_1}
 	\end{center}
 	\legend{Fonte: \citeonline{dedic:2011}}
 \end{figure}
