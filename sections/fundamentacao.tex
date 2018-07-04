@@ -8,7 +8,7 @@ Sistemas computacionais estão presentes em diversos produtos desde computadores
 
 Também pode-se definir um SE como um sistema computacional de propósito específico, e que não assume vários papéis de acordo com a necessidade do usuário, apenas realiza tarefas predeterminadas, em contraste a um computador pessoal~\cite{heath:2002}. Isto é, são sistemas eletrônicos projetados para funções específicas dentro de um dispositivo maior, que pode controlar o meio físico e permite sua interação com o usuário.
 
-Algumas características de sistemas embarcados, segundo~\citeonline{schlett:1998}, são restrições específicas como de custo de produção ou de consumo de energia, que é o caso de dispositivos móveis, por exemplo, pois dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias) e tem restrições de tamanho, custo, e consumo de energia.
+Algumas características de sistemas embarcados, segundo~\citeonline{schlett:1998}, são restrições específicas como de custo de produção ou de consumo de energia, que é o caso de dispositivos móveis, pois dependem de uma bateria para funcionar. \citeonline{vahid:2002} citam também como exemplo de sistema embarcado uma câmera fotográfica digital, pois tem um propósito específico (capturar e processar fotografias), restrições de tamanho, custo, e consumo de energia.
 
 Uma outra restrição comum que pode ser pertinente a um SE é de tempo. Alguns sistemas precisam necessariamente realizar certas operações dentro de um tempo esperado, correndo o risco de não desempenhar seu papel caso isso falhe, sendo conhecidos como sistemas em tempo real. Por exemplo, um sistema de controle de velocidade de cruzeiro de um automóvel precisa monitorar a velocidade, aceleração e desaceleração do veículo em tempo real, e qualquer atraso é considerado uma falha do sistema~\cite{vahid:2002}.
 
@@ -27,21 +27,21 @@ O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pin
 \begin{figure}[ht]
 	\caption{\label{fig:atmel_atmega328p_pinout}Pinagem do microcontrolador ATmega328/P}
 	\begin{center}
-	    \includegraphics[width=\textwidth]{resources/atmel_atmega328_pinout}
+	    \includegraphics[width=0.9\textwidth]{resources/atmel_atmega328_pinout}
 	\end{center}
 	\legend{Fonte:~\citeonline[p.14]{atmel:2016atmega328p}}
 \end{figure}
 
 A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Mas também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
 
-Microprocessadores não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por esse motivo, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
+Microprocessadores não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por isso, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
 
 Um computador de placa única que conta com um microprocessador é o Raspberry Pi 3 Model B+, mostrado na~\autoref{fig:raspberry_pi3_bplus}, que contém um processador 64-bit Broadcom BCM2837B0, que funciona a 1.4GHz. O Raspberry Pi 3 Model B+ também tem 1GB de RAM, além de ser equipado com 4 portas USB, conectividade Bluetooth e WiFi, e oferecer 40 pinos de entrada/saída digitais~\cite{raspberry:pi3_store}. Pode ser utilizado como um computador pessoal, mas também para projetos eletrônicos~\cite{raspberry:faq}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:raspberry_pi3_bplus}Raspberry Pi 3 Model B+}
 	\begin{center}
-	    \includegraphics[width=0.6\textwidth]{resources/raspberry_pi3_bplus}
+	    \includegraphics[width=0.5\textwidth]{resources/raspberry_pi3_bplus}
 	\end{center}
 	\legend{Fonte: Adaptado de~\citeonline{raspberry:pi3_store}}
 \end{figure}
@@ -58,7 +58,7 @@ Um exemplo de objeto inteligente na IoT, segundo~\citeonline{kopetz:2011}, é um
 \begin{figure}[ht]
 	\caption{\label{fig:irobot_roomba}Aspirador de pó automático iRobot Roomba 980}
 	\begin{center}
-	    \includegraphics[width=0.5\textwidth]{resources/irobot_roomba}
+	    \includegraphics[width=0.4\textwidth]{resources/irobot_roomba}
 	\end{center}
 	\legend{Fonte:~\citeonline{irobot:roomba980}}
 \end{figure}
@@ -68,27 +68,32 @@ Um exemplo de objeto inteligente na IoT, segundo~\citeonline{kopetz:2011}, é um
 \label{sec:robotica}
 % ==================================================
 
-A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo sejam feitas por pesquisadores de outras áreas, servindo como meio para diversos fins~\cite{craig:2005}. Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos~\cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial. Alguns robôs têm sido criados aos moldes de seres humanos, como o da~\autoref{fig:robot_johnnie}.
+A robótica é uma área que busca sintetizar atividades humanas através do uso de mecanismos, sensores, atuadores e computadores. É comum que pesquisas neste campo sejam feitas por pesquisadores de outras áreas, servindo como meio para diversos fins~\cite{craig:2005}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\caption{\label{fig:robot_johnnie}Robô ``Johnnie''}
 	\begin{center}
-	    \includegraphics[height=7cm]{resources/robotics_robot_marwedel}
+	    \includegraphics[height=6cm]{resources/robotics_robot_marwedel}
 	\end{center}
 	\legend{Fonte:~\citeonline[p.4]{marwedel:2010}}
 \end{figure}
 
-A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração do andar de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum~\cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no \autoref{ch:correlatos}.
+Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos~\cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial. Alguns robôs têm sido criados aos moldes de seres humanos, como o da~\autoref{fig:robot_johnnie}.
+
+A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração do andar de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. 
 
 \todo[color=cyan]{Talvez trocar a \autoref{fig:rehab_gait} por foto de prótese}\begin{figure}[ht]
 	\caption{\label{fig:rehab_gait}Exemplos de robôs de reabilitação de andar}
 	\begin{center}
-	    \includegraphics[width=0.9\textwidth]{resources/robotics_rehab_1}
+	    \includegraphics[width=0.7\textwidth]{resources/robotics_rehab_1}
 	\end{center}
 	\legend{Fonte:~\citeonline[p.1232]{siciliano:2008springer}}
 \end{figure}
 
+Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum~\cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no \autoref{ch:correlatos}.
+
 \todo[inline]{Apresentar e descrever sensores e atuadores utilizados na robótica}
+Alguns aspectos cruciais da Robótica são a mecânica, além de sensores e atuadores. A mecânica refere-se à forma física dos robôs: tanto relativo a movimento quanto a estrutura. Sensores são os responsáveis por detectar o ambiente para que se determine como se deve interagir com ele.\todo{referências}
 
 \todo[inline]{Apresentar detalhes sobre mecânica na robotica - ver http://www.leomar.com.br/brinquedos/images/stories/manuais/laboratorio/guia\%20de\%20robotica.pdf}
 
@@ -252,10 +257,10 @@ A Figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita m
 	\legend{Fonte: Adaptado de~\citeonline[p. 68]{wagner:2006}}
 \end{figure}
 
-\todo[inline]{Descrever que propriedades podem ser validadas usando um FSM}
+\todo[inline]{Descrever que propriedades podem ser validadas usando um FSM. \textbf{Não encontro!!!}}
 
 % ==================================================
-\subsection{Redes de Petri}
+\subsection{Redes de Petri}\legend{sec:petrinet}
 % ==================================================
 
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado~\cite{peterson:1981}. Segundo~\citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
@@ -286,9 +291,7 @@ Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. 
 
 Na \autoref{fig:petrinet} as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. 
-
-Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros.
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros \cite{peterson:1981}.
 
 A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas $0$ ou $1$~\cite{peterson:1981}. A Figura~\ref{fig:petri_net_safeness_a} demonstra uma rede de Petri não segura cuja propriedade de segurança foi forçada na Figura~\ref{fig:petri_net_safeness_b}.
 

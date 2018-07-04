@@ -38,11 +38,13 @@ O diagrama de sequência da \autoref{fig:sequence_diagram} representa os compone
 
 A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que tomará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente como, por exemplo, tenha sido iniciada a descida de uma escada.
 
-\subsection{Arquitetura do software}\label{sec:metodo_prot_software}
-% \todo[inline]{UML?}
-\todo[inline]{Adicionar coisa sobre modelos formais, rede de Petri, validação}
+\subsection{Arquitetura do \textit{software}}\label{sec:metodo_prot_software}
+\todo[inline]{Confirmar aqui ainda}
+O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado por meio de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na~\autoref{fig:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais.
 
-\subsection{Arquitetura do hardware}\label{sec:metodo_prot_hardware}
+Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, a fim de se criar um conjunto de dados a ser usado pela classificação na prótese.
+
+\subsection{Arquitetura do \textit{hardware}}\label{sec:metodo_prot_hardware}
 A prótese em si será formada por partes impressas em 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
 
 \begin{figure}[ht]
