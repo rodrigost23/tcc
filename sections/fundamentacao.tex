@@ -80,10 +80,10 @@ A robótica é uma área que busca sintetizar atividades humanas através do uso
 
 Sistemas embarcados são tradicionalmente usados na área da robótica, relacionando-se aos aspectos mecânicos~\cite{marwedel:2010}. \citeonline{craig:2005} divide a robótica em quatro grandes áreas: manipulação mecânica, locomoção, visão computacional e inteligência artificial. Alguns robôs têm sido criados aos moldes de seres humanos, como o da~\autoref{fig:robot_johnnie}.
 
-A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração do andar de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. 
+A robótica de reabilitação consiste em auxiliar pessoas com dificuldades motoras ou cognitivas por meio de sistemas como próteses robóticas e outros tipos de dispositivos, como os aparelhos de auxílio na restauração de caminhada de pacientes na \autoref{fig:rehab_gait}~\cite{siciliano:2008springer}. 
 
-\todo[color=cyan]{Talvez trocar a \autoref{fig:rehab_gait} por foto de prótese}\begin{figure}[ht]
-	\caption{\label{fig:rehab_gait}Exemplos de robôs de reabilitação de andar}
+\begin{figure}[ht]
+	\caption{\label{fig:rehab_gait}Exemplos de robôs de auxílio na restauração de caminhada}
 	\begin{center}
 	    \includegraphics[width=0.7\textwidth]{resources/robotics_rehab_1}
 	\end{center}
@@ -92,12 +92,11 @@ A robótica de reabilitação consiste em auxiliar pessoas com dificuldades moto
 
 Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pessoas com membros amputados, através de próteses ativas, que podem permitir, por exemplo, uma caminhada mais natural do que uma prótese passiva comum~\cite{dedic:2011}. Alguns projetos deste tipo, além deste trabalho, serão discutidos no \autoref{ch:correlatos}.
 
-\todo[inline]{Apresentar e descrever sensores e atuadores utilizados na robótica}
-Alguns aspectos cruciais da Robótica são a mecânica, além de sensores e atuadores. A mecânica refere-se à forma física dos robôs: tanto relativo a movimento quanto a estrutura. Sensores são os responsáveis por detectar o ambiente para que se determine como se deve interagir com ele.\todo{referências}
+Alguns elementos cruciais da Robótica são o manipulador, além de atuadores e sensores. O manipulador refere-se à estrutura física dos robôs, como juntas. Atuadores são o que realizam os movimentos do robô; alguns tipos comuns de atuadores são: servomotores, motores de passo, atuadores pneumáticos e atuadores hidráulicos~\cite{niku:2010robotics_intro}.
 
-\todo[inline]{Apresentar detalhes sobre mecânica na robotica - ver http://www.leomar.com.br/brinquedos/images/stories/manuais/laboratorio/guia\%20de\%20robotica.pdf}
+Sensores são os responsáveis por coletar informações sobre o estado interno do robô e por detectar o ambiente para que se determine como se deve interagir com ele; alguns sensores comuns são: potenciômetros, sensores de aceleração, de pressão, de proximidade, entre outros~\cite{niku:2010robotics_intro}.
 
-\todo[inline]{Falar sobre as platormas de desenvolvimento para robótica, como Lego Mindstorm - ver http://livros01.livrosgratis.com.br/cp115615.pdf}
+A parte mecânica é um aspecto importante da Robótica que pode se referir à mecânica estrutural, relativa a peças físicas de sustentação como barras e parafusos, e peças dinâmicas como polias, engrenagens e eixos, que permitem a movimentação \cite{modelix:2010guia_robotica}.
 
 % \section{Eletromiografia: Geração de Dados}
 % \label{sec:emg}
@@ -177,9 +176,9 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 \subsubsection{TensorFlow}\label{sec:ml_tf}
 % ==================================================
 
-TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}. É uma ferramenta bastante popular, e oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax~\cite{ertram:2017}.
+TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
 
-\todo[inline]{Ampliar esta seção está bem rasa, sugiro falar sobre as técnicas que são usadas na tool, como RNN pre-treinadas. Mencionar quem usa esta \textit{tool} e onde.}
+A ferramenta oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax, além de ser bastante popular~\cite{ertram:2017}. Empresas como Google e Mozilla utilizam o TensorFlow em projetos de Aprendizado de Máquina, como o projeto de reconhecimento de fala da Mozilla chamado \textit{Deep Search}~\cite{tensorflow:uses}.
 
 A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit{Deep Neural Network}, em inglês) com 2 camadas ocultas, contendo 10 nós cada. Este programa utiliza dados já contidos na API para classificar flores em três espécies diferentes, baseado nos tamanhos das sépalas e pétalas delas~\cite{tensorflow:premade_estimators}.
 
@@ -257,10 +256,10 @@ A Figura~\ref{fig:fsm_2} representa um sistema de máquina de venda que aceita m
 	\legend{Fonte: Adaptado de~\citeonline[p. 68]{wagner:2006}}
 \end{figure}
 
-\todo[inline]{Descrever que propriedades podem ser validadas usando um FSM. \textbf{Não encontro!!!}}
+% NÃO CONSEGUI ENCONTRAR ISSO: \todo[inline]{Descrever que propriedades podem ser validadas usando um FSM.}
 
 % ==================================================
-\subsection{Redes de Petri}\legend{sec:petrinet}
+\subsection{Redes de Petri}\label{sec:petrinet}
 % ==================================================
 
 Uma rede de Petri é um modelo matemático de um sistema, cujo estudo pode revelar informações vitais sobre a estrutura e o comportamento do sistema modelado~\cite{peterson:1981}. Segundo~\citeonline{murata:1989}, as redes de Petri são uma ferramenta de modelagem matemática e gráfica, especialmente úteis para sistemas concorrentes, assíncronos, distribuídos, paralelos, não-determinísticos, e estocásticos.
