@@ -62,7 +62,8 @@ Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motoriz
 
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flexível, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
 
-Os valores capturados\todo{Adicionar um exemplo de dados gerados pelos sensores}\ pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos. Os dados também serão armazenados para a análise descrita na~\autoref{sec:metodo_diagnostico}.
+%\todo{Adicionar um exemplo de dados gerados pelos sensores}
+Os valores capturados pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos. Os dados também serão armazenados para a análise descrita na~\autoref{sec:metodo_diagnostico}.
 
 \section{Previsão de movimentos}\label{sec:metodo_previsao}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
