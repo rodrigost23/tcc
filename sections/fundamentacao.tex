@@ -20,13 +20,31 @@ Conforme~\citeonline{buttazzo2011:realtime} afirma, um sistema em tempo real nã
 
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída~\cite{white:2011}. Esses componentes surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior~\cite{heath:2002}. Além disso, segundo~\citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
 
-A distinção entre microprocessadores e microcontroladores, contudo, não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Mas também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
+O Arduino Uno Rev3, por exemplo, é um placa de microcontrolador, equipado com o microcontrolador ATmega328/P e conta com 14 pinos de entrada/saída digitais e 6 entradas analógicas~\cite{arduino:uno_store}.
 
-Os microprocessadores, por sua vez, não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por esse motivo, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
+O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pinout}, é um microcontrolador 8-bit de baixo consumo de energia com arquitetura RISC que oferece 131 instruções. Além disso, contém uma memória \textit{flash} programável de 32kB \cite{atmel:2016atmega328p}.
 
-\todo[inline]{Apresentar exemplo de Microcontrolador, exemplo Arduino suas funções e pinagens}
-    
-\todo[inline]{Apresentar exemplo de Microprocessador, exemplo Galileo suas funções e pinagens}
+\begin{figure}[ht]
+	\caption{\label{fig:atmel_atmega328p_pinout}Pinagem do microcontrolador ATmega328/P}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/atmel_atmega328_pinout}
+	\end{center}
+	\legend{Fonte:~\citeonline[p.14]{atmel:2016atmega328p}}
+\end{figure}
+
+A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Mas também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
+
+Microprocessadores não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por esse motivo, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
+
+Um computador de placa única que conta com um microprocessador é o Raspberry Pi 3 Model B+, mostrado na~\autoref{fig:raspberry_pi3_bplus}, que contém um processador 64-bit Broadcom BCM2837B0, que funciona a 1.4GHz. O Raspberry Pi 3 Model B+ também tem 1GB de RAM, além de ser equipado com 4 portas USB, conectividade Bluetooth e WiFi, e oferecer 40 pinos de entrada/saída digitais~\cite{raspberry:pi3_store}. Pode ser utilizado como um computador pessoal, mas também para projetos eletrônicos~\cite{raspberry:faq}.
+
+\begin{figure}[ht]
+	\caption{\label{fig:raspberry_pi3_bplus}Raspberry Pi 3 Model B+}
+	\begin{center}
+	    \includegraphics[width=0.6\textwidth]{resources/raspberry_pi3_bplus}
+	\end{center}
+	\legend{Fonte: Adaptado de~\citeonline{raspberry:pi3_store}}
+\end{figure}
 
 % ==================================================
 \subsection{IoT\@: Internet das Coisas}
@@ -92,7 +110,7 @@ A robótica de reabilitação consiste em auxiliar pessoas com dificuldades moto
 \section{Reconhecimento de Padrões}\label{sec:patternrec}
 % ==================================================
 
-O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina\todo{Adicionar referência.}\ no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados~\cite{bishop:2006}.
+O reconhecimento de padrões é um campo que busca encontrar padrões em conjuntos de dados, com finalidade em diversas áreas, e vem sendo desenvolvido ao lado de Aprendizado de Máquina~\cite{samuel:1959machine_learning} no decorrer dos anos. Com isto, a intenção é usar algoritmos computacionais no intuito de descobrir automaticamente regularidades em dados, possibilitando, por exemplo, a classificação de tais dados~\cite{bishop:2006}.
 
 Os dados extraídos de sensores podem ser usados para classificação a partir do reconhecimento de padrões. Esta seção abordará o aprendizado de máquina e alguns \textit{frameworks} que podem ser usados na classificação dos movimentos a partir desses dados.
 
