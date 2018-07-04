@@ -59,7 +59,9 @@ O trabalho de \citeonline{kumar:2017} propõe um protótipo de braço prostétic
 	\legend{Fonte: \citeonline{kumar:2017}}
 \end{figure}
 
-O protótipo de \citeonline{kumar:2017} foi desenvolvido usando o \textit{software} Solid Works\footnote{<https://www.solidworks.com/>}, e a simulação foi feita com Simulink\footnote{<https://www.mathworks.com/products/simulink.html>} e SimMechanics\footnote{<https://www.mathworks.com/products/simmechanics.html>}. A classificação por aprendizado de máquina foi feita utilizando ANFIS~\cite{jang:1993anfis}, um tipo de rede neural artificial, a partir dos dados das simulações\todo{Descrever os resultados da classificação}. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
+O protótipo de \citeonline{kumar:2017} foi desenvolvido usando o \textit{software} Solid Works\footnote{<https://www.solidworks.com/>}, e a simulação foi feita com Simulink\footnote{<https://www.mathworks.com/products/simulink.html>} e SimMechanics\footnote{<https://www.mathworks.com/products/simmechanics.html>}. A classificação por aprendizado de máquina foi feita utilizando ANFIS~\cite{jang:1993anfis}, um tipo de rede neural artificial, a partir dos dados gerados na simulação.
+
+Foram geradas 40 mil posições do braço, simulando um braço humano real. Estes dados foram utilizados para treinar o algoritmo ANFIS, que então foi capaz de determinar o ângulo das articulações. Para atuar nos movimentos do braço robótico, foram usados vários servomotores e um microcontrolador PIC16F886.
 
 
 % ===================================================================================
