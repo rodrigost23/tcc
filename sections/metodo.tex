@@ -39,9 +39,11 @@ O diagrama de sequência da \autoref{fig:sequence_diagram} representa os compone
 A central localizada na prótese deverá requisitar os dados dos sensores de forma constante, em um intervalo a ser determinado. Estes dados são então inseridos no classificador, que tomará a ação necessária e ativará os atuadores caso haja uma mudança de ambiente como, por exemplo, tenha sido iniciada a descida de uma escada.
 
 \subsection{Arquitetura do \textit{software}}\label{sec:metodo_prot_software}
-O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado através de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na~\autoref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais.
+O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado através de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na Seção~\ref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais. 
+% 
+Vale ressaltar que a transformação do diagrama de sequência para rede de petri de forma automatizada é possível utilizando ferramentas como o FOREVER~\cite{cunha:2011forever}.
 
-A classificação será realizada com a utilização de uma ferramenta como as descritas na~\autoref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, de modo a se criar um conjunto de dados a ser usado pela classificação na prótese.
+A classificação será realizada com a utilização de uma ferramenta como as descritas na Seção~\ref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, de modo a se criar um conjunto de dados a ser usado pela classificação na prótese.
 
 \subsection{Arquitetura do \textit{hardware}}\label{sec:metodo_prot_hardware}
 A prótese em si será formada por partes impressas em 3D, feitas a partir de modelos gratuitos a serem escolhidos e adaptados. O uso de impressão 3D tem o intuito de manter o baixo custo do produto, que é um dos objetivos deste trabalho.
@@ -86,7 +88,7 @@ Assim que um passo começa a ser realizado, classifica-se o tipo de passo a ser 
 As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) pisada plana, (b) fim de um passo em piso plano, e (c) descida de escada. No primeiro caso, os motores só mantém estabilidade para garantir equilíbrio; no segundo caso, é necessária maleabilidade na dianteira do pé, para que seja possível impulsionar o passo do usuário. No terceiro caso, antes que o usuário desça o próximo degrau, a prótese deve inclinar-se e contrair a dianteira do pé para evitar tropeços e auxiliar na descida.
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}\label{sec:metodo_diagnostico}
-Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
+Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário~\cite{SabatiniMSC05}. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
 
 A partir das informações geradas, poderá ser feitas recomendações de melhorias ao indivíduo, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
 
