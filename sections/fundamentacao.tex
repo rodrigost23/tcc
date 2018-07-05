@@ -181,13 +181,12 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâm
 	y = [0, 1]
 	clf = svm.SVC()
 	clf.fit(X, y)
-\end{lstlisting}
+\end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
 
 \begin{lstlisting}[language=Python,caption={Previsão usando classificador SVM com scikit-learn},label={lst:sklearn_svm_2}]
 	>>> clf.predict([[2., 2.]])
 	array([1])
-\end{lstlisting}
-
+\end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
 
 % ==================================================
 \subsubsection{TensorFlow}\label{sec:ml_tf}
@@ -207,7 +206,41 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 	\legend{Fonte: \citeonline{tensorflow:premade_estimators}}
 \end{figure}
 
-\todo[inline]{Sugiro Apresentar algum exemplo/trecho de código}
+O~\autoref{lst:tf_dnn_1} mostra o código referente ao classificador representado na~\autoref{fig:tensorflow_ann_example}, enquanto o~\autoref{lst:tf_dnn_2} demonstra o treino da rede neural, e o~\autoref{lst:tf_dnn_3} demonstra a previsão a partir do modelo treinado \cite{tensorflow:premade_estimators}.
+
+\begin{lstlisting}[language=Python,caption={Inicializando o classificador no TensorFlow},label={lst:tf_dnn_1}]
+# Constrói uma DNN com 2 camadas ocultas e 10 nós em cada uma delas.
+classifier = tf.estimator.DNNClassifier(
+	feature_columns=my_feature_columns,
+	# Duas camadas ocultas de 10 nós cada.
+	hidden_units=[10, 10],
+	# O modelo deve escolher entre 3 classes.
+	n_classes=3)
+\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+
+\begin{lstlisting}[language=Python,caption={Treinando o classificador no TensorFlow},label={lst:tf_dnn_2}]
+	# Treina o modelo.
+classifier.train(
+    input_fn=lambda:iris_data.train_input_fn(train_x, train_y, args.batch_size),
+    steps=args.train_steps)
+\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+
+\begin{lstlisting}[language=Python,caption={Fazendo previsões a partir do modelo treinado no TensorFlow},label={lst:tf_dnn_3}]
+	# Gera previsões do modelo
+expected = ['Setosa', 'Versicolor', 'Virginica']
+predict_x = {
+    'SepalLength': [5.1, 5.9, 6.9], # Comprimento da sépala
+    'SepalWidth': [3.3, 3.0, 3.1],  # Largura da sépala
+    'PetalLength': [1.7, 4.2, 5.4], # Comprimento da pétala
+    'PetalWidth': [0.5, 1.5, 2.1],  # Largura da pétala
+}
+
+predictions = classifier.predict(
+    input_fn=lambda:iris_data.eval_input_fn(predict_x,
+                                            batch_size=args.batch_size))
+
+\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+
 
 % ==================================================
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
