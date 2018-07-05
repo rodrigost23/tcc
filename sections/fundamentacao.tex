@@ -94,11 +94,14 @@ Neste contexto, a robótica tem sido aplicada para aprimorar a mobilidade de pes
 
 Alguns elementos cruciais da Robótica são o manipulador, além de atuadores e sensores. O manipulador refere-se à estrutura física dos robôs, como articulações. Atuadores são o que realizam os movimentos do robô; alguns tipos comuns de atuadores são: servomotores, motores de passo, atuadores pneumáticos e atuadores hidráulicos~\cite{niku:2010robotics_intro}.
 
+%\todo[inline]{Seria bom falar um pouco mais sobre as questões mecânicas sobre movimentação de motores: funcionamento de motores, em específico servo motores, força e velocidade de rotação}
+Atuadores elétricos são o tipo de atuadores mais comuns na robótica, em especial servomotores, que são motores que podem ser controlados para se moverem em uma velocidade e torque desejados, e contam com um dispositivo de \textit{feedback} que indica sua velocidade e ângulo no momento~\cite{niku:2010robotics_intro}.
+
+Para que esses motores elétricos possam ser controlados por microprocessadores, é feita a conversão de sinal digital para analógico, e são necessárias várias saídas digitais para ter mais controle sobre a voltagem direcionada ao motor, para que se controle a velocidade, por exemplo~\cite{niku:2010robotics_intro}.
+
 Sensores são os responsáveis por coletar informações sobre o estado interno do robô e por detectar o ambiente para que se determine como se deve interagir com ele; alguns sensores comuns são: potenciômetros, sensores de aceleração, de pressão, de proximidade, entre outros~\cite{niku:2010robotics_intro}.
 
-A parte mecânica é um aspecto importante da Robótica que pode se referir à mecânica estrutural, relativa a peças físicas de sustentação como barras e parafusos, e peças dinâmicas como polias, engrenagens e eixos, que permitem a movimentação \cite{modelix:2010guia_robotica}.
-
-\todo[inline]{Seria bom falar um pouco mais sobre as questõe mecanicas sobre movimentação de motores}
+A parte mecânica é um aspecto importante da Robótica que pode se referir à mecânica estrutural, relativa a peças físicas de sustentação como barras e parafusos, e a peças dinâmicas como polias, engrenagens e eixos, que permitem a movimentação~\cite{modelix:2010guia_robotica}.
 
 % \section{Eletromiografia: Geração de Dados}
 % \label{sec:emg}
@@ -168,7 +171,7 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 \begin{figure}[ht]
 	\caption{\label{fig:sklearn_svm}Exemplo de classificação de dados utilizando scikit-learn}
 	\begin{center}
-	    \includegraphics[width=0.9\textwidth]{resources/sklearn_iris_svm.png}
+	    \includegraphics[width=0.8\textwidth]{resources/sklearn_iris_svm.png}
 	\end{center}
 	\legend{Fonte: \cite{scikitlearn:svm_classif}}
 \end{figure}
