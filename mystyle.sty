@@ -49,7 +49,7 @@
     	linkcolor=.,         % color of internal links
     	citecolor=.,         % color of links to bibliography
     	filecolor=black,         % color of file links
-		urlcolor=black,
+		urlcolor=blue,
 		bookmarksdepth=4
 }
 \makeatother
@@ -78,6 +78,12 @@
 % -----------------------------------------------------------------------------
 \renewcommand{\lstlistingname}{Programa}
 
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mypink}{rgb}{0.75,0,0.75}
+
 \lstset{ % Formatação do  pseudo-código
     language=C,
     basicstyle=\footnotesize,
@@ -86,6 +92,11 @@
     frame = single,
     showstringspaces=false,
     tabsize=2,
+    backgroundcolor=\color{white},   % choose the background color
+    commentstyle=\color{mygreen},    % comment style
+    %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+    keywordstyle=\color{blue},       % keyword style
+    stringstyle=\color{mymauve},     % string literal style
     breaklines=true,
     xleftmargin=10pt,
     breakatwhitespace=false,

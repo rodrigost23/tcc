@@ -168,14 +168,26 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 \begin{figure}[ht]
 	\caption{\label{fig:sklearn_svm}Exemplo de classificação de dados utilizando scikit-learn}
 	\begin{center}
-	    \includegraphics[width=0.8\textwidth]{resources/sklearn_iris_svm.png}
+	    \includegraphics[width=0.9\textwidth]{resources/sklearn_iris_svm.png}
 	\end{center}
 	\legend{Fonte: \cite{scikitlearn:svm_classif}}
 \end{figure}
 
-%\todo[inline]{Apresentar um exemplo de utilização da ferramenta, pode ser um trecho do próprio site}
+Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâmetro \texttt{X} contém as amostras, e o parâmetro \texttt{y} contém os rótulos das classes. Já o~\autoref{lst:sklearn_svm_2} faz a previsão: a linha~\texttt{1} é o comando realizado, dado um novo valor, e a linha~\texttt{2} representa o resultado, com os dados classificados \cite{scikitlearn:svm_classif}.
 
-\todo[inline]{Sugiro Apresentar algum exemplo/trecho de código}
+\begin{lstlisting}[language=Python,caption={Treino do classificador SVM com scikit-learn},label={lst:sklearn_svm_1}]
+	from sklearn import svm
+	X = [[0, 0], [1, 1]]
+	y = [0, 1]
+	clf = svm.SVC()
+	clf.fit(X, y)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python,caption={Previsão usando classificador SVM com scikit-learn},label={lst:sklearn_svm_2}]
+	>>> clf.predict([[2., 2.]])
+	array([1])
+\end{lstlisting}
+
 
 % ==================================================
 \subsubsection{TensorFlow}\label{sec:ml_tf}
