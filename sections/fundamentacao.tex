@@ -138,7 +138,7 @@ Quando os valores de saída são números, o problema é conhecido como \textbf{
 % \subsubsection{SVM}
 Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado~\cite{russell:2010}.
 
-A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes~\cite{hearst:1998}. Como no exemplo da figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em~\ref{fig:svm_classification_a} e o separador linear desejado em~\ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados~\cite{russell:2010}. Neste exemplo, é feita a classificação entre os círculos pretos e os brancos.
+A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes~\cite{hearst:1998}. Como no exemplo da Figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em~\ref{fig:svm_classification_a} e o separador linear desejado em~\ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados~\cite{russell:2010}. Neste exemplo, é feita a classificação entre os círculos pretos e os brancos.
 
 \begin{figure}[ht]
     \centering
@@ -222,14 +222,14 @@ classifier = tf.estimator.DNNClassifier(
 \end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
 
 \begin{lstlisting}[language=Python,caption={Treinando o classificador no TensorFlow},label={lst:tf_dnn_2}]
-	# Treina o modelo.
+# Treina o modelo.
 classifier.train(
     input_fn=lambda:iris_data.train_input_fn(train_x, train_y, args.batch_size),
     steps=args.train_steps)
 \end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
 
 \begin{lstlisting}[language=Python,caption={Fazendo previsões a partir do modelo treinado no TensorFlow},label={lst:tf_dnn_3}]
-	# Gera previsões do modelo
+# Gera previsões do modelo
 expected = ['Setosa', 'Versicolor', 'Virginica']
 predict_x = {
     'SepalLength': [5.1, 5.9, 6.9], # Comprimento da sépala
@@ -258,7 +258,7 @@ O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrev
 % ==================================================
 Uma forma de detalhar as especificações iniciais do \textit{design} do sistema é através do diagrama de sequência, que é um modelo especificado pela UML. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas, desenvolvida por especialistas de \textit{software} e utilizada por ferramentas comerciais~\cite{marwedel:2010}.
 
-Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
+Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na Figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
 \begin{figure}[!ht]
 	\caption{\label{fig:seq_chart}Exemplo de diagrama de sequência em UML}
@@ -268,7 +268,7 @@ Este diagrama indica a troca de mensagens sequencial entre os diversos component
 	\legend{Fonte: Adaptado de~\citeonline[p. 37]{marwedel:2010}}
 \end{figure}
 
-As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
+As linhas tracejadas representam as ``linhas da vida'', e as mensagens são ordenadas em sequência ao longo dessas linhas. Caixas sobre as linhas da vida representam controle ativo do componente correspondente. No exemplo da Figura~\ref{fig:seq_chart}, as setas denotam mensagens assíncronas, e pode-se notar que a máquina espera o usuário atender o telefone. Caso isso não ocorra, a própria máquina atende e envia as boas vindas para o autor da chamada, que deixa uma mensagem no correio de voz~\cite{marwedel:2010}.
 
 %Ainda segundo~\citeonline{marwedel:2010}, o diagrama de sequência tem certas limitações\todo{Exemplificar quais.}\ e não é capaz de descrever ações complexas, mas é útil para uma modelagem inicial. %===> Não sei de onde eu tirei essa ideia!
 
