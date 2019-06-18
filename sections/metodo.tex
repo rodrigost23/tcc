@@ -2,7 +2,7 @@ Este capítulo apresentará o método proposto por este trabalho para o projeto 
 
 \section{Visão geral do método}\label{sec:metodo_protese}
 
-O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação.
+\todo{Mudar de prótese para simulação}O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação.
 
 \begin{figure}[h]
 	\caption{\label{fig:big_picture}Visão geral do protótipo}
@@ -12,7 +12,7 @@ O projeto desenvolvido neste trabalho é uma prótese robótica para membros inf
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-O sistema computacional que envolve o projeto estará equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
+\todo{Apenas um sensor em apenas uma perna}O sistema computacional que envolve o projeto estará equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
 Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, posicionada na estrutura da própria prótese, que fará a classificação para determinar a ação dos atuadores, como pode ser visto no fluxograma ilustrado na \autoref{fig:flowchart}.
 
@@ -26,7 +26,7 @@ Os sensores serão posicionados nos joelhos do usuário, e os dados capturados s
 
 
 \section{Prototipação da prótese}\label{sec:metodo_prototipacao}
-O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença de dois objetos caracterizados como ``sensores'': com fio e sem fio. Os sensores sem fio são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
+\todo{Remover sensores sem fio?}O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença de dois objetos caracterizados como ``sensores'': com fio e sem fio. Os sensores sem fio são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
 
 \begin{figure}[ht]
 	\caption{\label{fig:sequence_diagram}Diagrama de sequência que descreve a interação entre os componentes do sistema}
@@ -41,7 +41,7 @@ A central localizada na prótese deverá requisitar os dados dos sensores de for
 \subsection{Arquitetura do \textit{software}}\label{sec:metodo_prot_software}
 O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado através de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na Seção~\ref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais. 
 % 
-Vale ressaltar que a transformação do diagrama de sequência para rede de petri de forma automatizada é possível utilizando ferramentas como o FOREVER~\cite{cunha:2011forever}.
+Vale ressaltar que a transformação do diagrama de sequência para rede de petri de forma automatizada é possível utilizando ferramentas como o FOREVER~\cite{cunha:2011forever}.\todo{Manter isso sobre rede de Petri?}
 
 A classificação será realizada com a utilização de uma ferramenta como as descritas na Seção~\ref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, de modo a se criar um conjunto de dados a ser usado pela classificação na prótese.
 
@@ -61,13 +61,14 @@ A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protóti
 Por fim, o ponto D da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, a fim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}.
 
 \section{Coleta de dados}\label{sec:metodo_coleta}
-
+\todo[inline]{Somente um sensor}
 Para que o sistema possa analisar e classificar os movimentos conforme o usuário utiliza a prótese normalmente, serão utilizados sensores nas duas pernas. Em cada joelho será posicionado um conjunto de um sensor flexível, um giroscópio e um acelerômetro, que serão utilizados em conjunto.
 
 %\todo{Adicionar um exemplo de dados gerados pelos sensores}
 Os valores capturados pelos sensores do membro intacto serão transmitidos sem fios para a central de classificação dos sinais, que se conecta aos atuadores. Os sensores posicionados no membro residual se comunicarão diretamente através de fios com a central, pois estão posicionados fisicamente próximos. Os dados também serão armazenados para a análise descrita na Seção~\ref{sec:metodo_diagnostico}.
 
 \section{Previsão de movimentos}\label{sec:metodo_previsao}
+\todo[inline]{Mudar a previsão de movimentos, já que não usa a perna intacta?}
 Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
 
 Antes que o usuário realize um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, realizado pela perna intacta, e a partir do movimento atual extraído do membro residual.
@@ -88,7 +89,7 @@ Assim que um passo começa a ser realizado, classifica-se o tipo de passo a ser 
 As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) pisada plana, (b) fim de um passo em piso plano, e (c) descida de escada. No primeiro caso, os motores só mantém estabilidade para garantir equilíbrio; no segundo caso, é necessária maleabilidade na dianteira do pé, para que seja possível impulsionar o passo do usuário. No terceiro caso, antes que o usuário desça o próximo degrau, a prótese deve inclinar-se e contrair a dianteira do pé para evitar tropeços e auxiliar na descida.
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}\label{sec:metodo_diagnostico}
-Os dados dos sensores também serão automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário~\cite{SabatiniMSC05}. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
+Os dados dos sensores também serão\todo{\textbf{Poderão} ser armazenados}{ }automaticamente armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do usuário~\cite{SabatiniMSC05}. O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
 
 A partir das informações geradas, poderá ser feitas recomendações de melhorias ao indivíduo, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
 
