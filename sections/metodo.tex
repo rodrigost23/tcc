@@ -1,8 +1,8 @@
-Este capítulo apresentará o método proposto por este trabalho para o projeto de uma prótese ativa baseada em sensores e aprendizado de máquina.
+Este capítulo apresentará o método proposto por este trabalho para o desenvolvimento de um simulador de prótese ativa baseada em sensores e aprendizado de máquina.
 
 \section{Visão geral do método}\label{sec:metodo_protese}
 
-\todo{Mudar de prótese para simulação}O projeto desenvolvido neste trabalho é uma prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação.
+O projeto desenvolvido neste trabalho é um simulador de prótese robótica para membros inferiores ou, mais especificamente, para a articulação do tornozelo. \todo{Mexer nesse texto que fala de prótese física}{ }Esta prótese será construída a partir de modelos de próteses para impressoras 3D, aproveitando-se as partes mecânicas. A intenção é manter um baixo custo de produção. O sistema é projetado para funcionar em uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação.
 
 \begin{figure}[h]
 	\caption{\label{fig:big_picture}Visão geral do protótipo}
@@ -12,7 +12,7 @@ Este capítulo apresentará o método proposto por este trabalho para o projeto 
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-\todo{Apenas um sensor em apenas uma perna}O sistema computacional que envolve o projeto estará equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
+\todo{Apenas um sensor em apenas uma perna?}O sistema computacional que envolve o projeto estará equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e o atuador da prótese em si.
 
 Os sensores serão posicionados nos joelhos do usuário, e os dados capturados serão transmitidos a uma placa de processamento, posicionada na estrutura da própria prótese, que fará a classificação para determinar a ação dos atuadores, como pode ser visto no fluxograma ilustrado na \autoref{fig:flowchart}.
 
