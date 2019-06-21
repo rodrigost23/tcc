@@ -1,20 +1,13 @@
 Este capítulo aborda a execução do método proposto por este trabalho e a análise dos resultados obtidos pelos experimentos realizados a fim de verificar a viabilidade do projeto, bem como sua eficiência.
 
 \section{Planejamento dos experimentos}\label{sec:result_planejamento}
-O intuito desta avaliação experimental é verificar a capacidade do sistema AutomailX de exibir um objeto 3D animado e classificar as ações do usuário a partir da leitura dos sensores do protótipo.
+O intuito desta avaliação experimental é verificar a capacidade do sistema AutomailX classificar as ações do usuário a partir da leitura de sensores, e exibir um objeto 3D animado que demonstra esses dados. Para tal, foi necessário o desenvolvimento de um protótipo físico para a captura dos movimentos e de um \textit{software} para visualização.
 
-\todo{\textbf{Coesão:} ``Para este fim...''} Utilizou-se um Arduino Uno, um sensor MPU-6050 e um sensor flexível\todo{especificar sensores} para a captura dos dados de movimento do usuário. Todos estes equipamentos foram fixados \todo{qual o nome da luvinha de joelho} no joelho direito dos sujeitos de teste, simulando a pena que estaria utilizando a prótese.
+\subsection{Captura dos movimentos}\label{sec:result_captura}
+O protótipo para captura de dados consiste em um Arduino Nano, um sensor MPU-6050 e um sensor flexível\todo{especificar sensor}, conectados conforme o esquema da \autoref{fig:result_schem}. Todos estes equipamentos foram fixados no acessório da \autoref{fig:result_prototipo}, que pode ser posicionado no joelho do usuário.
 
-Foram selecionados indivíduos para gerar o conjunto de dados que seria utilizado para a classificação, e solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações. A captura foi feita a partir de um cabo USB conectado a um notebook \todo{configuração} estabelecendo conexão via porta serial para o programa.
-
-As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna\todo{devido à limitação dos sensores disponíveis, pois o giroscópio não é tão preciso assim sozinho}{ }.
-
-A simulação animada em 3D mostra em tempo real o movimento realizado pelos dois sensores e, após a captura dos dados, mostra também a ação realizada na prótese simulada, baseado na classificação dos dados de movimento.
-
-\section{Execução dos experimentos}\label{sec:result_execucao}
-
-\todo{Consertar imagem}\begin{figure}[ht]
-	\caption{\label{fig:result_schem}Esquema das conexões}
+\begin{figure}[ht]
+	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
 	\begin{center}
 	    \includegraphics[width=.8\textwidth]{resources/result_schem}
 	\end{center}
@@ -29,6 +22,35 @@ A simulação animada em 3D mostra em tempo real o movimento realizado pelos doi
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
+Para que seja possível ser feita a leitura e a classificação dos dados capturados, o Arduino deve ser conectado via USB em um computador que estaria executando o \textit{software} de simulação, que obtém os dados do giroscópio, acelerômetro e resistência do sensor flexível via comunicação serial.
+
+O \textit{software} contido no Arduino encarrega-se de enviar os dados de forma contínua\todo{complementar}
+
+\subsection{\textit{Software} de simulação}\label{sec:result_simulacao}
+
+
+A simulação animada em 3D mostra em tempo real o movimento realizado pelos dois sensores e, após a captura dos dados, mostra também a ação realizada na prótese simulada, baseado na classificação dos dados de movimento.
+
+\section{Execução dos experimentos}\label{sec:result_execucao}
+
 \todo[inline]{Dado tal cenário, coletei os dados, funcionou mas poderia melhorar de tal jeito, isso e aquilo. Se não funcionou, pode ter sido limitação do classificador, ou do sensor, ou da placa.}
-\todo[inline]{Escolha do algoritmo, comparação de gráficos
-}
+
+As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna\todo{devido à limitação dos sensores disponíveis, pois o giroscópio não é tão preciso assim sozinho (na verdade só não deu tempo mesmo)}{}.
+
+Foram selecionados indivíduos para gerar o conjunto de dados que seria utilizado para a classificação, e solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações. A captura foi feita a partir de um cabo USB conectado a um notebook \todo{configuração} estabelecendo conexão via porta serial para o programa.
+
+\subsection{Análise dos resultados}
+
+A partir dos dados coletados dos usuários, verificou-se\todo{Falar do KFold} dentre os algoritmos do scikit-learn\todo{Conferir coerência em relação ao nome do scikit em outras partes do texto}{ } que a árvore de decisões CART seria o mais apropriado, com acurácia de aproximadamente 94,7\%.
+\todo[inline]{Escolha do algoritmo, comparação de gráficos}
+\todo{Corrigir imagem: separar os gráficos ou manter só o de baixo}\begin{figure}[ht]
+	\caption{\label{fig:result_accuracy_plot}Gráfico de acurácia}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/result_accuracy_plot}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+Ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso.
+
+Observou-se que com a coleta realizada, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos, mas os conjuntos isolados para cada um deles funcionava. \todo{Reformular isso aqui.}
