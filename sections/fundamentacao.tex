@@ -15,7 +15,7 @@ Uma outra restrição comum que pode ser pertinente a um SE é de tempo. Alguns 
 Conforme~\citeonline{buttazzo2011:realtime} afirma, um sistema em tempo real não é apenas um sistema ``rápido''. É necessário que o tempo do sistema corresponda ao tempo \textit{real}, ou seja, do mundo exterior. Sistemas robóticos, do ponto de vista de arquitetura, dependem de interação com ambientes dinâmicos e incertos, o que exige controle em tempo real dos sensores e atuadores, com suporte a concorrência e reagindo rapidamente a situações excepcionais~\cite{siciliano:2008springer}.
 
 % ==================================================
-\subsection{Microcontroladores versus Microprocessadores}
+\subsection{Microcontroladores \textit{versus} Microprocessadores}
 % ==================================================
 
 Microcontroladores são processadores com vários componentes integrados, como RAM, uma memória de programa e interfaces de entrada e saída~\cite{white:2011}. Esses componentes surgiram como um substituto para circuitos lógicos discretos, por serem mais facilmente programáveis e proporcionarem uma funcionalidade maior~\cite{heath:2002}. Além disso, segundo~\citeonline{marwedel:2010}, os processadores em sistemas embarcados são geralmente microcontroladores, por serem simples e fáceis de usar.
@@ -136,7 +136,7 @@ No \textbf{aprendizado supervisionado}, o agente observa pares de entrada e saí
 Quando os valores de saída são números, o problema é conhecido como \textbf{regressão}. Quando a saída é um conjunto de valores finitos, o problema de aprendizagem é chamado de \textbf{classificação}, também conhecido como classificação Booleana ou binária caso hajam apenas dois valores~\cite{russell:2010}.
 
 % \subsubsection{SVM}
-Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado~\cite{russell:2010}.
+\todo{Remover SVM daqui pois não estou usando?} Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado~\cite{russell:2010}.
 
 A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes~\cite{hearst:1998}. Como no exemplo da Figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em~\ref{fig:svm_classification_a} e o separador linear desejado em~\ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados~\cite{russell:2010}. Neste exemplo, é feita a classificação entre os círculos pretos e os brancos.
 
@@ -195,7 +195,7 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâm
 \subsubsection{TensorFlow}\label{sec:ml_tf}
 % ==================================================
 
-TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
+\todo{Remover TensorFlow porque não estou usando?}TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
 
 A ferramenta oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax, além de ser bastante popular~\cite{ertram:2017}. Empresas como Google e Mozilla utilizam o TensorFlow em projetos de Aprendizado de Máquina, como o projeto de reconhecimento de fala da Mozilla chamado \textit{Deep Search}~\cite{tensorflow:uses}.
 
