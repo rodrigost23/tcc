@@ -11,17 +11,27 @@ aproveitando-se para simular as partes mecânicas e a inclusão de cenários de 
 % A intenção é manter um baixo custo de produção. 
 O simulador foi projetado para funcionar como uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação. Adicionalmente, o simulador conta com a utilização de classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas via coleta de dados de sensores por meio de um \textit{wearable}.
 
-Este dispositivo vestível que envolve o simulador está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e os atuadores da prótese que será utilizada no simulador.
+Este dispositivo vestível que envolve o simulador está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A Figura~\ref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e os atuadores da prótese que será utilizada no simulador (Figura~\ref{fig:simulation_prototype}).
 
-\begin{figure}[h]
-	\caption{\label{fig:big_picture}Visão geral do protótipo}
-	\begin{center}
-	    \fbox{\includegraphics[width=0.6\textwidth]{resources/big_picture}}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
+% \begin{figure}[h]
+% 	\caption{\label{fig:big_picture}Visão geral do protótipo}
+% 	\begin{center}
+% 	    \fbox{\includegraphics[width=0.6\textwidth]{resources/big_picture}}
+% 	\end{center}
+% 	\legend{Fonte: Elaborada pelo autor}
+% \end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \caption{Projeto do protótipo}
+    \label{fig:big_picture_simulation}
+    \subfloat[Visão geral do protótipo\label{fig:big_picture}]
+        {\includegraphics[height=5cm]{resources/big_picture}}
+        \hspace{0.5cm}
+    \subfloat[Simulação virtual do protótipo\label{fig:simulation_prototype}]
+        {\includegraphics[height=5cm]{resources/method_simulacao}}
+        \legend{Fonte: Elaboradas pelo autor}
 \end{figure}
-
-\todo[inline]{Ao lado da figura acima adicionar um image do simulador}
 
 No \textit{wearable}, os sensores são posicionados nos joelhos do usuário, e os dados capturados são transmitidos por uma placa de processamento para o simulador em computador. 
 % posicionada na estrutura da própria prótese, que 
@@ -118,7 +128,7 @@ As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) 
 
 Os dados dos sensores também são armazenados automaticamente para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do futuro usuário da prótese~\cite{SabatiniMSC05}. 
 % O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
-A partir das informações geradas, poderá ser feitas recomendações de melhorias ao indivíduo, via consulta a um especialista, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. 
+A partir das informações geradas, poderão ser feitas recomendações de melhorias ao indivíduo, via consulta a um especialista, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. 
 % Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
 
 Como trabalho futuro, pretende-se adicionar ao simulador um analisador de eficácia da prótese em relação aos sensores utilizados no \textit{wearable} para simulação da prótese. Visto que tais sensores poderão ser utilizados na prototipação de uma prótese física.  
