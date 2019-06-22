@@ -43,7 +43,9 @@ A simulação animada em 3D, exibida na~\autoref{fig:result_simulacao} mostra em
 
 Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início à captura de dados dos sensores, na qual observou-se que os melhores dados a serem usados para a classificação dentre os disponíveis seriam os valores do acelerômetro e do sensor flexível, ignorando a orientação do giroscópio, que ainda é utilizada para orientar a simulação.
 
-Foram selecionados 2\todo{foi o que deu tempo}{ } indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação, e solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações. A captura foi feita a partir de um cabo USB conectado a um \textit{notebook} (com um processador Intel i7-7500U, que conta com \textit{clock} de até \(3{,}5\) GHz e \(8\) GB de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}}, estabelecendo comunicação serial com o programa.
+Foram selecionados dois\todo{foi o que deu tempo}{ } indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação. O dispositivo vestível foi utilizado na perna direita e foi solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações.
+
+A captura foi feita a partir de um cabo USB conectado a um \textit{notebook} (com um processador Intel i7-7500U, que conta com \textit{clock} de até \(3{,}5\) GHz e \(8\) GB de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}}, estabelecendo comunicação serial com o programa.
 
 As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna\todo{só não deu tempo}. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram realizadas \todo{De novo, foi o que deu tempo}140 amostras.
 
@@ -62,6 +64,7 @@ A partir dos dados coletados dos usuários, verificou-se através de validação
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_plot}Gráfico de acurácia do algoritmo CART}
+	\todo[inline]{Tentar gerar um gráfico mais interessante: \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html}}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_plot}
 	\end{center}
