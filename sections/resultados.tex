@@ -41,29 +41,27 @@ A simulação animada em 3D, exibida na~\autoref{fig:result_simulacao} mostra em
 
 \section{Execução dos experimentos}\label{sec:result_execucao}
 
-\todo[inline]{Dado tal cenário, coletei os dados, funcionou mas poderia melhorar de tal jeito, isso e aquilo. Se não funcionou, pode ter sido limitação do classificador, ou do sensor, ou da placa.}
 Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início à captura de dados dos sensores, na qual observou-se que os melhores dados a serem usados para a classificação dentre os disponíveis seriam os valores do acelerômetro e do sensor flexível, ignorando a orientação do giroscópio, que ainda é utilizada para orientar a simulação.
 
-Foram selecionados 2\todo{Se der tempo, eu coloco mais gente pra testar no laboratório}{ } indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação, e solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações. A captura foi feita a partir de um cabo USB conectado a um notebook (com um processador Intel i7-7500U, que conta com \textit{clock} de até 3,5GHzm e 8GB de RAM), estabelecendo comunicação serial com o programa.
+Foram selecionados 2\todo{foi o que deu tempo}{ } indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação, e solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações. A captura foi feita a partir de um cabo USB conectado a um notebook (com um processador Intel i7-7500U, que conta com \textit{clock} de até 3,5GHzm e 8GB de RAM), estabelecendo comunicação serial com o programa.
 
-As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna\todo{só não deu tempo}. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}.
+As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna\todo{só não deu tempo}. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram realizadas \todo{De novo, foi o que deu tempo}140 amostras.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação}
 	\begin{center}
 	   % \includegraphics[width=\textwidth]{resources/result_estados}
-	   \missingfigure[figwidth=\textwidth]{}
+	   \missingfigure[figwidth=\textwidth]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
 \subsection{Análise dos resultados}\label{sec:result_analise}
 
-A partir dos dados coletados dos usuários, verificou-se\todo{Falar do KFold}{ } dentre os algoritmos do scikit\todo[fancyline]{Conferir coerência em relação ao nome em outras partes do texto}-learn que a árvore de decisões CART seria o mais apropriado, com acurácia de aproximadamente 94,7\%.
+A partir dos dados coletados dos usuários, verificou-se através de validação cruzada, dentre os algoritmos disponíveis no scikit-learn, que a árvore de decisões CART seria o mais apropriado, com acurácia de aproximadamente 94,7\% para os dados selecionados, como pode ser visto no gráfico da \autoref{fig:result_accuracy_plot}.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_plot}Gráfico de acurácia}
-	\todo[inline]{Corrigir imagem: separar os gráficos ou manter só o de baixo}
+	\caption{\label{fig:result_accuracy_plot}Gráfico de acurácia do algoritmo CART}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_plot}
 	\end{center}
