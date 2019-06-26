@@ -9,9 +9,9 @@ O simulador visa prover suporte para a construção de modelos de próteses,
 % para impressoras 3D, 
 aproveitando-se para simular as partes mecânicas e a inclusão de cenários de diferentes tipos de superfícies.
 % A intenção é manter um baixo custo de produção. 
-O simulador foi projetado para funcionar como uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação. Adicionalmente, o simulador conta com a utilização de classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas via coleta de dados de sensores por meio de um \textit{wearable}.
+O simulador foi projetado para funcionar como uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação. Além disso, o simulador conta com a utilização de um classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas via coleta de dados de sensores por meio de um dispositivo vestível na forma de joelheira.
 
-Este dispositivo vestível que envolve o simulador está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A Figura~\ref{fig:big_picture} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores e os atuadores da prótese que será utilizada no simulador (Figura~\ref{fig:simulation_prototype}).
+Este dispositivo está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A Figura~\ref{fig:big_picture_prosthesis} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores para o simulador juntamente com uma possível prótese implementada com atuadores reais (Figura~\ref{fig:big_picture_prosthesis}) e a simulação gerada a partir dos dados coletados dos sensores, com a movimentação do pé a partir da classificação destes dados (Figura~\ref{fig:simulation_prototype}).
 
 % \begin{figure}[h]
 % 	\caption{\label{fig:big_picture}Visão geral do protótipo}
@@ -23,19 +23,19 @@ Este dispositivo vestível que envolve o simulador está equipado com sensores f
 
 \begin{figure}[ht]
     \centering
-    \caption{Projeto do protótipo}
-    \label{fig:big_picture_simulation}
-    \subfloat[Visão geral do protótipo\label{fig:big_picture}]
+    \caption{Visão geral do sistema}
+    \label{fig:big_picture}
+    \subfloat[Proposta de implementação de prótese\label{fig:big_picture_prosthesis}]
         {\includegraphics[height=5cm]{resources/big_picture}}
-        \hspace{0.5cm}
+    \hspace{1cm}
     \subfloat[Simulação virtual do protótipo\label{fig:simulation_prototype}]
         {\includegraphics[height=5cm]{resources/method_simulacao}}
-        \legend{Fonte: Elaboradas pelo autor}
+    \legend{Fonte: Elaboradas pelo autor}
 \end{figure}
 
-No \textit{wearable}, os sensores são posicionados nos joelhos do usuário, e os dados capturados são transmitidos por uma placa de processamento para o simulador em computador. 
+No dispositivo vestível, os sensores são posicionados nos joelhos do usuário, e os dados capturados são transmitidos por uma placa de processamento para o simulador em um computador. 
 % posicionada na estrutura da própria prótese, que 
-O simulador então trata os dados enviados e efetua a classificação para determinar a ação dos atuadores (ver fluxograma ilustrado na \autoref{fig:flowchart}) em um modelo virtual da prótese em tempo real.
+O simulador então trata os dados enviados e realiza a classificação para determinar a ação dos atuadores, conforme fluxograma ilustrado na \autoref{fig:flowchart}, em um modelo virtual da prótese em tempo real.
 % O fluxo  como pode ser visto no fluxograma ilustrado na \autoref{fig:flowchart}.
 
 \begin{figure}[ht]
@@ -72,7 +72,7 @@ A central localizada na simulador recebe os dados dos sensores de forma constant
 
 \subsection{Arquitetura do \textit{hardware} presente no simulador virtual}\label{sec:metodo_prot_hardware}
 
-A prótese virtual é apresenta em 3D, visando uma melhor visualização dos componentes propostos e futuro uso de uma impressora 3D com o foco em prototipação da prótese proposta. O uso de impressão 3D tem o intuito de manter o baixo custo do produto.
+A prótese virtual é apresentada em 3D, visando uma melhor visualização dos componentes propostos e futuro uso de uma impressora 3D com o foco em prototipação da prótese proposta. O uso de impressão 3D tem o intuito de manter o baixo custo do produto.
 
 A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo virtual, que deverão ser acionados de acordo com a classificação dos dados dos sensores. No ponto \textbf{A}, o motor do tornozelo da prótese regulará a rigidez da articulação, como forma de manter estabilidade nos passos. Os pontos \textbf{B} e \textbf{C} referem-se a motores de passo que, juntos a hastes, se prendem no calcanhar da prótese, para mover o pé e exercer força na pisada.
 
@@ -106,7 +106,7 @@ e a partir do movimento atual extraído do \textit{wearable} no membro residual 
 
 Considerando que haverá um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- 
 % será decidida um
-a técnica de aprendizado de máquina supervisionado para classificação utilizada no simulador é a CART\todo{Confirmar o nome da técnica}, conforme analisado em testes preliminares feitos e apresentados na Seção~\ref{sec:result_analise}.
+a técnica de aprendizado de máquina supervisionado para classificação utilizada no simulador é a Floresta Aleatória\todo{Confirmar o nome da técnica}, conforme analisado em testes preliminares feitos e apresentados na Seção~\ref{sec:result_analise}.
 % , mais especificamente de , através de ferramentas de aprendizado de máquina, como as descritas na Seção~\ref{sec:ml_tools}.
 
 % Assim que um passo começa a ser realizado, 
