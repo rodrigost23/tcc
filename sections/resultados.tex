@@ -1,10 +1,10 @@
 Este capítulo aborda a execução do método proposto por este trabalho e a análise dos resultados obtidos pelos experimentos realizados a fim de verificar a viabilidade do projeto, bem como sua eficiência.
 
 \section{Planejamento dos experimentos}\label{sec:result_planejamento}
-O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra esses dados. Para tal, foi necessário o desenvolvimento de um protótipo físico para a captura dos movimentos e de um \textit{software} para visualização.
+O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados.
 
 \subsection{Captura dos movimentos}\label{sec:result_captura}
-O protótipo para captura de dados consiste em um Arduino Nano, um sensor MPU\=/\todo{Inserir modelo específico}6050, contendo um acelerômetro e um giroscópio, e um sensor flexível, conectados conforme o esquema da \autoref{fig:result_schem}. 
+O protótipo para captura de dados consiste em um Arduino Nano, um sensor MPU\=/\todo{Inserir modelo específico}6050, contendo um acelerômetro e um giroscópio, e um sensor flexível, conectados conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -14,7 +14,7 @@ O protótipo para captura de dados consiste em um Arduino Nano, um sensor MPU\=/
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU-6050 (b) posicionado acima do joelho, e o sensor flexível (a) posicionado atrás do joelho. Este sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \(2{,}2\) polegadas e seu posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
+Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU-6050 (b) posicionado acima do joelho, e o sensor flexível (a) posicionado na parte de trás. Este último sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \(2{,}2\) polegadas, já que posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_prototipo}Protótipo com o sensor flexível (a) e o MPU-6050 (b) conectados ao Arduino Nano}
@@ -24,33 +24,33 @@ Todos esses equipamentos foram fixados em uma joelheira de material flexível n�
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Para que fossem feitas a leitura e a classificação dos dados capturados, o Arduino foi conectado via cabo USB em um computador que executava o \textit{software} de simulação. Os dados do giroscópio, acelerômetro e resistência do sensor flexível, respectivamente, são enviados continuamente via comunicação serial pelo \textit{software} carregado no Arduino.
+Para que fossem feitas a leitura e a classificação dos dados capturados, o Arduino foi conectado via cabo USB em um computador que executava o simulador. Os dados do giroscópio, acelerômetro e resistência do sensor flexível, respectivamente, são enviados continuamente via comunicação serial pelo \textit{software} carregado no Arduino.
 
 \subsection{\textit{Software} de simulação}\label{sec:result_simulacao}
-O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python, para facilitar o uso da ferramenta scikit-learn. O programa é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando scikit-learn; e a exibição 3D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
+O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python 3.7, para facilitar o uso da ferramenta scikit-learn. O programa é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando scikit-learn; e a exibição 3D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
 
 \section{Execução dos experimentos}\label{sec:result_execucao}
 
-Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início à captura de dados dos sensores, na qual observou-se que os melhores dados a serem usados para a classificação dentre os disponíveis seriam os valores do acelerômetro e do sensor flexível, ignorando a orientação do giroscópio, que ainda é utilizada para orientar a simulação.
+Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início à captura de dados dos sensores, na qual observou-se que os melhores dados a serem usados para a classificação dentre os disponíveis seriam os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual.
 
 Foram selecionados indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação. A joelheira foi vestida na perna direita e foi solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações.
 
-As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram realizadas 140 amostras.
+As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas 140 amostras.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação}
 	\begin{center}
 	   % \includegraphics[width=\textwidth]{resources/result_estados}
-	   \missingfigure[figwidth=\textwidth]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
+	   \missingfigure[figwidth=\textwidth, figheight=7cm]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A captura foi feita a partir de um cabo USB conectado a um \textit{notebook} (com um processador Intel i7-7500U, que conta com \textit{clock} de até \(3{,}5\) GHz, e \(8\) GB de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}}, estabelecendo comunicação serial com o programa.
+A captura foi feita a partir de um cabo USB de \(1{,}5\) m conectado a um \textit{notebook} (com um processador Intel i7-7500U, que conta com \textit{clock} de até \(3{,}5\) GHz, e \(8\) GB de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}}, estabelecendo comunicação serial com o programa.
 
 \subsection{Análise dos resultados}\label{sec:result_analise}
 
-A partir dos dados coletados dos usuários, verificou-se através de validação cruzada que a Floresta Aleatória\todo{Conferir} seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+A partir dos dados coletados dos usuários, verificou-se através de validação cruzada que a Floresta Aleatória\todo{Conferir}{ } seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_rfc}Gráfico de acurácia do algoritmo da Floresta Aleatória para os dados combinados}
@@ -82,7 +82,7 @@ Ao analisar-se os conjuntos de dados de cada indivíduo, sobressaiu-se a Anális
 % 	\legend{Fonte: Elaborada pelo autor}
 % \end{figure}
 
-A simulação animada em 3D, como vista na~\autoref{fig:result_simulacao} mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, com a classificação dos dados, também a ação realizada na prótese simulada.
+A simulação animada em 3D, como vista na~\autoref{fig:result_simulacao} mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, com a classificação dos dados, também a ação realizada na prótese simulada, desde que o conjunto de dados utilizado correspondesse apenas aos dados coletados pelo mesmo usuário que estivesse utilizando o dispositivo.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_simulacao}Visualização da posição da perna do usuário e simulação da prótese}

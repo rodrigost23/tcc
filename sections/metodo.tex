@@ -2,16 +2,11 @@ Este capítulo apresentará o método proposto por este trabalho para o desenvol
 
 \section{Visão geral do método}\label{sec:metodo_protese}
 
-% O projeto desenvolvido n
-Este trabalho apresenta um simulador de prótese robótica para membros inferiores ou, mais especificamente, para as articulação do pé. 
-% \todo{Mexer nesse texto que fala de prótese física}{ }
-O simulador visa prover suporte para a construção de modelos de próteses,  
-% para impressoras 3D, 
-aproveitando-se para simular as partes mecânicas e a inclusão de cenários de diferentes tipos de superfícies.
-% A intenção é manter um baixo custo de produção. 
-O simulador foi projetado para funcionar como uma prótese transtibial, atuando sobre ela para adaptar a rigidez da articulação conforme a situação. Além disso, o simulador conta com a utilização de um classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas via coleta de dados de sensores por meio de um dispositivo vestível na forma de joelheira.
+Este trabalho apresenta um simulador de prótese robótica para membros inferiores ou, mais especificamente, para as articulação do pé, que visa prover suporte para a construção de modelos de próteses, aproveitando-se para simular as partes mecânicas articuladas e a inclusão de cenários de diferentes tipos de superfícies.
 
-Este dispositivo está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A Figura~\ref{fig:big_picture_prosthesis} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores para o simulador juntamente com uma possível prótese implementada com atuadores reais (Figura~\ref{fig:big_picture_prosthesis}) e a simulação gerada a partir dos dados coletados dos sensores, com a movimentação do pé a partir da classificação destes dados (Figura~\ref{fig:simulation_prototype}).
+O simulador foi projetado para funcionar como uma prótese transtibial, ou seja, para pernas que contenham a articulação do joelho intacta, atuando sobre a rigidez de suas articulações para adaptá-la a diferentes situações. Isto é possível pois a simulação conta ainda com a utilização de um classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas através da coleta de dados de sensores em um dispositivo vestível na forma de joelheira.
+
+Este dispositivo está equipado com sensores flexíveis \cite{flex:datasheet} nas articulações dos joelhos além de giroscópios e acelerômetros \cite{invensense:imu_mpu}, que serão usados para capturar as ações do usuário. A \autoref{fig:big_picture_prosthesis} ilustra a visão geral do sistema, incluindo o posicionamento dos sensores para o simulador juntamente com uma possível prótese implementada com atuadores reais (\autoref{fig:big_picture_prosthesis}) e a simulação gerada a partir dos dados coletados dos sensores, com a movimentação do pé a partir da classificação destes dados (\autoref{fig:simulation_prototype}).
 
 % \begin{figure}[h]
 % 	\caption{\label{fig:big_picture}Visão geral do protótipo}
@@ -35,7 +30,7 @@ Este dispositivo está equipado com sensores flexíveis \cite{flex:datasheet} na
 
 No dispositivo vestível, os sensores são posicionados nos joelhos do usuário, e os dados capturados são transmitidos por uma placa de processamento para o simulador em um computador. 
 % posicionada na estrutura da própria prótese, que 
-O simulador então trata os dados enviados e realiza a classificação para determinar a ação dos atuadores, conforme fluxograma ilustrado na \autoref{fig:flowchart}, em um modelo virtual da prótese em tempo real.
+O simulador então utiliza os dados enviados para mostrar o modelo virtual, e os classifica para determinar a ação dos atuadores, conforme fluxograma ilustrado na \autoref{fig:flowchart}, em um modelo virtual da prótese em tempo real.
 % O fluxo  como pode ser visto no fluxograma ilustrado na \autoref{fig:flowchart}.
 
 \begin{figure}[ht]
@@ -50,18 +45,18 @@ O simulador então trata os dados enviados e realiza a classificação para dete
 \section{Prototipação da prótese no simulador}\label{sec:metodo_prototipacao}
 
 % \todo{Remover sensores sem fio?}
-O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença dos objetos caracterizados como \textbf{Sensores}: com fio e sem fio que compõem o \textit{wearable}; e \textbf{Central} e \textbf{Atuadores} que estão no simulador da prótese virtual. 
+O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença dos objetos caracterizados como \textbf{Sensores} com fio e sem fio e \textbf{Central de \textit{hardware}}, que compõem o dispositivo vestível, e \textbf{Simulação} que representa a visualização do modelo da perna e da prótese no computador.
 % O wearable também pode ser utilizado são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
 
 \begin{figure}[ht]
 	\caption{\label{fig:sequence_diagram}Diagrama de sequência que descreve a interação entre os componentes do sistema}
 	\begin{center}
-	    \includegraphics[width=\textwidth]{resources/sequence_diagram.pdf}
+	    \includegraphics[width=\textwidth]{resources/sequence_diagram}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A central localizada na simulador recebe os dados dos sensores de forma constante, em um intervalo de tempo a ser determinado no simulador. Estes dados são então repassados ao classificador de movimentos de acordo com os atuadores disponíveis na prótese virtual que tomará a ação necessária e ativará os atuadores na animação caso haja uma mudança de ambiente como, por exemplo, tenha sido iniciada a descida de uma escada.
+A central localizada na perna da prótese recebe os dados de todos os sensores de forma constante e dados são então repassados à simulação, que os utiliza para orientar a posição da perna virtual de acordo com os dados dos giroscópios e acelerômetros e para classificar os movimentos, o que a permite que realize ações sobre as articulações da prótese virtual de acordo com o movimento detectado como, por exemplo, caso tenha sido iniciado um passo.
 
 % \subsection{Arquitetura do \textit{software}}\label{sec:metodo_prot_software}
 % O \textit{software} relativo à~\autoref{fig:sequence_diagram} será modelado através de uma rede de Petri. Desta forma, será possível validar o sistema para garantir confiabilidade. Esta validação será feita conforme as propriedades descritas na Seção~\ref{sec:petrinet}, como segurança e vivacidade, além de possivelmente outras propriedades adicionais. 
@@ -70,11 +65,10 @@ A central localizada na simulador recebe os dados dos sensores de forma constant
 % 
 % A classificação será realizada com a utilização de uma ferramenta como as descritas na Seção~\ref{sec:ml_tools}. Além disso, será necessário fazer o treinamento do algoritmo de classificação, para que se tenha um protótipo funcional. Inicialmente, o \textit{software} para treinamento será produzido separadamente ao sistema de classificação principal, de modo a se criar um conjunto de dados a ser usado pela classificação na prótese.
 
-\subsection{Arquitetura do \textit{hardware} presente no simulador virtual}\label{sec:metodo_prot_hardware}
+\subsection{Arquitetura de \textit{hardware} proposta}\label{sec:metodo_prot_hardware}
+A prótese virtual é apresentada em um modelo virtual 3D que simula a ação dos atuadores ao prever os movimentos e conta com duas articulações ativas no pé, como visto na~\autoref{fig:simulation_prototype}. O intuito deste modelo é proporcionar o futuro uso de uma impressora 3D para construção de uma prótese física. O uso de impressão 3D tem o intuito de manter o baixo custo do produto.
 
-A prótese virtual é apresentada em 3D, visando uma melhor visualização dos componentes propostos e futuro uso de uma impressora 3D com o foco em prototipação da prótese proposta. O uso de impressão 3D tem o intuito de manter o baixo custo do produto.
-
-A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protótipo virtual, que deverão ser acionados de acordo com a classificação dos dados dos sensores. No ponto \textbf{A}, o motor do tornozelo da prótese regulará a rigidez da articulação, como forma de manter estabilidade nos passos. Os pontos \textbf{B} e \textbf{C} referem-se a motores de passo que, juntos a hastes, se prendem no calcanhar da prótese, para mover o pé e exercer força na pisada.
+A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores de um modelo proposto de prótese que se beneficiaria deste sistema, com atuadores que deverão ser acionados de acordo com a classificação dos dados dos sensores. No ponto \textbf{A}, o motor do tornozelo da prótese regula a rigidez da articulação, como forma de manter estabilidade nos passos. Os pontos \textbf{B} e \textbf{C} referem-se a motores de passo que, juntos a hastes, se prendem no calcanhar da prótese, para mover o pé e exercer força na pisada.
 
 \begin{figure}[ht]
 	\caption{\label{fig:hardware_scheme}Esquema representando o funcionamento dos atuadores}
@@ -84,7 +78,7 @@ A~\autoref{fig:hardware_scheme} mostra o funcionamento dos atuadores do protóti
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Por fim, o ponto \textbf{D} da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, a fim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}. Vale ressaltar que este é um modelo de prótese proposto neste trabalho, contudo o simulador pode ser adaptado também a outros modelos.
+Por fim, o ponto \textbf{D} da \autoref{fig:hardware_scheme} é uma articulação motorizada que manipula a parte dianteira do pé, a fim de controlar a curvatura, simulando a flexibilidade de um pé humano. Alguns exemplos de configurações possíveis dos motores e articulações de acordo com diferentes cenários serão mostrados posteriormente na \autoref{fig:hardware_poses}. Deve-se salientar que este é um modelo de prótese proposto neste trabalho, contudo o simulador pode ser adaptado também a outros modelos.
 
 
 % \section{Coleta de dados}\label{sec:metodo_coleta}
