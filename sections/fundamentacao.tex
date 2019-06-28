@@ -32,7 +32,7 @@ O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pin
 	\legend{Fonte:~\citeonline[p.14]{atmel:2016atmega328p}}
 \end{figure}
 
-A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de $8$ e $16$-bit como microcontroladores. Também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
+A distinção entre microprocessadores e microcontroladores não é tão trivial:~\citeonline{schlett:1998} afirma que, de forma simplificada, é comum diferenciá-los tendo como parâmetro seu desempenho, considerando dispositivos de \(8\) e \(16\)-bit como microcontroladores. Também existem outros critérios a se considerar, como sua finalidade e suas possíveis restrições de energia, ou a necessidade de integração com vários componentes periféricos.
 
 Microprocessadores não contam com RAM e ROM integradas e contém apenas cache. Este tipo de processador é encontrado nos computadores pessoais e costumam ter um desempenho aprimorado em relação aos microcontroladores. Por isso, alguns sistemas embarcados passaram a usar microprocessadores também, pois alguns dispositivos como \textit{video games} portáteis passaram a exigir maior capacidade de processamento. No entanto, estes microprocessadores embarcados ainda costumam ter restrições como de energia, custo, etc~\cite{schlett:1998}.
 
@@ -164,7 +164,7 @@ Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar
 \subsubsection{Scikit-learn}\label{sec:ml_sklearn}
 % ==================================================
 
-O scikit-learn\footnote{\href{http://scikit-learn.org/}{<http://scikit-learn.org/>}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM \cite{cortes:1995svm}, KNN \cite{cover:1967knn}, e K-Means \cite{macqueen:1967kmeans}, e permite a comparação fácil de diversos métodos em uma aplicação~\cite{pedregosa:2011}.
+O scikit-learn\footnote{\url{http://scikit-learn.org/}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM \cite{cortes:1995svm}, KNN \cite{cover:1967knn}, e K-Means \cite{macqueen:1967kmeans}, e permite a comparação fácil de diversos métodos em uma aplicação~\cite{pedregosa:2011}.
 
 Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de \textit{software} e em campos além da ciência da computação. Além disso,~\citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
 
@@ -195,7 +195,7 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâm
 \subsubsection{TensorFlow}\label{sec:ml_tf}
 % ==================================================
 
-\todo{Remover TensorFlow porque não estou usando?}TensorFlow\footnote{\href{http://tensorflow.org/}{<http://tensorflow.org/>}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
+\todo{Remover TensorFlow porque não estou usando?}TensorFlow\footnote{\url{http://tensorflow.org/}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
 
 A ferramenta oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax, além de ser bastante popular~\cite{ertram:2017}. Empresas como Google e Mozilla utilizam o TensorFlow em projetos de Aprendizado de Máquina, como o projeto de reconhecimento de fala da Mozilla chamado \textit{Deep Search}~\cite{tensorflow:uses}.
 
@@ -209,7 +209,7 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 	\legend{Fonte: \citeonline{tensorflow:premade_estimators}}
 \end{figure}
 
-O~\autoref{lst:tf_dnn_1} mostra o código referente ao classificador representado na~\autoref{fig:tensorflow_ann_example}, enquanto o~\autoref{lst:tf_dnn_2} demonstra o treino da rede neural, e o~\autoref{lst:tf_dnn_3} demonstra a previsão a partir do modelo treinado \cite{tensorflow:premade_estimators}.
+O~\autoref{lst:tf_dnn_1} mostra o código referente ao classificador representado na~\autoref{fig:tensorflow_ann_example}, enquanto o~\autoref{lst:tf_dnn_2} demonstra o treino da rede neural, e o~\autoref{lst:tf_dnn_3} demonstra a previsão a partir do modelo treinado~\cite{tensorflow:premade_estimators}.
 
 \begin{lstlisting}[language=Python,caption={Inicializando o classificador no TensorFlow},label={lst:tf_dnn_1}]
 # Constrói uma DNN com 2 camadas ocultas e 10 nós em cada uma delas.
@@ -342,16 +342,16 @@ Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. 
 	\legend{Fonte:~\citeonline[p. 545]{murata:1989}}
 \end{figure}
 
-Na \autoref{fig:petrinet}, as transições $t_1$ e $t_2$ estão habilitadas, pois há \textit{tokens} suficientes nos lugares $P_1$ e $P_2$, e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
+Na \autoref{fig:petrinet}, as transições \(t_1\) e \(t_2\) estão habilitadas, pois há \textit{tokens} suficientes nos lugares \(P_1\) e \(P_2\), e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
 A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros \cite{peterson:1981}.
 
-A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas $0$ ou $1$~\cite{peterson:1981}. A Figura~\ref{fig:petri_net_safeness_a} demonstra uma rede de Petri não segura cuja propriedade de segurança foi forçada na Figura~\ref{fig:petri_net_safeness_b}.
+A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas \(0\) ou \(1\)~\cite{peterson:1981}. A Figura~\ref{fig:petri_net_safeness_a} demonstra uma rede de Petri não segura cuja propriedade de segurança foi forçada na Figura~\ref{fig:petri_net_safeness_b}.
 
 \begin{figure}[ht]
     \centering
-    \caption{Exemplo de segurança em uma rede de Petri}
-    \label{fig:petri_net_safeness}
+	\caption{Exemplo de segurança em uma rede de Petri}%
+	\label{fig:petri_net_safeness}
     \subfloat[Rede de Petri não segura \label{fig:petri_net_safeness_a}]
         {\includegraphics[width=0.45\textwidth]{resources/petri_net_peterson_safeness_a}}
         \hspace{0.1cm}
@@ -362,7 +362,7 @@ A importância desta propriedade para dispositivos de hardware se dá pelo fato 
 
 O conceito de limitação, no que lhe concerne, é uma generalização da propriedade de segurança, representada na~\autoref{fig:petri_net_safeness}, e determina o número \textit{k} de \textit{tokens} que são permitidos em cada lugar. Caso \textit{k} seja 1, então a propriedade de segurança se aplica. A limitação é essencial para especificação de \textit{hardware}, e os lugares podem ser implementados com contadores~\cite{peterson:1981}.
 
-Um problema computacional comum em relação à alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições $t_2$ e $t_5$ na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri~\cite{peterson:1981}.
+Um problema computacional comum em relação à alocação de recursos é o \textit{deadlock}, em que processos diferentes requerem recursos que estão indisponíveis e não conseguem prosseguir. Em uma rede de Petri, isto é representado por uma transição ou conjunto de transições que não podem ser acionadas, como pode ser o caso das transições \(t_2\) e \(t_5\) na \autoref{fig:petrinet_deadlock}. Uma transição está em \textit{deadlock} caso ela não possa ser acionada, e é uma transição \textit{viva} caso seja potencialmente acionável em qualquer situação da rede de Petri~\cite{peterson:1981}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:petrinet_deadlock}Exemplo de possível \textit{deadlock} em uma rede de Petri}
