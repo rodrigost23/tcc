@@ -3,8 +3,7 @@ Este capítulo aborda o planejamento, análise e execução do método proposto 
 
 \section{Planejamento dos experimentos}\label{sec:result_planejamento}
 
-O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados. Neste sentido, foi
-definido as seguintes questões de pesquisa:
+O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados. Neste sentido, foram definidas as seguintes questões de pesquisa:
 
 \begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]
     \item O sistema \productname{} é capaz de replicar os movimentos realizados pelo usuário em um ambiente virtual?\label{qp:simula_movimentos}
@@ -17,7 +16,7 @@ Visando responder essas questões, foi criado um estudo de caso onde foram testa
 
 \subsection{Captura dos movimentos}\label{sec:result_captura}
 
-O protótipo para captura de dados consiste, um módulo GY\=/$521$ com um sensor MPU\=/$6050$, que contém um acelerômetro e um giroscópio, e um sensor flexível\todo{Adicionar versão e referências aos sensores}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
+O protótipo para captura de dados consiste, um módulo GY\=/\(521\) com um sensor MPU-\(6050\) \cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{spectrasymbol:flex_sensor}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -27,7 +26,7 @@ O protótipo para captura de dados consiste, um módulo GY\=/$521$ com um sensor
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU\=/$6050$ (b) posicionado acima do joelho, e o sensor flexível (a) posicionado na parte de trás. Este último sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \(2{,}2\) polegadas, já que posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
+Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU\=/\(6050\) (b) posicionado acima do joelho, e o sensor flexível (a) posicionado na parte de trás. Este último sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \SI{55.88}{\milli\meter}, já que posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_prototipo}Protótipo com o sensor flexível (a) e o MPU-6050 (b) conectados ao Arduino Nano}
