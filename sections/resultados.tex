@@ -8,18 +8,19 @@ Este capítulo aborda o planejamento, análise e execução do método proposto 
 
 O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados. Neste sentido, foram definidas as seguintes questões de pesquisa:
 
-\begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]\todo{Melhorar questões de pesquisa}
+\todo[inline]{Melhorar questões de pesquisa para usá-las na execução dos experimentos}
+\begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]
     \item O sistema \productname{} é capaz de replicar os movimentos realizados pelo usuário em um ambiente virtual?\label{qp:simula_movimentos}
     \item O sistema \productname{} pode prever as ações da prótese virtual em tempo real a partir dos dados dos sensores?\label{qp:previsao_sensores}
-    \item O sistema \productname{} tem desempenho consistente independente do usuário?\label{qp:usuarios_diferentes}
-    \item A acurácia da previsão de movimentos do sistema \productname{} é suficiente para garantir a sua confiabilidade?\label{qp:acuracia}
+    % \item O sistema \productname{} tem desempenho consistente independente do usuário?\label{qp:usuarios_diferentes}
+    \item A previsão de movimentos do sistema \productname{} é precisa o suficiente para garantir a sua confiabilidade?\label{qp:acuracia}
 \end{enumerate}
 
 Visando responder essas questões, foi definido um ambiente que consiste em um sistema de captura de movimentos acoplado ao \textit{software} simulador sendo executado em um computador.
 
 % \subsection{Captura dos movimentos}\label{sec:result_captura}
 
-O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{spectrasymbol:flex_sensor}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
+O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -29,11 +30,10 @@ O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um se
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU\=/\(6050\) (b) posicionado acima do joelho, e o sensor flexível (a) posicionado na parte de trás. Este último sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \SI{55.88}{\milli\meter}, já que posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
+Todos esses equipamentos foram fixados em uma joelheira de material flexível não rígido, como visto na \autoref{fig:result_prototipo}, com o MPU\=/\(6050\) (a) posicionado acima do joelho, e o sensor flexível (b) posicionado na parte de trás. Este último sensor teve de ser posicionado desta forma devido ao seu comprimento de apenas \SI{55.88}{\milli\meter}, já que posicionamento na parte frontal do joelho, como planejado na ~\autoref{sec:metodo_protese}, impediria que a resistência do sensor variasse o suficiente.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_prototipo}Protótipo com o sensor flexível (a) e o MPU-6050 (b) conectados ao Arduino Nano}
-    \todo[inline]{Substituir uma das figuras da joelheira por uma perna usando a joelheira}
+	\caption{\label{fig:result_prototipo}Joelheira com o Arduino Nano, o MPU-6050 (a) e o sensor flexível (b) fixados}
 	\begin{center}
 	    \includegraphics[width=.8\textwidth]{resources/result_prototipo}
 	\end{center}
@@ -63,16 +63,16 @@ O primeiro experimento realizado, visando responder à primeira questão de pesq
 
 Os dados de orientação, dentre os que são enviados pelo \textit{software} carregado no Arduino, são recebidos pelo simulador e utilizados como ângulos de rotação do modelo da perna virtual, para replicar a orientação do membro do usuário que está utilizando o protótipo. Durante os experimentos, observou-se que foi necessário fazer uma calibragem do MPU-\(6050\) a partir de sua posição vertical, pois os ângulos de rotação precisam ser relativos a uma posição inicial para que a orientação seja precisa.
 
+Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usuário, com apenas uma ressalva: a falta de um magnetômetro no MPU\=/6050 utilizado impede que ele realize rotações em torno do eixo \todo{Conferir se tá certo isso}perpendicular ao solo, fazendo com que a simulação não reconhecesse bem movimentos de virada. Na \autoref{fig:result_simulacao} é possível ver os valores dos sensores na parte superior, enquanto o modelo virtual os representa graficamente.
+
 \begin{figure}[ht]
 	\caption{\label{fig:result_simulacao}Posicionamento da perna virtual conforme dados dos sensores}
 	\begin{center}
-	   % \includegraphics[width=.8\textwidth]{resources/result_simulacao}
-   	   \missingfigure[figwidth=\textwidth, figheight=5cm]{Fotos lado a lado da simulação e de uma perna usando a joelheira, pra mostrar o modelo 3D funcionando}
+	    \includegraphics[height=8cm]{resources/result_simulacao}
+   	%   \missingfigure[figwidth=\textwidth, figheight=5cm]{Fotos lado a lado da simulação e de uma perna usando a joelheira, pra mostrar o modelo 3D funcionando}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
-
-Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usuário (como pode-se ver na \autoref{fig:result_simulacao}), com apenas uma ressalva: a falta de um magnetômetro no MPU\=/6050 utilizado impede que ele realize rotações em torno do eixo \todo{Conferir se tá certo isso}perpendicular ao solo, fazendo com que a simulação não reconhecesse bem movimentos de virada.
 
 %---------------------------------------------------------------------------
 \subsection{Classificação de movimentos}\label{sec:result_classif}
@@ -84,7 +84,7 @@ Todos os dados foram capturados a partir de um cabo USB de \SI{1.5}{\meter}\todo
 
 Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
 
-Após a consolidação do conjunto de dados para cada etapa dos experimentos, sempre era realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{LR}, \textit{LDA}, \textit{KNN}, \textit{CART}, \textit{NB}, \textit{SVM}, \textit{ADB}, \textit{RFC}, \textit{ETC} e \textit{GBC}.\todo{Escrever o nome completo dos algoritmos}
+Após a consolidação do conjunto de dados para cada etapa dos experimentos, sempre era realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{LR}, \textit{LDA}, \textit{KNN}, \textit{CART}, \textit{Naive Bayes}, \textit{Support Vector Machine}, \textit{ADB}, \textit{RFC}, \textit{Extra-Trees Classifier} e \textit{GBC}.\todo{Escrever o nome completo dos algoritmos}
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: caminhada em linha reta}
@@ -92,10 +92,10 @@ Após a consolidação do conjunto de dados para cada etapa dos experimentos, se
 O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta sobre uma superfície plana. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas 140 amostras.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação}
+	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação da caminhada}
 	\begin{center}
-	   % \includegraphics[width=\textwidth]{resources/result_estados}
-	   \missingfigure[figwidth=\textwidth, figheight=7cm]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
+	    \includegraphics[width=\textwidth]{resources/result_estados}
+	   %\missingfigure[figwidth=\textwidth, figheight=7cm]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
@@ -141,44 +141,42 @@ Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexív
 Após os experimentos com dados de caminhada em linha reta, foram iniciados os experimentos para classificação de subida e descida de degrau. Neste cenário, o usuário deveria subir um degrau com a perna direita (equipada com a joelheira), e descer o degrau com a perna esquerda. Estas ações foram identificadas como \(3\) e \(4\), respectivamente, e estão ilustradas na \autoref{fig:result_poses_degraus}.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_poses_degraus}Posições de subida e descida de escada para classificação}
+	\caption{\label{fig:result_poses_degraus}Ambiente utilizado para coleta de amostras de subida e descida de escada}
 	\begin{center}
-	   % \includegraphics[width=.8\textwidth]{resources/result_poses_degraus}
-   	   \missingfigure[figwidth=\textwidth, figheight=5cm]{Fotos das poses de subir e descer degrau}
+	    \includegraphics[width=.8\textwidth]{resources/result_poses_degraus}
+   	%   \missingfigure[figwidth=\textwidth, figheight=5cm]{Fotos das poses de subir e descer degrau}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao todo, foram coletadas \(X\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(X\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(X\%\).
+Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(53\%\).
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do}
-	\todo[inline]{Inserir nome do algoritmo}
+	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do classificador \textit{Naive Bayes}}
 	\begin{center}
-	   % \includegraphics[width=.8\textwidth]{resources/result_accuracy_degraus_1}
-   	   \missingfigure[figwidth=\textwidth, figheight=5cm]{Gráfico de acurácia pro dataset combinado dos dados de repouso e caminhada, junto com o de subir e descer degrau}
+	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_1}
+   	%   \missingfigure[figwidth=\textwidth, figheight=5cm]{Gráfico de acurácia pro dataset combinado dos dados de repouso e caminhada, junto com o de subir e descer degrau}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho foi o X\todo{Completar}X, com \(X\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
+Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do}
-	\todo[inline]{Inserir nome do algoritmo}
+	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do classificador \textit{Extra-Trees}}
 	\begin{center}
-	   % \includegraphics[width=.8\textwidth]{resources/result_accuracy_degraus_2}
-   	   \missingfigure[figwidth=\textwidth, figheight=5cm]{Gráfico de acurácia pro dataset isolado só com os dados gerados no dia do degrau}
+	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_2}
+   	%   \missingfigure[figwidth=\textwidth, figheight=6cm]{Gráfico de acurácia pro dataset isolado só com os dados gerados no dia do degrau}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
+Em vista destes resultados, constata-se que quanto maior o número de classes, maior é o número de amostras necessárias para o classificador. \todo{complementar parágrafo\ldots}
 
 %---------------------------------------------------------------------------
 \subsection{Simulação da prótese}
 %---------------------------------------------------------------------------
 
-\todo[inline]{Falar sobre a animação do pé que muda conforme a classe detectada.}
 Por fim, a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese conforme o usuário caminhava em linha reta.
 
 A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
@@ -191,3 +189,5 @@ A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pel
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
+
+\todo[inline]{Não sei como encerrar o capítulo direito}
