@@ -17,7 +17,6 @@ O intuito desta avaliação experimental é verificar a capacidade do sistema \p
 
 Visando responder essas questões, foi definido um ambiente que consiste em um sistema de captura de movimentos acoplado ao \textit{software} simulador sendo executado em um computador.
 
-\todo[inline]{Com a utilização de dois datasets, ficou ruim. Tive que usar um dataset só pra caminhada, e outro dataset só pra escada. O da escada foi só subindo com a perna direita e descendo com a esquerda. Lembrar de gerar os gráficos.}
 % \subsection{Captura dos movimentos}\label{sec:result_captura}
 
 O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{spectrasymbol:flex_sensor}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
@@ -54,26 +53,43 @@ O sistema de simulação é executado em um computador e foi desenvolvido na lin
 %
 %==========================================================================
 
-Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início aos experimentos que procuram responder às questões de pesquisa apresentadas na \autoref{sec:result_planejamento}.
+Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início aos experimentos com o intuito de responder às questões de pesquisa apresentadas na \autoref{sec:result_planejamento}.
 
 %---------------------------------------------------------------------------
-\subsection{Transmissão de dados e simulaçao}
+\subsection{Transmissão de dados e ambiente virtual}
 %---------------------------------------------------------------------------
 
 O primeiro experimento realizado, visando responder à primeira questão de pesquisa (\ref{qp:simula_movimentos}), foi focado na transmissão de dados dos sensores para o simulador através da comunicação serial enquanto o ambiente virtual replicava os movimentos realizados pelos sensores.
 
-\todo[inline]{pra funcionar direito os dados do giroscópio, foi preciso colocar os offsets do giroscópio e do acelerômetro no }
+Os dados de orientação, dentre os que são enviados pelo \textit{software} carregado no Arduino, são recebidos pelo simulador e utilizados como ângulos de rotação do modelo da perna virtual, para replicar a orientação do membro do usuário que está utilizando o protótipo. Durante os experimentos, observou-se que foi necessário fazer uma calibragem do MPU-\(6050\) a partir de sua posição vertical, pois os ângulos de rotação precisam ser relativos a uma posição inicial para que a orientação seja precisa.
 
-A falta de um magnetômetro no MPU\=/6050 utilizado impede que ele estabeleça uma orientação realista em relação ao mundo real, fazendo com que a simulação não reconhecesse bem movimentos de virada.
+\begin{figure}[ht]
+	\caption{\label{fig:result_simulacao}Visualização da posição da perna do usuário e simulação da prótese}
+	\todo[inline]{Adicionar foto da perna ao lado da simulação}
+	\begin{center}
+	    \includegraphics[width=.8\textwidth]{resources/result_simulacao}
+	\end{center}
+	\legend{Fonte: Elaborada pelo autor}
+\end{figure}
+
+Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usuário (como pode-se ver na \autoref{fig:result_simulacao}), com apenas uma ressalva: a falta de um magnetômetro no MPU\=/6050 utilizado impede que ele realize rotações em torno do eixo \todo{Conferir se tá certo isso}perpendicular ao solo, fazendo com que a simulação não reconhecesse bem movimentos de virada.
 
 %---------------------------------------------------------------------------
-\subsection{}\todo{Escolher título}
+\subsection{Classificação de movimentos}\label{sec:result_classif}
 %---------------------------------------------------------------------------
-na qual observou-se que os melhores dados a serem usados para a classificação dentre os disponíveis seriam os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual.
 
-Foram selecionados indivíduos com os membros intactos para gerar o conjunto de dados que seria utilizado para a classificação. A joelheira foi vestida na perna direita e foi solicitado para que cada um deles caminhasse em linha reta, enquanto era capturado o estado da transição de cada uma das ações.
+\todo[inline]{Com a utilização de dois datasets, ficou ruim. Tive que usar um dataset só pra caminhada, e outro dataset só pra escada. O da escada foi só subindo com a perna direita e descendo com a esquerda. Lembrar de gerar os gráficos.}
+Para tornar possível a previsão dos movimentos, foi decidido que seriam armazenados os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual. Diversos conjuntos de dados foram gravados com diversos tipos de ações diferentes.
 
-As ações definidas para este experimento foram apenas voltadas à detecção de uma caminhada plana, classificando cada um dos passos de cada perna. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas 140 amostras.
+Todos os dados foram capturados a partir de um cabo USB de \SI{1.5}{\meter}\todo{Conferir comprimento do cabo} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
+
+Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada etapa do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
+
+\todo[inline]{Acrescentar que ao fim de cada geração de dataset, eu rodava o programa que comparava os algoritmos. Lembrar de listar todos os algoritmos comparados}
+
+\subsubsection{Movimentos de caminhada}
+
+O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas 140 amostras.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação}
@@ -83,14 +99,6 @@ As ações definidas para este experimento foram apenas voltadas à detecção d
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
-
-A captura foi feita a partir de um cabo USB de \SI{1.5}{\meter} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
-
-%==========================================================================
-%
-\subsection{Análise dos resultados}\label{sec:result_analise}
-%
-%==========================================================================
 
 A partir dos dados coletados dos usuários, verificou-se através de validação cruzada que \textit{Random Forest} seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
 
@@ -124,14 +132,7 @@ Ao analisar-se os conjuntos de dados de cada indivíduo, sobressaiu-se a Anális
 % 	\legend{Fonte: Elaborada pelo autor}
 % \end{figure}
 
-A simulação animada em 3D, como vista na~\autoref{fig:result_simulacao} mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, com a classificação dos dados, também a ação realizada na prótese simulada, desde que o conjunto de dados utilizado correspondesse apenas aos dados coletados pelo mesmo usuário que estivesse utilizando o dispositivo.
+A simulação animada em 3D, como vista na~\autoref{fig:result_simulacao_2} mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, com a classificação dos dados, também a ação realizada na prótese simulada, desde que o conjunto de dados utilizado correspondesse apenas aos dados coletados pelo mesmo usuário que estivesse utilizando o dispositivo.
 
-\begin{figure}[ht]
-	\caption{\label{fig:result_simulacao}Visualização da posição da perna do usuário e simulação da prótese}
-	\begin{center}
-	    \includegraphics[width=.8\textwidth]{resources/result_simulacao}
-	\end{center}
-	\legend{Fonte: Elaborada pelo autor}
-\end{figure}
 
 Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização 3D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas.
