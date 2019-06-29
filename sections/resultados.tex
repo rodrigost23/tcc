@@ -8,7 +8,7 @@ Este capítulo aborda o planejamento, análise e execução do método proposto 
 
 O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados. Neste sentido, foram definidas as seguintes questões de pesquisa:
 
-\begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]
+\begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]\todo{Melhorar questões de pesquisa}
     \item O sistema \productname{} é capaz de replicar os movimentos realizados pelo usuário em um ambiente virtual?\label{qp:simula_movimentos}
     \item O sistema \productname{} pode prever as ações da prótese virtual em tempo real a partir dos dados dos sensores?\label{qp:previsao_sensores}
     \item O sistema \productname{} tem desempenho consistente independente do usuário?\label{qp:usuarios_diferentes}
@@ -49,10 +49,10 @@ O sistema de simulação é executado em um computador e foi desenvolvido na lin
 
 %==========================================================================
 %
-\section{Execução dos experimentos}\label{sec:result_execucao}
+\section{Execução dos experimentos e análise dos resultados}\label{sec:result_execucao}
 %
 %==========================================================================
-
+\todo[inline]{Usar as questões de pesquisa no texto}
 Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início aos experimentos com o intuito de responder às questões de pesquisa apresentadas na \autoref{sec:result_planejamento}.
 
 %---------------------------------------------------------------------------
@@ -135,9 +135,9 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 
 Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização 3D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas.
 
-
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: Subida e descida de escada}
+
 Após os experimentos com dados de caminhada em linha reta, foram iniciados os experimentos para classificação de subida e descida de degrau. Neste cenário, o usuário deveria subir um degrau com a perna direita (equipada com a joelheira), e descer o degrau com a perna esquerda. Estas ações foram identificadas como \(3\) e \(4\), respectivamente, e estão ilustradas na \autoref{fig:result_poses_degraus}.
 
 \begin{figure}[ht]
@@ -176,6 +176,8 @@ Em seguida, portanto, foram realizados testes com apenas os dados capturados par
 
 %---------------------------------------------------------------------------
 \subsection{Simulação da prótese}
+%---------------------------------------------------------------------------
+
 \todo[inline]{Falar sobre a animação do pé que muda conforme a classe detectada.}
 Por fim, a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese conforme o usuário caminhava em linha reta.
 

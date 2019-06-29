@@ -1,8 +1,9 @@
+\todo[inline]{Onde colocar detalhes da minha implementação?}
 Este capítulo apresentará o método proposto por este trabalho para o desenvolvimento de um simulador de prótese ativa baseada em sensores e aprendizado de máquina.
 
 \section{Visão geral do método}\label{sec:metodo_protese}
 
-Este trabalho apresenta um simulador de prótese robótica para membros inferiores ou, mais especificamente, para as articulação do pé, que visa prover suporte para a construção de modelos de próteses, aproveitando-se para simular as partes mecânicas articuladas e a inclusão de cenários de diferentes tipos de superfícies.
+Este trabalho apresenta um simulador de prótese robótica para membros inferiores ou, mais especificamente, para as articulações do pé, visando prover suporte para a construção de modelos de próteses, aproveitando-se para simular as partes mecânicas articuladas e a inclusão de cenários de diferentes tipos de superfícies.
 
 O simulador foi projetado para funcionar como uma prótese transtibial, ou seja, para pernas que contenham a articulação do joelho intacta, atuando sobre a rigidez de suas articulações para adaptá-la a diferentes situações. Isto é possível pois a simulação conta ainda com a utilização de um classificador de movimentos capaz de prever as ações necessárias nas partes mecânicas através da coleta de dados de sensores em um dispositivo vestível na forma de joelheira.
 
@@ -44,7 +45,6 @@ O simulador então utiliza os dados enviados para mostrar o modelo virtual, e os
 
 \section{Prototipação da prótese no simulador}\label{sec:metodo_prototipacao}
 
-% \todo{Remover sensores sem fio?}
 O diagrama de sequência da \autoref{fig:sequence_diagram} representa os componentes do sistema proposto por este trabalho, bem como a interação entre eles. Nela, pode-se observar a presença dos objetos caracterizados como \textbf{Sensores} com fio e sem fio e \textbf{Central de \textit{hardware}}, que compõem o dispositivo vestível, e \textbf{Simulação} que representa a visualização do modelo da perna e da prótese no computador.
 % O wearable também pode ser utilizado são os localizados no membro intacto do usuário, que devem se transmitir os dados à central de processamento na prótese.
 
@@ -92,24 +92,14 @@ Por fim, o ponto \textbf{D} da \autoref{fig:hardware_scheme} é uma articulaçã
 \section{Previsão de movimentos no simulador}\label{sec:metodo_previsao}
 
 % \todo[inline]{Mudar a previsão de movimentos, já que não usa a perna intacta?}
-Os dados coletados serão analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações serão classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau.
-% 
-Antes que o usuário realize um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, 
-% realizado pela perna intacta, 
-e a partir do movimento atual extraído do \textit{wearable} no membro residual que se está analisando.
+Os dados coletados são analisados por um algoritmo de aprendizado de máquina para que se classifique e se preveja as ações do usuário. Essas ações são classificadas de acordo com o passo a ser dado, podendo ser caminhada plana, subida ou descida de degrau. Enquanto o usuário realiza um passo, o sistema deverá identificar em que ambiente este passo será dado. Isto poderá ser feito a partir do passo anterior, e a partir do movimento atual extraído do dispositivo vestível posicionado no membro residual que se está analisando.
 
-Considerando que haverá um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- 
-% será decidida um
-a técnica de aprendizado de máquina supervisionado para classificação utilizada no simulador é a Floresta Aleatória\todo{Confirmar o nome da técnica}, conforme analisado em testes preliminares feitos e apresentados na Seção~\ref{sec:result_analise}.
-% , mais especificamente de , através de ferramentas de aprendizado de máquina, como as descritas na Seção~\ref{sec:ml_tools}.
+Considerando que haverá um conjunto predeterminado de cenários possíveis -- caminhada plana, subida e descida de escada -- a técnica de aprendizado de máquina supervisionado para classificação utilizada no simulador é a XX\todo{Confirmar o nome da técnica}, conforme analisado em testes preliminares feitos e apresentados na \autoref{sec:result_execucao}. Quando o tipo de passo a ser realizado é identificado pelo sistema, acionam-se os atuadores, que terão sua ação determinada de acordo com o cenário identificado. Na~\autoref{fig:hardware_poses} pode-se observar a forma em que a prótese deve se posicionar de acordo com cada tipo de ação. As ações diferem para o início e o fim de cada passo em diferentes cenários.
 
-% Assim que um passo começa a ser realizado, 
-Classifica-se o tipo de passo a ser realizado, e acionam-se os atuadores, que terão sua ação determinada de acordo com o cenário identificado. Na~\autoref{fig:hardware_poses} pode-se observar a forma em que a prótese deve se posicionar de acordo com cada tipo de ação. As ações diferem para o início e o fim de cada passo em diferentes cenários.
-% 
-As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) pisada plana, (b) fim de um passo em piso plano, e (c) descida de escada. No primeiro caso, os motores só mantém estabilidade para garantir equilíbrio; no segundo caso, é necessária maleabilidade na dianteira do pé, para que seja possível impulsionar o passo do usuário. No terceiro caso, antes que o usuário desça o próximo degrau, a prótese deve inclinar-se e contrair a dianteira do pé para evitar tropeços e auxiliar na descida.
+As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) pisada plana, (b) fim de um passo em piso plano, e (c) descida de escada. No primeiro caso, os motores só mantêm estabilidade para garantir equilíbrio; no segundo caso, é necessária maleabilidade na dianteira do pé, para que seja possível impulsionar o passo do usuário. No terceiro caso, antes que o usuário desça o próximo degrau, a prótese deve inclinar-se e contrair a dianteira do pé para evitar tropeços e auxiliar na descida.
 
 \begin{figure}[h]
-	\caption{\label{fig:hardware_poses}Algumas posições da prótese de acordo com cenários}
+	\caption{\label{fig:hardware_poses}Algumas posições da prótese de acordo com cenários distintos}
 	\begin{center}
 	   \fbox{\includegraphics[width=\textwidth]{resources/hardware_poses}}
 	   %\missingfigure[figwidth=12cm,figheight=5cm]{Poses da prótese em diferentes situações: início de caminhada, fim de caminhada, descida de escada.}
@@ -120,10 +110,9 @@ As três ações representadas na \autoref{fig:hardware_poses} referem-se a (a) 
 
 \section{Diagnóstico do uso da prótese e recomendações de melhorias no caminhar}\label{sec:metodo_diagnostico}
 
-Os dados dos sensores também são armazenados automaticamente para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do futuro usuário da prótese~\cite{SabatiniMSC05}. 
+Os dados dos sensores também poderão ser armazenados para geração de estatísticas que podem ser usadas para diagnóstico relacionado à saúde da caminhada do futuro usuário da prótese~\cite{SabatiniMSC05}.
 % O sistema fará um relatório do uso, indicando se é exercida mais força em uma das pernas do que na outra, por exemplo, além de outros dados.
 A partir das informações geradas, poderão ser feitas recomendações de melhorias ao indivíduo, via consulta a um especialista, para que se melhore a postura, a caminhada, ou que se utilize algum tipo de equipamento adicional. 
 % Além disso, ainda será possível analisar as estatísticas de uso da prótese para avaliar seu impacto na vida do usuário, caso esteja alterando seus hábitos de alguma forma.
 
-Como trabalho futuro, pretende-se adicionar ao simulador um analisador de eficácia da prótese em relação aos sensores utilizados no \textit{wearable} para simulação da prótese. Visto que tais sensores poderão ser utilizados na prototipação de uma prótese física.  
-Para que este diagnóstico seja possível, será analisada a hipótese do uso de sensores adicionais aos propostos pelo protótipo atual, caso estes não sejam suficientes para gerar os dados necessários de análise de saúde da caminhada.
+Como trabalho futuro, pretende-se adicionar ao simulador um analisador de eficácia da prótese em relação aos sensores utilizados na joelheira para simulação da prótese, visto que tais sensores poderão ser utilizados na prototipação de uma prótese física. Para que este diagnóstico seja possível, será analisada a hipótese do uso de sensores adicionais aos definidos pelo protótipo atual, caso estes não sejam suficientes para gerar os dados necessários de análise de saúde da caminhada.
