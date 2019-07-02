@@ -80,30 +80,42 @@ Para tornar possível a previsão dos movimentos e para responder à segunda que
 
 Todos os dados foram capturados a partir de um cabo USB de \SI{1}{\meter} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
 
-Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário (apresentados a seguir) do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
+Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário (apresentados nas seções a seguir) do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
 
-Após a consolidação do conjunto de dados para cada etapa dos experimentos, foi realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{Logistic Regression}\cite{scikit:lr}, \textit{Linear Discriminant Analysis}\cite{scikit:lda}, \textit{K-Nearest Neighbors}\cite{scikit:knn}, \textit{CART}\cite{scikit:cart}, \textit{Gaussian Naive Bayes}\cite{scikit:nb}, \textit{Support Vector Machine}\cite{scikit:svm}, \textit{AdaBoost Classifier}\cite{scikit:adb}, \textit{Random Forest Classifier}\cite{scikit:rfc}, \textit{Extra-Trees Classifier}\cite{scikit:etc} e \textit{Gradient Boosting Classifier}\cite{scikit:gbc}.
+Após a consolidação do conjunto de dados para cada etapa dos experimentos, foi realizada uma comparação, através de validação cruzada \cite{scikit:crossval}, entre a acurácia dos diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{Logistic Regression} \cite{scikit:lr}, \textit{Linear Discriminant Analysis} \cite{scikit:lda}, \textit{K-Nearest Neighbors} \cite{scikit:knn}, \textit{CART} \cite{scikit:cart}, \textit{Gaussian Naive Bayes}\cite{scikit:nb}, \textit{Support Vector Machine} \cite{scikit:svm}, \textit{AdaBoost Classifier} \cite{scikit:adb}, \textit{Random Forest Classifier} \cite{scikit:rfc}, \textit{Extra-Trees Classifier} \cite{scikit:etc} e \textit{Gradient Boosting Classifier} \cite{scikit:gbc}.
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: caminhada em linha reta}
 
-O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta sobre uma superfície plana. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado $0$), foram armazenados o ponto em que a perna esquerda estava para frente (estado $1$), e o ponto em que a perna direita estava para frente (estado $2$), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas $140$ amostras.
+O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta sobre uma superfície plana. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado \(0\)), foram armazenados o ponto em que a perna esquerda estava para frente (estado \(1\)), e o ponto em que a perna direita estava para frente (estado \(2\)), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas \(140\) amostras.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação da caminhada}
 	\begin{center}
-	    \includegraphics[width=\textwidth]{resources/result_estados}
+	    \includegraphics[width=.8\textwidth]{resources/result_estados}
 	   %\missingfigure[figwidth=\textwidth, figheight=7cm]{Tirar 3 fotos em cada uma das posições para ilustrar as ações no texto (ou só capturar do vídeo de exemplo)}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A partir dos dados coletados dos usuários, verificou-se através de validação cruzada\todo{Adicionare referência} que \textit{Random Forest} seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+A partir dos dados coletados dos usuários, verificou-se que \textit{Random Forest} (RFC) seria o algoritmo mais apropriado (\autoref{tab:result_accuracy_rfc}), com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
 
-\todo[inline]{Sugiro adicionar o grafico que apresenta a comparação entre todos os algoritmos e só citar no texto acima.}
+\begin{table}[ht]
+\caption{Comparação dos classificadores com o conjunto de dados individual para o cenário de subida e descida de degrau}
+\label{tab:result_accuracy_rfc}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Algoritmo} & LR      & LDA     & KNN     & CART    & NB      \\ \hline
+\textbf{Acurácia}  & 95,71\% & 96,90\% & 89,76\% & 92,62\% & 95,71\% \\ \hline
+                   &         &         &         &         &         \\ \hline
+\textbf{Algoritmo} & SVM     & ADB     & RFC     & ETC     & GBC     \\ \hline
+\textbf{Acurácia}  & 5,00\%  & 94,29\% & 94,29\% & 94,29\% & 91,43\% \\ \hline
+\end{tabularx}
+\legend{Fonte: Elaborada pelo autor}
+\end{table}
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_rfc}Gráfico de acurácia do algoritmo da \textit{Random Forest} para os dados combinados}
+	\caption{\label{fig:result_accuracy_rfc}Gráfico de acurácia do algoritmo do classificador \textit{Random Forest} para os dados combinados}
 % 	\todo[inline]{Tentar gerar um gráfico mais interessante: \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html}}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_rfc}
@@ -111,7 +123,21 @@ A partir dos dados coletados dos usuários, verificou-se através de validação
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Discriminantes Lineares (LDA)\todo{Adicionare referência} obteve maior acurácia, com aproximadamente \(96{,}9\%\), como demonstra a \autoref{fig:result_accuracy_lda}. Devido ao pequeno número de amostras, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos a partir da coleta realizada. Portanto, uma possível solução seria que cada usuário teria que fazer a própria calibragem do dispositivo para prever os próprios movimentos.
+Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Discriminantes Lineares (LDA) \cite{scikit:lda} obteve maior acurácia, com aproximadamente \(96{,}9\%\), como demonstram a \autoref{tab:result_accuracy_lda} e a \autoref{fig:result_accuracy_lda}. Devido ao pequeno número de amostras, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos a partir da coleta realizada. Portanto, uma possível solução seria que cada usuário teria que fazer a própria calibragem do dispositivo para prever os próprios movimentos.
+
+\begin{table}[ht]
+\caption{Comparação dos classificadores com o conjunto de dados individual para o cenário de subida e descida de degrau}
+\label{tab:result_accuracy_lda}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Algoritmo} & LR      & LDA     & KNN     & CART    & NB      \\ \hline
+\textbf{Acurácia}  & 95,71\% & 96,90\% & 89,76\% & 92,62\% & 95,71\% \\ \hline
+                   &         &         &         &         &         \\ \hline
+\textbf{Algoritmo} & SVM     & ADB     & RFC     & ETC     & GBC     \\ \hline
+\textbf{Acurácia}  & 5,00\%  & 94,29\% & 94,29\% & 94,29\% & 91,43\% \\ \hline
+\end{tabularx}
+\legend{Fonte: Elaborada pelo autor}
+\end{table}
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_lda}Gráfico de acurácia da LDA para um conjunto de dados individual}
@@ -122,7 +148,7 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização $3$D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas\todo{Sugiro apresentar uma possível solução, exemplo, um outro sensor}.
+Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização $3$D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas. O uso de um sensor maior, que permitisse seu uso na parte frontal do joelho, pode fazer com que ele se desgaste menos.
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: Subida e descida de escada}
@@ -138,9 +164,25 @@ Após os experimentos com dados de caminhada em linha reta, foram iniciados os e
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(53\%\)\todo{com qual algoritmo?}.
+Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A comparação dos algoritmos (\autoref{tab:result_accuracy_degraus_1}) resultou com o melhor desempenho do classificador \textit{Gaussian Naive Bayes}. A acurácia deste classificador para os conjuntos de dados combinados foi de apenas \(53\%\), como mostra a \autoref{fig:result_accuracy_degraus_1}.
 
-\begin{figure}[H]
+
+\begin{table}[ht]
+\caption{Comparação dos classificadores com o conjunto de dados individual para todos os cenários combinados}
+\label{tab:result_accuracy_degraus_1}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Algoritmo} & LR      & LDA     & KNN     & CART    & NB      \\ \hline
+\textbf{Acurácia}  & 49,44\% & 39,82\% & 36,20\% & 45,03\% & 52,43\% \\ \hline
+                   &         &         &         &         &         \\ \hline
+\textbf{Algoritmo} & SVM     & ADB     & RFC     & ETC     & GBC     \\ \hline
+\textbf{Acurácia}  & 04,91\% & 22,02\% & 46,2\%  & 50,09\% & 45,23\% \\ \hline
+\end{tabularx}
+\legend{Fonte: Elaborada pelo autor}
+\end{table}
+
+
+\begin{figure}[h]
 	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do classificador \textit{Gaussian Naive Bayes} com o conjunto de dados individual para todos os cenários}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_1}
@@ -149,9 +191,21 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 \newpage
-Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
+Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho, conforme a \autoref{tab:result_accuracy_degraus_2}, foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
 
-\todo[inline]{Sugiro adicionar o grafico que apresenta a comparação entre todos os algoritmos e só citar no texto acima.}
+\begin{table}[ht]
+\caption{Comparação dos classificadores com o conjunto de dados individual para o cenário de subida e descida de degrau}
+\label{tab:result_accuracy_degraus_2}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Algoritmo} & LR      & LDA     & KNN     & CART    & NB      \\ \hline
+\textbf{Acurácia}  & 63,93\% & 71,96\% & 67,68\% & 80,54\% & 70,71\% \\ \hline
+                   &         &         &         &         &         \\ \hline
+\textbf{Algoritmo} & SVM     & ADB     & RFC     & ETC     & GBC     \\ \hline
+\textbf{Acurácia}  & 26,79\% & 30,54\% & 80,36\% & 81,96\% & 67,50\% \\ \hline
+\end{tabularx}
+\legend{Fonte: Elaborada pelo autor}
+\end{table}
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do classificador \textit{Extra-Trees} com o conjunto de dados individual para o cenário de subida e descida de degrau}
@@ -180,6 +234,4 @@ Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:pr
 
 A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
 
-\todo[inline]{Seria bom apresentar o resultado de um número x de execução e descrever se em todas as execuções a simulação funcionou de forma correta.}
-
-\todo[inline]{Outro detalhe a ideia do simulador gerar a animação para a outra perna não foi testada, acho que falamos disso no métod e na introdução.}
+Neste experimento de caminhada, de \(8\) passos realizados com a perna direita, apenas \(2\) não foram reconhecidos corretamente, enquanto todos os \(8\) passos realizados com a perna esquerda (\autoref{fig:result_simulacao_atuadores}) e o estado de repouso foram classificados corretamente.
