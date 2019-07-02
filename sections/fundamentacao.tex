@@ -136,8 +136,8 @@ No \textbf{aprendizado supervisionado}, o agente observa pares de entrada e saí
 Quando os valores de saída são números, o problema é conhecido como \textbf{regressão}. Quando a saída é um conjunto de valores finitos, o problema de aprendizagem é chamado de \textbf{classificação}, também conhecido como classificação Booleana ou binária caso hajam apenas dois valores~\cite{russell:2010}.
 
 % \subsubsection{SVM}
-\todo{Remover SVM daqui pois não estou usando?} Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado~\cite{russell:2010}.
-
+Uma das técnicas mais populares de aprendizado de máquina supervisionado é a Máquina de Vetores de Suporte (SVM, em inglês), por não exigir um conhecimento prévio do domínio em que será aplicado~\cite{russell:2010}.
+% 
 A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre as diferentes classes~\cite{hearst:1998}. Como no exemplo da Figura~\ref{fig:svm_classification}, é possível ver três hiperplanos em~\ref{fig:svm_classification_a} e o separador linear desejado em~\ref{fig:svm_classification_b}, consistindo no hiperplano com a maior margem entre os vetores de suporte, que são os pontos circulados~\cite{russell:2010}. Neste exemplo, é feita a classificação entre os círculos pretos e os brancos.
 
 \begin{figure}[ht]
@@ -199,13 +199,13 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, no qual o par
 \subsubsection{TensorFlow}\label{sec:ml_tf}
 % ==================================================
 
-\todo{Remover TensorFlow porque não estou usando?}TensorFlow\footnote{\url{http://tensorflow.org/}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
+TensorFlow\footnote{\url{http://tensorflow.org/}} é um sistema para algoritmos de aprendizado de máquina que funciona em diversos sistemas diferentes de forma flexível, sem exigir grandes alterações em uma variedade de sistemas heterogêneos~\cite{abadi:2016}.
 
 A ferramenta oferece classificação utilizando técnicas como Redes Neurais Convolutivas (CNN) e SoftMax, além de ser bastante popular~\cite{ertram:2017}. Empresas como Google e Mozilla utilizam o TensorFlow em projetos de Aprendizado de Máquina, como o projeto de reconhecimento de fala da Mozilla chamado \textit{Deep Search}~\cite{tensorflow:uses}.
 
 A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit{Deep Neural Network}, em inglês) com duas camadas ocultas, contendo dez nós cada. Este programa utiliza dados já contidos na API para classificar flores em três espécies diferentes, baseado nos tamanhos das sépalas e pétalas delas~\cite{tensorflow:premade_estimators}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\caption{\label{fig:tensorflow_ann_example}Rede Neural Profunda construída com o TensorFlow}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/tensorflow_ann_example}

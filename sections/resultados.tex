@@ -19,7 +19,7 @@ Visando responder essas questões, foi definido um ambiente que consiste em um s
 % 
 % \subsection{Captura dos movimentos}\label{sec:result_captura}
 % 
-O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{.}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano\todo{Adicionar versão} conforme o esquema da \autoref{fig:result_schem}.
+O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano 3.0 conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -44,7 +44,7 @@ Para que fossem feitas a leitura e a classificação dos dados capturados, o Ard
 
 % \subsection{\textit{Software} de simulação}\label{sec:result_simulacao}
 
-O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python $3.7$, para facilitar o uso da ferramenta Scikit-learn\todo{Adicionar referência.}. O programa do simulador é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando Scikit-learn; e a exibição $3$D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
+O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python $3.7$, para facilitar o uso da ferramenta Scikit-learn\cite{pedregosa:2011}. O programa do simulador é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando Scikit-learn; e a exibição $3$D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
 
 %==========================================================================
 %
@@ -76,18 +76,18 @@ Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usu
 \subsection{Classificação de movimentos}\label{sec:result_classif}
 %---------------------------------------------------------------------------
 
-Para tornar possível a previsão dos movimentos e para responder à segunda questão de pesquisa (\ref{qp:acuracia}), foi decidido que seriam armazenados os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual. Diversos conjuntos de dados foram gravados com diversos tipos de ações\todo{Exemplificar, caminha, subida de escada...} diferentes.
+Para tornar possível a previsão dos movimentos e para responder à segunda questão de pesquisa (\ref{qp:acuracia}), foi decidido que seriam armazenados os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual. Diversos conjuntos de dados foram gravados com diferentes tipos de ações, como caminhada, subida e descida de degrau.
 
 Todos os dados foram capturados a partir de um cabo USB de \SI{1}{\meter} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
 
 Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário (apresentados a seguir) do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
 
-Após a consolidação do conjunto de dados para cada etapa dos experimentos, foi realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn\todo{Adicionar referência para cada algoritmo apresentado a seguir.}: \textit{Logistic Regression}, \textit{Linear Discriminant Analysis}, \textit{K-Nearest Neighbors}, \textit{CART}, \textit{Gaussian Naive Bayes}, \textit{Support Vector Machine}, \textit{AdaBoost Classifier}, \textit{Random Forest Classifier}, \textit{Extra-Trees Classifier} e \textit{Gradient Boosting Classifier}.
+Após a consolidação do conjunto de dados para cada etapa dos experimentos, foi realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{Logistic Regression}\cite{scikit:lr}, \textit{Linear Discriminant Analysis}\cite{scikit:lda}, \textit{K-Nearest Neighbors}\cite{scikit:knn}, \textit{CART}\cite{scikit:cart}, \textit{Gaussian Naive Bayes}\cite{scikit:nb}, \textit{Support Vector Machine}\cite{scikit:svm}, \textit{AdaBoost Classifier}\cite{scikit:adb}, \textit{Random Forest Classifier}\cite{scikit:rfc}, \textit{Extra-Trees Classifier}\cite{scikit:etc} e \textit{Gradient Boosting Classifier}\cite{scikit:gbc}.
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: caminhada em linha reta}
 
-O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta sobre uma superfície plana. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado 0), foram armazenados o ponto em que a perna esquerda estava para frente (estado 1), e o ponto em que a perna direita estava para frente (estado 2), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas 140 amostras.
+O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas caminhavam em linha reta sobre uma superfície plana. Cada um dos passos de cada perna deveria ser classificado de forma independente. Ou seja, além do estado de repouso (estado $0$), foram armazenados o ponto em que a perna esquerda estava para frente (estado $1$), e o ponto em que a perna direita estava para frente (estado $2$), ilustrados pela \autoref{fig:result_estados}. Ao todo, foram coletadas $140$ amostras.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_estados}Demonstração das três ações capturadas para a classificação da caminhada}
@@ -98,7 +98,9 @@ O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas 
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A partir dos dados coletados dos usuários, verificou-se através de validação cruzada que \textit{Random Forest} seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+A partir dos dados coletados dos usuários, verificou-se através de validação cruzada\todo{Adicionare referência} que \textit{Random Forest} seria o algoritmo mais apropriado dentre os disponíveis no scikit-learn, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+
+\todo[inline]{Sugiro adicionar o grafico que apresenta a comparação entre todos os algoritmos e só citar no texto acima.}
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_rfc}Gráfico de acurácia do algoritmo da \textit{Random Forest} para os dados combinados}
@@ -109,7 +111,7 @@ A partir dos dados coletados dos usuários, verificou-se através de validação
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Discriminantes Lineares (LDA) obteve maior acurácia, com aproximadamente \(96{,}9\%\), como demonstra a \autoref{fig:result_accuracy_lda}. Devido ao pequeno número de amostras, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos a partir da coleta realizada. Portanto, cada usuário teria que fazer a própria calibragem do dispositivo para prever os próprios movimentos.
+Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Discriminantes Lineares (LDA)\todo{Adicionare referência} obteve maior acurácia, com aproximadamente \(96{,}9\%\), como demonstra a \autoref{fig:result_accuracy_lda}. Devido ao pequeno número de amostras, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos a partir da coleta realizada. Portanto, uma possível solução seria que cada usuário teria que fazer a própria calibragem do dispositivo para prever os próprios movimentos.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_lda}Gráfico de acurácia da LDA para um conjunto de dados individual}
@@ -120,7 +122,7 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização 3D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas.
+Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização $3$D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas\todo{Sugiro apresentar uma possível solução, exemplo, um outro sensor}.
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: Subida e descida de escada}
@@ -136,9 +138,9 @@ Após os experimentos com dados de caminhada em linha reta, foram iniciados os e
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(53\%\).
+Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(53\%\)\todo{com qual algoritmo?}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do classificador \textit{Gaussian Naive Bayes} com o conjunto de dados individual para todos os cenários}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_1}
@@ -146,8 +148,10 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
-
+\newpage
 Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
+
+\todo[inline]{Sugiro adicionar o grafico que apresenta a comparação entre todos os algoritmos e só citar no texto acima.}
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do classificador \textit{Extra-Trees} com o conjunto de dados individual para o cenário de subida e descida de degrau}
@@ -164,7 +168,7 @@ Em vista destes resultados, constata-se que quanto maior o número de classes, m
 \subsection{Simulação da prótese em tempo real}
 %---------------------------------------------------------------------------
 
-Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:previsao_sensores}), a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese conforme o usuário caminhava em linha reta.
+Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:previsao_sensores}), a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese, conforme o usuário caminhava em linha reta.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_simulacao_atuadores}Simulação dos atuadores da prótese a partir da classificação dos dados dos sensores}
@@ -175,3 +179,7 @@ Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:pr
 \end{figure}
 
 A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
+
+\todo[inline]{Seria bom apresentar o resultado de um número x de execução e descrever se em todas as execuções a simulação funcionou de forma correta.}
+
+\todo[inline]{Outro detalhe a ideia do simulador gerar a animação para a outra perna não foi testada, acho que falamos disso no métod e na introdução.}
