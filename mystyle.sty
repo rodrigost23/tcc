@@ -81,6 +81,12 @@
 % -----------------------------------------------------------------------------
 \renewcommand{\lstlistingname}{Programa}
 
+\usepackage{float}
+\usepackage{listings}
+
+\newfloat{lstfloat}{htbp}{lop}
+\floatname{lstfloat}{Listing}
+\def\lstfloatautorefname{Programa} % needed for hyperref/auroref
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -95,14 +101,15 @@
     stepnumber=1,
     frame = single,
     showstringspaces=false,
+    belowcaptionskip=1\baselineskip,
     tabsize=2,
     backgroundcolor=\color{white},   % choose the background color
     commentstyle=\color{mygreen},    % comment style
-    %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+    escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
     keywordstyle=\color{blue},       % keyword style
     stringstyle=\color{mymauve},     % string literal style
-    morekeywords={>,<,.,;,-,!,=,~,\[,\],\{,\},:,\(,\)},
-    otherkeywords={>,<,.,;,-,!,=,~,\[,\],\{,\},:,\(,\)},
+    morekeywords={>,<,;,-,!,=,~,\[,\],\{,\},:,\(,\)},
+    otherkeywords={>,<,;,-,!,=,~,\[,\],\{,\},:,\(,\)},
     breaklines=true,
     xleftmargin=10pt,
     breakatwhitespace=false,

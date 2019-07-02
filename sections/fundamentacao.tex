@@ -176,8 +176,9 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 	\legend{Fonte: \cite{scikitlearn:svm_classif}}
 \end{figure}
 
-Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâmetro \texttt{X} contém as amostras, e o parâmetro \texttt{y} contém os rótulos das classes. Já o~\autoref{lst:sklearn_svm_2} faz a previsão: a linha~\texttt{1} é o comando realizado, dado um novo valor, e a linha~\texttt{2} representa o resultado, com os dados classificados \cite{scikitlearn:svm_classif}.
+Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, no qual o parâmetro \texttt{X} contém as amostras, e o parâmetro \texttt{y} contém os rótulos das classes. Já o~\autoref{lst:sklearn_svm_2} faz a previsão: a linha~\texttt{1} é o comando realizado, dado um novo valor, e a linha~\texttt{2} representa o resultado, com os dados classificados \cite{scikitlearn:svm_classif}.
 
+\begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Treino do classificador SVM com scikit-learn},label={lst:sklearn_svm_1}]
 	from sklearn import svm
 	X = [[0, 0], [1, 1]]
@@ -185,11 +186,14 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, onde o parâm
 	clf = svm.SVC()
 	clf.fit(X, y)
 \end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
+\end{lstfloat}
 
+\begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Previsão usando classificador SVM com scikit-learn},label={lst:sklearn_svm_2}]
 	>>> clf.predict([[2., 2.]])
 	array([1])
 \end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
+\end{lstfloat}
 
 % ==================================================
 \subsubsection{TensorFlow}\label{sec:ml_tf}
@@ -211,6 +215,7 @@ A~\autoref{fig:tensorflow_ann_example} ilustra uma Rede Neural Profunda (\textit
 
 O~\autoref{lst:tf_dnn_1} mostra o código referente ao classificador representado na~\autoref{fig:tensorflow_ann_example}, enquanto o~\autoref{lst:tf_dnn_2} demonstra o treino da rede neural, e o~\autoref{lst:tf_dnn_3} demonstra a previsão a partir do modelo treinado~\cite{tensorflow:premade_estimators}.
 
+\begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Inicializando o classificador no TensorFlow},label={lst:tf_dnn_1}]
 # Constrói uma DNN com 2 camadas ocultas e 10 nós em cada uma delas.
 classifier = tf.estimator.DNNClassifier(
@@ -220,14 +225,18 @@ classifier = tf.estimator.DNNClassifier(
 	# O modelo deve escolher entre 3 classes.
 	n_classes=3)
 \end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+\end{lstfloat}
 
+\begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Treinando o classificador no TensorFlow},label={lst:tf_dnn_2}]
 # Treina o modelo.
 classifier.train(
     input_fn=lambda:iris_data.train_input_fn(train_x, train_y, args.batch_size),
     steps=args.train_steps)
 \end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+\end{lstfloat}
 
+\begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Fazendo previsões a partir do modelo treinado no TensorFlow},label={lst:tf_dnn_3}]
 # Gera previsões do modelo
 expected = ['Setosa', 'Versicolor', 'Virginica']
@@ -243,7 +252,7 @@ predictions = classifier.predict(
                                             batch_size=args.batch_size))
 
 \end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
-
+\end{lstfloat}
 
 % ==================================================
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}

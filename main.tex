@@ -21,13 +21,14 @@
 ]{abntex2}
 
 \usepackage{mystyle}
-\newcommand{\productname}{Automail\=/X}
+\newcommand{\productname}{Automail\=/$X$}
 
 % -----------------------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % -----------------------------------------------------------------------------
 % \title{\productname: Uma prótese robótica para geração de ações em movimentos baseada em \textcolor{red}{padrões musculares \textbf{[trocar]}}}
-\title{\productname: Prótese Robótica Autônoma para a Previsão de Movimentos de Caminhada baseada em Padrões Musculares}
+% \title{\productname: Prótese Robótica Autônoma para a Previsão de Movimentos de Caminhada baseada em Padrões Musculares}
+\title{\productname: Simulador de prótese robótica autônoma baseado em previsão de movimentos}
 \titulo{\uppercase{\thetitle}}
 
 \author{Rodrigo dos Santos Tavares}
@@ -138,12 +139,12 @@
 % PORTUGUÊS
 % -----------------------------------------------------------------------------
 \begin{resumo}[Resumo]
-  Pessoas com membros inferiores amputados geralmente buscam próteses que os ajudem a realizar as tarefas cotidianas, porém as próteses mais comuns do mercado com preços mais acessíveis são passivas e carecem de funcionalidades que podem trazer mais naturalidade aos movimentos do usuário. Este trabalho propõe o projeto de uma prótese robótica para o pé humano que funcione de forma autônoma através da previsão de movimentos das articulações com o intuito de auxiliar na locomoção de seu usuário e monitore dados relacionados à saúde do usuário através de técnicas de aprendizado de máquina. Visando baixo custo por meio de componentes encontrados no mercado nacional e por meio de impressão da estrutura/frames com impressora 3D. Com o foco na garantia da qualidade do produto, o processo de desenvolvimento do sistema proposto será demonstrado com a aplicação de técnicas de métodos formais para validá-lo, tais como, redes de Petri e \textit{model checkers}.
+  Pessoas com membros inferiores amputados geralmente buscam próteses que os ajudem a realizar as tarefas cotidianas, porém as próteses mais comuns do mercado com preços mais acessíveis são passivas e carecem de funcionalidades que podem trazer mais naturalidade aos movimentos do usuário. Este trabalho propõe um simulador de próteses para o pé humano que funciona de forma autônoma através da previsão dos movimentos das articulações através de técnicas de aprendizado de máquina com o intuito de auxiliar na produção de próteses robóticas de baixo custo por meio de componentes encontrados no mercado nacional e de impressão 3D.
 
  \vspace{\onelineskip}
 
  \noindent
- \textbf{Palavras-chave}: próteses, robótica de reabilitação, sistemas embarcados, acelerômetro, giroscópio
+ \textbf{Palavras-chave}: próteses, robótica de reabilitação, sistemas embarcados, acelerômetro, giroscópio\todo{Computação gráfica?}
 \end{resumo}
 % -----------------------------------------------------------------------------
 
@@ -152,16 +153,16 @@
 % -----------------------------------------------------------------------------
 % INGLÊS
 % -----------------------------------------------------------------------------
-% \begin{resumo}[Abstract]
-%  \begin{otherlanguage*}{english}
-%     People with amputated lower limbs usually seek prostheses that help them perform everyday tasks, but the most common ones available with accessible prices are passive prostheses and lack features to make the user's movements more natural. This work proposes the design of a robotic prosthesis for the human foot that aids people in locomotion and tracks data relating to the user's health through machine learning techniques, targeting low cost by means of 3D printing. Part of this project is also using formal methods to validate it.
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+People with amputated lower limbs often seek prostheses to help them perform everyday tasks, but the most common and affordable ones on the market are passive and lack functionalities to make the user's movements more natural. This work proposes a simulator of a prosthesis for the human foot that works autonomously through the prediction of movements through machine learning techniques with the purpose of aiding in the production of low cost robotic prostheses through components found in the local market and 3D printing.
   
-%   \vspace{\onelineskip}
+  \vspace{\onelineskip}
 
-%     \noindent
-%     \textbf{Keywords}: prostheses, rehabilitation robotics, embedded systems, accelerometer, gyroscope
-%  \end{otherlanguage*}
-% \end{resumo}
+    \noindent
+    \textbf{Keywords}: prostheses, rehabilitation robotics, embedded systems, accelerometer, gyroscope\todo{computer graphics?}
+ \end{otherlanguage*}
+\end{resumo}
 % -----------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------
@@ -257,7 +258,7 @@
 % -----------------------------------------------------------------------------
 % Considerações Finais e Trabalhos Futuros
 % -----------------------------------------------------------------------------
-\chapter{Conclusões e Trabalhos Futuros}\label{ch:consideracoes}
+\chapter{Considerações Finais}\label{ch:consideracoes}
 \input{sections/consideracoes.tex}
 
 % -----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-Este capítulo aborda o planejamento, análise e execução do método proposto por este trabalho, a fim de verificar a viabilidade do projeto, bem como sua eficiência. O sistema computacional desenvolvido denomina-se \productname{} e tem seu código-fonte disponível em \url{https://github.com/rodrigost23/automailx}.
+Este capítulo aborda o planejamento, execução e análise do método proposto por este trabalho, a fim de verificar a viabilidade do projeto, bem como sua eficiência. O sistema computacional desenvolvido denomina-se \productname{} e tem seu código-fonte disponível em \url{https://github.com/rodrigost23/automailx}.
 
 %==========================================================================
 %
@@ -8,19 +8,18 @@ Este capítulo aborda o planejamento, análise e execução do método proposto 
 
 O intuito desta avaliação experimental é verificar a capacidade do sistema \productname{} de classificar as ações do usuário a partir da leitura de sensores, e exibir um modelo virtual animado que demonstra os dados lidos e a detecção dos movimentos realizados. Neste sentido, foram definidas as seguintes questões de pesquisa:
 
-\todo[inline]{Melhorar questões de pesquisa para usá-las na execução dos experimentos}
 \begin{enumerate}[label=\textbf{QP\arabic*:}, ref=QP\arabic*]
     \item O sistema \productname{} é capaz de replicar os movimentos realizados pelo usuário em um ambiente virtual?\label{qp:simula_movimentos}
+    \item A previsão de movimentos do sistema \productname{} é precisa o suficiente para garantir a sua confiabilidade?\label{qp:acuracia}
     \item O sistema \productname{} pode prever as ações da prótese virtual em tempo real a partir dos dados dos sensores?\label{qp:previsao_sensores}
     % \item O sistema \productname{} tem desempenho consistente independente do usuário?\label{qp:usuarios_diferentes}
-    \item A previsão de movimentos do sistema \productname{} é precisa o suficiente para garantir a sua confiabilidade?\label{qp:acuracia}
 \end{enumerate}
 
 Visando responder essas questões, foi definido um ambiente que consiste em um sistema de captura de movimentos acoplado ao \textit{software} simulador sendo executado em um computador.
-
+% 
 % \subsection{Captura dos movimentos}\label{sec:result_captura}
-
-O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano conforme o esquema da \autoref{fig:result_schem}.
+% 
+O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{.}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano\todo{Adicionar versão} conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -45,15 +44,14 @@ Para que fossem feitas a leitura e a classificação dos dados capturados, o Ard
 
 % \subsection{\textit{Software} de simulação}\label{sec:result_simulacao}
 
-O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python 3.7, para facilitar o uso da ferramenta scikit-learn. O programa é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando scikit-learn; e a exibição 3D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
+O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python $3.7$, para facilitar o uso da ferramenta Scikit-learn\todo{Adicionar referência.}. O programa do simulador é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando Scikit-learn; e a exibição $3$D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
 
 %==========================================================================
 %
 \section{Execução dos experimentos e análise dos resultados}\label{sec:result_execucao}
 %
 %==========================================================================
-\todo[inline]{Usar as questões de pesquisa no texto}
-Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início aos experimentos com o intuito de responder às questões de pesquisa apresentadas na \autoref{sec:result_planejamento}.
+Com o protótipo confeccionado e os \textit{softwares} desenvolvidos, deu-se início aos experimentos, visando responder às questões de pesquisa apresentadas na \autoref{sec:result_planejamento} para analisar a eficácia do sistema \productname{} em diferentes cenários de uso.
 
 %---------------------------------------------------------------------------
 \subsection{Transmissão de dados e ambiente virtual}
@@ -63,7 +61,7 @@ O primeiro experimento realizado, visando responder à primeira questão de pesq
 
 Os dados de orientação, dentre os que são enviados pelo \textit{software} carregado no Arduino, são recebidos pelo simulador e utilizados como ângulos de rotação do modelo da perna virtual, para replicar a orientação do membro do usuário que está utilizando o protótipo. Durante os experimentos, observou-se que foi necessário fazer uma calibragem do MPU-\(6050\) a partir de sua posição vertical, pois os ângulos de rotação precisam ser relativos a uma posição inicial para que a orientação seja precisa.
 
-Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usuário, com apenas uma ressalva: a falta de um magnetômetro no MPU\=/6050 utilizado impede que ele realize rotações em torno do eixo \todo{Conferir se tá certo isso}perpendicular ao solo, fazendo com que a simulação não reconhecesse bem movimentos de virada. Na \autoref{fig:result_simulacao} é possível ver os valores dos sensores na parte superior, enquanto o modelo virtual os representa graficamente.
+Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usuário, com apenas uma ressalva: a falta de um magnetômetro no MPU\=/6050 utilizado impede que ele realize rotações em torno do eixo perpendicular ao solo, fazendo com que a simulação não reconhecesse bem movimentos de virada. Na \autoref{fig:result_simulacao} é possível ver os valores dos sensores na parte superior, enquanto o modelo virtual os representa graficamente.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_simulacao}Posicionamento da perna virtual conforme dados dos sensores}
@@ -78,13 +76,13 @@ Feito isso, o ambiente virtual foi capaz de replicar a posição da perna do usu
 \subsection{Classificação de movimentos}\label{sec:result_classif}
 %---------------------------------------------------------------------------
 
-Para tornar possível a previsão dos movimentos, foi decidido que seriam armazenados os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual. Diversos conjuntos de dados foram gravados com diversos tipos de ações diferentes.
+Para tornar possível a previsão dos movimentos e para responder à segunda questão de pesquisa (\ref{qp:acuracia}), foi decidido que seriam armazenados os valores do acelerômetro e do sensor flexível, ignorando os dados de orientação do giroscópio, que ainda são utilizados para orientar o modelo virtual. Diversos conjuntos de dados foram gravados com diversos tipos de ações\todo{Exemplificar, caminha, subida de escada...} diferentes.
 
-Todos os dados foram capturados a partir de um cabo USB de \SI{1.5}{\meter}\todo{Conferir comprimento do cabo} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
+Todos os dados foram capturados a partir de um cabo USB de \SI{1}{\meter} conectado a um \textit{notebook} (com um processador Intel i7\=/7500U, que conta com \textit{clock} de até \SI{3.5}{\giga\hertz}, e \SI{8}{\giga\byte} de RAM) no sistema operacional Manjaro Linux\footnote{\url{http://manjaro.org/}} 18.0.4, estabelecendo comunicação serial com o programa.
 
-Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
+Os indivíduos selecionados para a coleta dos dados tinham os membros intactos e vestiram a joelheira com os equipamentos na perna direita e realizavam as ações necessárias para cada cenário (apresentados a seguir) do experimento enquanto as transições entre os movimentos eram gravadas em um arquivo.
 
-Após a consolidação do conjunto de dados para cada etapa dos experimentos, sempre era realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn: \textit{LR}, \textit{LDA}, \textit{KNN}, \textit{CART}, \textit{Naive Bayes}, \textit{Support Vector Machine}, \textit{ADB}, \textit{RFC}, \textit{Extra-Trees Classifier} e \textit{GBC}.\todo{Escrever o nome completo dos algoritmos}
+Após a consolidação do conjunto de dados para cada etapa dos experimentos, foi realizada uma comparação entre os diversos algoritmos de classificação disponíveis na ferramenta scikit-learn\todo{Adicionar referência para cada algoritmo apresentado a seguir.}: \textit{Logistic Regression}, \textit{Linear Discriminant Analysis}, \textit{K-Nearest Neighbors}, \textit{CART}, \textit{Gaussian Naive Bayes}, \textit{Support Vector Machine}, \textit{AdaBoost Classifier}, \textit{Random Forest Classifier}, \textit{Extra-Trees Classifier} e \textit{Gradient Boosting Classifier}.
 
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: caminhada em linha reta}
@@ -122,17 +120,6 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-
-% \begin{figure}[ht]
-% 	\caption{\label{fig:result_accuracy_plot}Gráfico de acurácia do algoritmo CART}
-% % 	\todo[inline]{Tentar gerar um gráfico mais interessante: \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html}}
-% 	\begin{center}
-% 	    \includegraphics[width=\textwidth]{resources/result_accuracy_plot}
-% 	\end{center}
-% 	\legend{Fonte: Elaborada pelo autor}
-% \end{figure}
-
-
 Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização 3D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas.
 
 %---------------------------------------------------------------------------
@@ -152,7 +139,7 @@ Após os experimentos com dados de caminhada em linha reta, foram iniciados os e
 Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A acurácia da classificação dos movimentos dos conjuntos de dados combinados foi de apenas \(53\%\).
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do classificador \textit{Naive Bayes}}
+	\caption{\label{fig:result_accuracy_degraus_1}Gráfico de acurácia do classificador \textit{Gaussian Naive Bayes} com o conjunto de dados individual para todos os cenários}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_1}
    	%   \missingfigure[figwidth=\textwidth, figheight=5cm]{Gráfico de acurácia pro dataset combinado dos dados de repouso e caminhada, junto com o de subir e descer degrau}
@@ -163,7 +150,7 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do classificador \textit{Extra-Trees}}
+	\caption{\label{fig:result_accuracy_degraus_2}Gráfico de acurácia do classificador \textit{Extra-Trees} com o conjunto de dados individual para o cenário de subida e descida de degrau}
 	\begin{center}
 	    \includegraphics[width=\textwidth]{resources/result_accuracy_degraus_2}
    	%   \missingfigure[figwidth=\textwidth, figheight=6cm]{Gráfico de acurácia pro dataset isolado só com os dados gerados no dia do degrau}
@@ -171,23 +158,20 @@ Em seguida, portanto, foram realizados testes com apenas os dados capturados par
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Em vista destes resultados, constata-se que quanto maior o número de classes, maior é o número de amostras necessárias para o classificador. \todo{complementar parágrafo\ldots}
+Em vista destes resultados, constata-se que quanto maior o número de classes, maior é o número de amostras necessárias para o classificador e no caso de ter a disponibilidade de um número maior de amostras, o sistema deve conseguir funcionar de forma mais precisa com diversos tipos de cenários.
 
 %---------------------------------------------------------------------------
-\subsection{Simulação da prótese}
+\subsection{Simulação da prótese em tempo real}
 %---------------------------------------------------------------------------
 
-Por fim, a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese conforme o usuário caminhava em linha reta.
-
-A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
+Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:previsao_sensores}), a animação da prótese virtual foi avaliada em relação à confiabilidade da ação de seus atuadores. Utilizando apenas o conjunto de dados correspondente ao usuário que estava vestindo o dispositivo, observou-se a ativação da prótese conforme o usuário caminhava em linha reta.
 
 \begin{figure}[ht]
-	\caption{\label{fig:result_simulacao_atuadores}Simulação dos atuadores da prótese a partir da classificação dos dados}
-	\todo[inline]{Trocar por uma montagem do simulador ao lado da perna em movimento (pegar do vídeo de exemplo)}
+	\caption{\label{fig:result_simulacao_atuadores}Simulação dos atuadores da prótese a partir da classificação dos dados dos sensores}
 	\begin{center}
-	    \includegraphics[width=.8\textwidth]{resources/result_simulacao_atuadores}
+	    \includegraphics[width=\textwidth]{resources/result_simulacao_atuadores}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-\todo[inline]{Não sei como encerrar o capítulo direito}
+A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
