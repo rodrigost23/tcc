@@ -108,7 +108,7 @@ O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas 
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A partir dos dados coletados dos usuários, verificou-se que \textit{Random Forest} (RFC) seria o algoritmo mais apropriado (\autoref{tab:result_accuracy_rfc}), com acurácia de aproximadamente \(83\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+A partir dos dados coletados dos usuários, verificou-se que \textit{Random Forest} (RFC) seria o algoritmo mais apropriado (\autoref{tab:result_accuracy_rfc})\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
 
 \begin{table}[ht]
 	\caption{Comparação dos classificadores com o conjunto de dados combinados para o cenário de caminhada}%
@@ -132,6 +132,8 @@ A partir dos dados coletados dos usuários, verificou-se que \textit{Random Fore
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
+\newpage
+
 Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Discriminantes Lineares (LDA)~\cite{scikit:lda} obteve maior acurácia, com aproximadamente \(96{,}9\%\), como demonstram a \autoref{tab:result_accuracy_lda} e a \autoref{fig:result_accuracy_lda}. Devido ao pequeno número de amostras, não foi possível gerar um conjunto de dados genérico que funcionasse para todos os indivíduos a partir da coleta realizada. Portanto, uma possível solução seria que cada usuário teria que fazer a própria calibragem do dispositivo para prever os próprios movimentos.
 
 \begin{table}[ht]
@@ -147,7 +149,7 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 	\legend{Fonte: Elaborada pelo autor}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\caption{\label{fig:result_accuracy_lda}Gráfico de acurácia da LDA para um conjunto de dados individual no cenário de caminhada}
 	% 	\todo[inline]{Tentar gerar um gráfico mais interessante: \url{https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html}}
 	\begin{center}
@@ -172,7 +174,7 @@ Após os experimentos com dados de caminhada em linha reta, foram iniciados os e
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A comparação dos algoritmos (\autoref{tab:result_accuracy_degraus_1}) resultou com o melhor desempenho do classificador \textit{Gaussian Naive Bayes}. A acurácia deste classificador para os conjuntos de dados combinados foi de apenas \(53\%\), como mostra a \autoref{fig:result_accuracy_degraus_1}.
+Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A comparação dos algoritmos (\autoref{tab:result_accuracy_degraus_1}) resultou com o melhor desempenho do classificador \textit{Gaussian Naive Bayes}\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}. A acurácia deste classificador para os conjuntos de dados combinados foi de apenas \(53\%\), como mostra a \autoref{fig:result_accuracy_degraus_1}.
 
 
 \begin{table}[ht]
@@ -183,7 +185,7 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 		\textbf{Algoritmo} & LR            & LDA           & KNN           & CART          & NB            \\ \midrule
 		\textbf{Acurácia}  & \(49{,}44\%\) & \(39{,}82\%\) & \(36{,}20\%\) & \(45{,}03\%\) & \(52{,}43\%\) \\ \bottomrule \toprule
 		\textbf{Algoritmo} & SVM           & ADB           & RFC           & ETC           & GBC           \\ \midrule
-		\textbf{Acurácia}  & \(04{,}91\%\) & \(22{,}02\%\) & \(46{,}2\%\)  & \(50{,}09\%\) & \(45{,}23\%\) \\ \bottomrule
+		\textbf{Acurácia}  & \(4{,}91\%\)  & \(22{,}02\%\) & \(46{,}2\%\)  & \(50{,}09\%\) & \(45{,}23\%\) \\ \bottomrule
 	\end{tabularx}
 	\legend{Fonte: Elaborada pelo autor}
 \end{table}
@@ -197,8 +199,9 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
+
 \newpage
-Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho, conforme a \autoref{tab:result_accuracy_degraus_2}, foi o \textit{Extra-Trees}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
+Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho, conforme a \autoref{tab:result_accuracy_degraus_2}, foi o \textit{Extra-Trees}\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
 
 \begin{table}[ht]
 	\caption{Comparação dos classificadores com o conjunto de dados individual para o cenário de subida e descida de degrau}%
@@ -240,4 +243,4 @@ Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:pr
 
 A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
 
-Neste experimento de caminhada, de \(8\) passos realizados com a perna direita, apenas \(2\) não foram reconhecidos corretamente, enquanto todos os \(8\) passos realizados com a perna esquerda (\autoref{fig:result_simulacao_atuadores}) e o estado de repouso foram classificados corretamente.
+Neste experimento de caminhada, de \(8\) passos realizados com a perna direita, apenas \(2\) não foram reconhecidos corretamente, enquanto todos os \(8\) passos realizados com a perna esquerda (\autoref{fig:result_simulacao_atuadores}) e o estado de repouso foram classificados corretamente\todo{Descrever o que poderia ser melhorado em relação ao erros gerados}.
