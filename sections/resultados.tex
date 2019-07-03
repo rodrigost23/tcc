@@ -108,7 +108,7 @@ O primeiro conjunto de dados gerado foi a partir de dois indivíduos que apenas 
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-A partir dos dados coletados dos usuários, verificou-se que \textit{Random Forest} (RFC) seria o algoritmo mais apropriado (\autoref{tab:result_accuracy_rfc})\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}, com acurácia de aproximadamente \(82\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
+A partir dos dados coletados dos usuários, verificou-se que \textit{Random Forest} (RFC) seria o algoritmo mais apropriado, com \(82{,}81\%\) de acurácia em relação aos outros algoritmos (conforme a \autoref{tab:result_accuracy_rfc}), e com acurácia de \(83{,}5\%\) para os dados combinados de todos os usuários, como pode ser visto no gráfico da \autoref{fig:result_accuracy_rfc}.
 
 \begin{table}[ht]
 	\caption{Comparação dos classificadores com o conjunto de dados combinados para o cenário de caminhada}%
@@ -116,9 +116,9 @@ A partir dos dados coletados dos usuários, verificou-se que \textit{Random Fore
 	\begin{tabularx}{\textwidth}{X X X X X X}
 		\toprule
 		\textbf{Algoritmo} & LR            & LDA           & KNN           & CART          & NB            \\ \midrule
-		\textbf{Acurácia}  & \(50,86\%\)   &   \(69,19\%\)   &   \(62,30\%\)   &   \(75,76\%\)   &   \(69,19\%\) \\ \bottomrule \toprule
+		\textbf{Acurácia}  & \(50{,}86\%\)   &   \(69{,}19\%\)   &   \(62{,}30\%\)   &   \(75{,}76\%\)   &   \(69{,}19\%\) \\ \bottomrule \toprule
 		\textbf{Algoritmo} & SVM           & ADB           & RFC           & ETC           & GBC           \\ \midrule
-		\textbf{Acurácia}  & \(12,05\%\)   &   \(48,48\%\)   &   \(82,81\%\)   &   \(81,33\%\)   &   \(78,48\%\) \\ \bottomrule
+		\textbf{Acurácia}  & \(12{,}05\%\)   &   \(48{,}48\%\)   &   \(82{,}81\%\)   &   \(81{,}33\%\)   &   \(78{,}48\%\) \\ \bottomrule
 	\end{tabularx}
 	\legend{Fonte: Elaborada pelo autor}
 \end{table}
@@ -142,7 +142,7 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 	\begin{tabularx}{\textwidth}{X X X X X X}
 		\toprule
 		\textbf{Algoritmo} & LR            & LDA           & KNN           & CART          & NB            \\ \midrule
-		\textbf{Acurácia}  & \(95{,}71\%\) & \(96{,}90\%\) & \(89{,}76\%\) & \(92{,}62\%\) & \(95{,}71\%\) \\ \bottomrule \toprule
+		\textbf{Acurácia}  & \(95{,}71\%\) & \(96{,}9\%\) & \(89{,}76\%\) & \(92{,}62\%\) & \(95{,}71\%\) \\ \bottomrule \toprule
 		\textbf{Algoritmo} & SVM           & ADB           & RFC           & ETC           & GBC           \\ \midrule
 		\textbf{Acurácia}  & \(5{,}00\%\)  & \(94{,}29\%\) & \(94{,}29\%\) & \(94{,}29\%\) & \(91{,}43\%\) \\ \bottomrule
 	\end{tabularx}
@@ -160,6 +160,7 @@ Ao serem analisados os conjuntos de dados de cada indivíduo, a Análise de Disc
 
 Além disso, ao longo dos experimentos realizados, notou-se que o sensor flexível ficou cada vez menos preciso, o que tornou a visualização $3$D um pouco menos realista, pois o ruído nos dados do sensor tornou-se maior, mas não impediu que os dados fossem classificados e as ações previstas. O uso de um sensor maior, que permitisse seu uso na parte frontal do joelho, pode fazer com que ele se desgaste menos.
 
+\newpage
 %---------------------------------------------------------------------------
 \subsubsection{Cenário: Subida e descida de escada}
 
@@ -168,13 +169,13 @@ Após os experimentos com dados de caminhada em linha reta, foram iniciados os e
 \begin{figure}[ht]
 	\caption{\label{fig:result_poses_degraus}Ambiente utilizado para coleta de amostras de subida e descida de escada}
 	\begin{center}
-		\includegraphics[width=.8\textwidth]{resources/result_poses_degraus}
+		\includegraphics[width=.9\textwidth]{resources/result_poses_degraus}
 		%   \missingfigure[figwidth=\textwidth, figheight=5cm]{Fotos das poses de subir e descer degrau}
 	\end{center}
 	\legend{Fonte: Elaborada pelo autor}
 \end{figure}
 
-Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A comparação dos algoritmos (\autoref{tab:result_accuracy_degraus_1}) resultou com o melhor desempenho do classificador \textit{Gaussian Naive Bayes}\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}. A acurácia deste classificador para os conjuntos de dados combinados foi de apenas \(53\%\), como mostra a \autoref{fig:result_accuracy_degraus_1}.
+Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto de dados de caminhada plana do mesmo usuário, totalizaram-se \(184\) amostras. A comparação dos algoritmos vista na \autoref{tab:result_accuracy_degraus_1} resultou com o melhor desempenho do classificador \textit{Gaussian Naive Bayes}~(NB), com \(52{,}43\%\). A acurácia deste classificador para os conjuntos de dados combinados foi de apenas \(53\%\), como mostra a \autoref{fig:result_accuracy_degraus_1}.
 
 
 \begin{table}[ht]
@@ -201,7 +202,7 @@ Ao todo, foram coletadas \(76\) amostras para este cenário. Ao unir ao conjunto
 \end{figure}
 
 \newpage
-Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho, conforme a \autoref{tab:result_accuracy_degraus_2}, foi o \textit{Extra-Trees}\todo{Adicionar a porcentagem, pois fica confuso se é da tabela ou figura a outra.}, com \(84{,}5\%\) de acurácia, como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
+Em seguida, portanto, foram realizados testes com apenas os dados capturados para este cenário, removendo da classificação os dados gerados no cenário de caminhada. Neste caso, o algoritmo com melhor desempenho, conforme a \autoref{tab:result_accuracy_degraus_2}, foi o \textit{Extra-Trees}~(ETC), com \(81{,}96\%\) de acurácia. Já na validação deste algoritmo isoladamente, a acurácia foi de \(84{,}5\%\), como visto no gráfico da \autoref{fig:result_accuracy_degraus_2}.
 
 \begin{table}[ht]
 	\caption{Comparação dos classificadores com o conjunto de dados individual para o cenário de subida e descida de degrau}%
@@ -243,4 +244,4 @@ Por fim, com o intuito de responder à terceira questão de pesquisa (\ref{qp:pr
 
 A simulação animada em 3D mostrou-se capaz de exibir o movimento realizado pelos dois sensores em tempo real e, além da ação realizada na prótese simulada. A \autoref{fig:result_simulacao_atuadores} mostra a ação correspondente a um passo com a perna oposta à perna com os sensores, ativando os atuadores da prótese ao detectar a classe \(1\).
 
-Neste experimento de caminhada, de \(8\) passos realizados com a perna direita, apenas \(2\) não foram reconhecidos corretamente, enquanto todos os \(8\) passos realizados com a perna esquerda (\autoref{fig:result_simulacao_atuadores}) e o estado de repouso foram classificados corretamente\todo{Descrever o que poderia ser melhorado em relação ao erros gerados}.
+Neste experimento de caminhada, de \(8\) passos realizados com a perna direita, apenas \(2\) não foram reconhecidos corretamente, enquanto todos os \(8\) passos realizados com a perna esquerda (\autoref{fig:result_simulacao_atuadores}) e o estado de repouso foram classificados corretamente. Para aprimorar a precisão desta classificação, o uso de um conjunto de dados com mais amostras deverá ser suficiente para que as ações com as duas pernas sejam classificadas corretamente.
