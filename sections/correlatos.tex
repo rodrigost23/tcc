@@ -1,7 +1,7 @@
 Este capítulo apresentará trabalhos existentes na literatura que compartilham de objetivos semelhantes ou são comparáveis de alguma forma e contribuem para o desenvolvimento deste trabalho. Os trabalhos descritos nas seções a seguir propõem métodos relacionados a previsão de movimentos para próteses ativas.
 
 % ===================================================================================
-\section{Translational Motion Tracking of Leg Joints for Enhanced Prediction of Walking Tasks}\label{sec:rel_stolyarov}
+\section[Translational Motion Tracking of Leg Joints for Enhanced\\Prediction of Walking Tasks]{Translational Motion Tracking of Leg Joints for Enhanced Prediction of Walking Tasks}\label{sec:rel_stolyarov}
 % ===================================================================================
 
 Neste artigo, \citeonline{stolyarov:2017} propuseram um método de prever tarefas de caminhada utilizando apenas uma IMU (unidade de medição inercial) em uma prótese comercial de uma articulação (tornozelo-pé). Foram classificadas cinco tarefas diferentes: caminhada em solo plano, subida de rampa, descida de rampa, subida de degrau e descida de degrau.
@@ -13,7 +13,8 @@ Algumas limitações deste método são a falta de filtros para tratar problemas
 O estudo do artigo de \citeonline{stolyarov:2017} proporciona ao trabalho aqui proposto a noção de que o uso de acelerômetros e giroscópios pode ser o suficiente para o objetivo proposto, principalmente quando se trata de próteses de baixo custo.
 
 % ===================================================================================
-\section{Turn Intent Detection for Control of a Lower Limb Prosthesis}\label{sec:rel_pew}
+\section[Turn Intent Detection for Control of a Lower Limb Prosthesis]{Turn Intent Detection for Control of a Lower Limb\\Prosthesis}%
+\label{sec:rel_pew}
 % ===================================================================================
 
 No trabalho de \citeonline{pew:2017} foi proposto fazer uma prótese para membros inferiores que tivesse rigidez adaptável em tempo real durante movimentos de virada, prevendo as ações de caminhada e de virada usando técnicas de aprendizagem de máquina, tais como, SVM e KNN\@.
@@ -36,7 +37,7 @@ A comparação dos algoritmos feita pelos autores \citeonline{pew:2017} e os tes
 
 
 % ===================================================================================
-\section{Automated detection of gait initiation and termination using wearable sensors}\label{sec:rel_novak}
+\section[Automated detection of gait initiation and termination using\\wearable sensors]{Automated detection of gait initiation and termination using wearable sensors}\label{sec:rel_novak}
 % ===================================================================================
 
 \citeonline{novak:2013Automated} desenvolveram um método de previsão de início e término de caminhada, a partir de IMUs e uma sola sensível a pressão. O treino foi feito com pessoas com membros intactos e sem deficiências motoras, apenas para desenvolver a técnica. Foram utilizados \(12\) sinais das IMUs, passando por filtros de Kalman~\cite{kalman:1960}, e \(4\) sinais das duas solas. Além disso, os sinais foram classificados utilizando uma árvore de classificação, tanto para detectar os passos individuais quanto para prever as intenções de início e término da caminhada.

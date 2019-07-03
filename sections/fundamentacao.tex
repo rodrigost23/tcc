@@ -22,7 +22,7 @@ Microcontroladores são processadores com vários componentes integrados, como R
 
 O Arduino Uno Rev3, por exemplo, é uma placa de microcontrolador, equipado com o microcontrolador ATmega328/P e conta com 14 pinos de entrada/saída digitais e 6 entradas analógicas~\cite{arduino:uno_store}.
 % 
-O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pinout}, é um microcontrolador 8-bit de baixo consumo de energia com arquitetura RISC que oferece 131 instruções. Além disso, contém uma memória \textit{flash} programável de 32kB \cite{atmel:2016atmega328p}.
+O ATmega328/P, cuja pinagem está ilustrada na~\autoref{fig:atmel_atmega328p_pinout}, é um microcontrolador 8-bit de baixo consumo de energia com arquitetura RISC que oferece 131 instruções. Além disso, contém uma memória \textit{flash} programável de 32kB~\cite{atmel:2016atmega328p}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:atmel_atmega328p_pinout}Pinagem do microcontrolador ATmega328/P}
@@ -47,7 +47,7 @@ Um computador de placa única que conta com um microprocessador é o Raspberry P
 \end{figure}
 
 % ==================================================
-\subsection{IoT\@: Internet das Coisas}
+\subsection{\texorpdfstring{IoT\@:}{IoT:} Internet das Coisas}
 % ==================================================
 Com a constante evolução e a ubiquidade da Internet, começam a surgir objetos conectados, transformando dispositivos que já faziam parte do cotidiano em algo que possa ser autônomo e inteligente~\cite{kopetz:2011}.  Segundo~\citeonline{xia:2012}, o termo ``Internet das Coisas'' (IoT)  não se refere apenas à existência destes dispositivos inteligentes, mas à interconexão dos objetos do cotidiano através de sistemas embarcados, proporcionando assim ambientes em que os dispositivos se comunicam entre si e também com seres humanos de forma inteligente.
 
@@ -64,7 +64,7 @@ Um exemplo de objeto inteligente na IoT, segundo~\citeonline{kopetz:2011}, é um
 \end{figure}
 
 % ==================================================
-\section{Robótica e suas Aplicações}
+\section{Robótica e suas Aplicações}%
 \label{sec:robotica}
 % ==================================================
 
@@ -142,12 +142,12 @@ A SVM funciona ao encontrar um hiperplano que tem a maior margem possível entre
 
 \begin{figure}[ht]
     \centering
-    \caption{Classificação binária com SVM}
+    \caption{Classificação binária com SVM}%
     \label{fig:svm_classification}
-    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares. \label{fig:svm_classification_a}]
+    \subfloat[Duas classes de pontos (círculos pretos e brancos) e três candidatos a separadores lineares.\label{fig:svm_classification_a}]
         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_a}}
         \hspace{0.2cm}
-    \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas tracejadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador. \label{fig:svm_classification_b}]
+    \subfloat[O separador com maior margem (linha escura) no ponto médio da margem (entre as linhas tracejadas). Os vetores de suporte (pontos circulados) são os mais próximos ao separador.\label{fig:svm_classification_b}]
         {\includegraphics[width=0.4\textwidth]{resources/svm_russel_classification_b}}
         \legend{Fonte: Adaptado de~\citeonline[p. 745]{russell:2010}}
 \end{figure}
@@ -164,7 +164,7 @@ Dada a complexidade de algoritmos de aprendizado de máquina, e visando auxiliar
 \subsubsection{Scikit-learn}\label{sec:ml_sklearn}
 % ==================================================
 
-O scikit-learn\footnote{\url{http://scikit-learn.org/}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM \cite{cortes:1995svm}, KNN \cite{cover:1967knn}, e K-Means \cite{macqueen:1967kmeans}, e permite a comparação fácil de diversos métodos em uma aplicação~\cite{pedregosa:2011}.
+O scikit-learn\footnote{\url{http://scikit-learn.org/}} é um módulo para a linguagem Python que integra uma alta gama de algoritmos de aprendizado de máquina, tanto supervisionados quanto não supervisionados, como SVM~\cite{cortes:1995svm}, KNN~\cite{cover:1967knn}, e K\=/Means~\cite{macqueen:1967kmeans}, e permite a comparação fácil de diversos métodos em uma aplicação~\cite{pedregosa:2011}.
 
 Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da linguagem Python para manter a facilidade de uso do \textit{framework}, tornando-o utilizável por não especialistas da indústria de \textit{software} e em campos além da ciência da computação. Além disso,~\citeonline{pedregosa:2011} garantem maior eficiência do que outras ferramentas semelhantes em Python, pois o scikit-learn incorpora código compilado. A \autoref{fig:sklearn_svm} demonstra exemplos de classificação em SVM, com diferentes características, feitos com o scikit-learn.
 
@@ -173,10 +173,10 @@ Segundo~\citeonline{pedregosa:2011}, o scikit-learn aproveita o alto nível da l
 	\begin{center}
 	    \includegraphics[width=0.8\textwidth]{resources/sklearn_iris_svm.png}
 	\end{center}
-	\legend{Fonte: \cite{scikitlearn:svm_classif}}
+	\legend{Fonte: \citeonline{scikitlearn:svm_classif}}
 \end{figure}
 
-Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, no qual o parâmetro \texttt{X} contém as amostras, e o parâmetro \texttt{y} contém os rótulos das classes. Já o~\autoref{lst:sklearn_svm_2} faz a previsão: a linha~\texttt{1} é o comando realizado, dado um novo valor, e a linha~\texttt{2} representa o resultado, com os dados classificados \cite{scikitlearn:svm_classif}.
+Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, no qual o parâmetro \texttt{X} contém as amostras, e o parâmetro \texttt{y} contém os rótulos das classes. Já o~\autoref{lst:sklearn_svm_2} faz a previsão: a linha~\texttt{1} é o comando realizado, dado um novo valor, e a linha~\texttt{2} representa o resultado, com os dados classificados~\cite{scikitlearn:svm_classif}.
 
 \begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Treino do classificador SVM com scikit-learn},label={lst:sklearn_svm_1}]
@@ -185,14 +185,16 @@ Ainda usando SVM, o~\autoref{lst:sklearn_svm_1} faz o treinamento, no qual o par
 	y = [0, 1]
 	clf = svm.SVC()
 	clf.fit(X, y)
-\end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
+\end{lstlisting}
+\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
 \end{lstfloat}
 
 \begin{lstfloat}
 \begin{lstlisting}[language=Python,caption={Previsão usando classificador SVM com scikit-learn},label={lst:sklearn_svm_2}]
 	>>> clf.predict([[2., 2.]])
 	array([1])
-\end{lstlisting}\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
+\end{lstlisting}
+\legend{Fonte:~\citeonline{scikitlearn:svm_classif}}
 \end{lstfloat}
 
 % ==================================================
@@ -224,7 +226,8 @@ classifier = tf.estimator.DNNClassifier(
 	hidden_units=[10, 10],
 	# O modelo deve escolher entre 3 classes.
 	n_classes=3)
-\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+\end{lstlisting}
+\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
 \end{lstfloat}
 
 \begin{lstfloat}
@@ -233,7 +236,8 @@ classifier = tf.estimator.DNNClassifier(
 classifier.train(
     input_fn=lambda:iris_data.train_input_fn(train_x, train_y, args.batch_size),
     steps=args.train_steps)
-\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+\end{lstlisting}
+\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
 \end{lstfloat}
 
 \begin{lstfloat}
@@ -251,21 +255,22 @@ predictions = classifier.predict(
     input_fn=lambda:iris_data.eval_input_fn(predict_x,
                                             batch_size=args.batch_size))
 
-\end{lstlisting}\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
+\end{lstlisting}
+\legend{Fonte: Adaptado de~\citeonline{tensorflow:premade_estimators}}
 \end{lstfloat}
 
 % ==================================================
 \section{Modelagem e validação de sistemas}\label{sec:modelosformais}
 % ==================================================
 
-Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, porque podem oferecer risco à vida ou grandes prejuízos~\cite{edwards:1997}. \citeonline{buttazzo2011:realtime} apresenta o caso do foguete Ariane 5, que em 1996 teve uma falha 37 segundos após seu lançamento e teve que ser destruído, pois desviou do curso correto. A falha foi causada por um erro de conversão de inteiros não previsto \cite{buttazzo2011:realtime}.
+Sistemas embarcados são muitas vezes usados em situações críticas, em que segurança e confiabilidade são critérios muito importantes, porque podem oferecer risco à vida ou grandes prejuízos~\cite{edwards:1997}. \citeonline{buttazzo2011:realtime} apresenta o caso do foguete Ariane 5, que em 1996 teve uma falha 37 segundos após seu lançamento e teve que ser destruído, pois desviou do curso correto. A falha foi causada por um erro de conversão de inteiros não previsto~\cite{buttazzo2011:realtime}.
 
 O uso de modelos formais, como redes de Petri~\cite{peterson:1981}, para descrever o comportamento do sistema antes que este seja desenvolvido é uma forma de se aproximar da melhor confiabilidade e evitar erros, pois esses modelos podem ser validados automaticamente~\cite{edwards:1997}.
 
 % ==================================================
 \subsection{Diagrama de sequência}
 % ==================================================
-Uma forma de detalhar as especificações iniciais do \textit{design} do sistema é através do diagrama de sequência, que é um modelo especificado pela UML. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas, desenvolvida por especialistas de \textit{software} e utilizada por ferramentas comerciais~\cite{marwedel:2010}.
+Uma forma de detalhar as especificações iniciais do \textit{design} do sistema é através do diagrama de sequência, que é um modelo especificado pela UML\@. A UML (\textit{Unified Modeling Language}) é uma padronização que visa auxiliar nas etapas iniciais de especificação de sistemas, desenvolvida por especialistas de \textit{software} e utilizada por ferramentas comerciais~\cite{marwedel:2010}.
 
 Este diagrama indica a troca de mensagens sequencial entre os diversos componentes de um sistema. Na Figura~\ref{fig:seq_chart}, pode-se ver um exemplo de um atendedor telefônico automático. A dimensão vertical neste exemplo representa a sequência, e a horizontal representa cada componente de comunicação~\cite{marwedel:2010}.
 
@@ -353,7 +358,7 @@ Cada um dos lugares é marcado com um número não negativo de \textit{tokens}. 
 
 Na \autoref{fig:petrinet}, as transições \(t_1\) e \(t_2\) estão habilitadas, pois há \textit{tokens} suficientes nos lugares \(P_1\) e \(P_2\), e também são paralelas, pois suas causas são independentes. Caso uma dessas transições seja disparada, o \textit{token} no lugar de entrada é removido e um novo é produzido no lugar de saída da transição.
 
-A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros \cite{peterson:1981}.
+A partir do modelo, é possível fazer a análise da rede de Petri usando propriedades como segurança, limitação (do inglês \textit{boundedness}) e vivacidade. Em uma rede de Petri que modela um hardware, \textit{segurança} é uma das propriedades mais importantes. Um lugar em uma rede de Petri é seguro quando nunca contém mais de um \textit{token}, e uma rede de Petri é segura se todos os lugares forem seguros~\cite{peterson:1981}.
 
 A importância desta propriedade para dispositivos de hardware se dá pelo fato de cada lugar poder ser implementado por um único \textit{flip-flop}, já que o número de um lugar pode ser apenas \(0\) ou \(1\)~\cite{peterson:1981}. A Figura~\ref{fig:petri_net_safeness_a} demonstra uma rede de Petri não segura cuja propriedade de segurança foi forçada na Figura~\ref{fig:petri_net_safeness_b}.
 
@@ -361,10 +366,10 @@ A importância desta propriedade para dispositivos de hardware se dá pelo fato 
     \centering
 	\caption{Exemplo de segurança em uma rede de Petri}%
 	\label{fig:petri_net_safeness}
-    \subfloat[Rede de Petri não segura \label{fig:petri_net_safeness_a}]
+    \subfloat[Rede de Petri não segura\label{fig:petri_net_safeness_a}]
         {\includegraphics[width=0.45\textwidth]{resources/petri_net_peterson_safeness_a}}
         \hspace{0.1cm}
-    \subfloat[A rede de Petri da Figura~\ref{fig:petri_net_safeness_a} pode ser forçada a ser segura desta forma \label{fig:petri_net_safeness_b}]
+    \subfloat[A rede de Petri da Figura~\ref{fig:petri_net_safeness_a} pode ser forçada a ser segura desta forma\label{fig:petri_net_safeness_b}]
         {\includegraphics[width=0.45\textwidth]{resources/petri_net_peterson_safeness_b}}
         \legend{Fonte: Adaptado de~\citeonline[p. 81]{peterson:1981}}
 \end{figure}
