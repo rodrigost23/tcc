@@ -19,7 +19,7 @@ Visando responder essas questões, foi definido um ambiente que consiste em um s
 % 
 % \subsection{Captura dos movimentos}\label{sec:result_captura}
 % 
-O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \(2{,}2\) polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano 3.0 conforme o esquema da \autoref{fig:result_schem}.
+O protótipo para captura de dados consiste em um módulo GY\=/\(521\) com um sensor MPU-\(6050\)~\cite{invensense:imu_mpu}, que contém um acelerômetro e um giroscópio, e um sensor flexível SparkFun de \num{2.2} polegadas~\cite{flex:datasheet}, conectados em um Arduino Nano 3.0 conforme o esquema da \autoref{fig:result_schem}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:result_schem}Esquema das conexões dos sensores ao Arduino}
@@ -44,7 +44,7 @@ Para que fossem feitas a leitura e a classificação dos dados capturados, o Ard
 
 % \subsection{\textit{Software} de simulação}\label{sec:result_simulacao}
 
-O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python $3.7$, para facilitar o uso da ferramenta Scikit-learn\cite{pedregosa:2011}. O programa do simulador é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando Scikit-learn; e a exibição $3$D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
+O sistema de simulação é executado em um computador e foi desenvolvido na linguagem Python $3.7$, para facilitar o uso da ferramenta Scikit-learn~\cite{pedregosa:2011}. O programa do simulador é composto por diversos componentes que se integram para realizar diferentes atividades: leitura dos dados, através da biblioteca \textit{pyserial}\footnote{\url{https://github.com/pyserial/pyserial}}; gravação dos dados em arquivos; classificação dos dados, utilizando Scikit-learn; e a exibição $3$D com o uso das bibliotecas \textit{PyOpenGL}\footnote{\url{http://pyopengl.sourceforge.net/}} e \textit{pygame}\footnote{\url{https://www.pygame.org/}}.
 
 %==========================================================================
 %
